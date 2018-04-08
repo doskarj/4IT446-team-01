@@ -1,23 +1,20 @@
 *** Variables ***
-${eshopPageTitle}    Zoo Praha | Internetový obchod
-${pageTitleMagnets}    Magnetky
-${magnetsPageURL}    https://eshop.zoopraha.cz/suvenyry/magnetky-128.html
-${productName}    Magnetka s motivem vydry
-${productPrice}    35
-${firstName}    Pavel
-${lastName}    Racek
+${eshop_page_title}    Zoo Praha | Internetový obchod
+${page_title_magnets}    Magnetky
+${product_name}    Magnetka s motivem vydry
+${product_price}    35
+${first_name}    Pavel
+${last_name}    Racek
 ${email}    pavel@mail.com
 ${street}    U zvonu
 ${city}    Praha
 ${telephone}    999999999 
 
-${searchQuery}    Pexeso
-${afterSearchURL}    https://eshop.zoopraha.cz/catalogsearch/result/?q=Pexeso&cat=
-${foundProductTitle1}    Pexeso Zoo Praha II
-${foundProductTitle2}    Pexeso Let it grow
+${search_query}    Pexeso
+${found_product_title1}    Pexeso Zoo Praha II
+${found_product_title2}    Pexeso Let it grow
 
-${searchCategory}    51
-${afterSearchWithCategoryURL}    https://eshop.zoopraha.cz/catalogsearch/result/?q=Pexeso&cat=51
+${search_category}    51
+
 
 ${productImgAlt}    Magnetka Vydra
-${productDetailURL}    https://eshop.zoopraha.cz/suvenyry/magnetky-128/magnetka-vydra.html

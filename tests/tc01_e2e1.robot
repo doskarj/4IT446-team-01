@@ -12,8 +12,8 @@ TC-01 E2E test -pozitivni test zakladni funkcionality eshopu
     
     Wait Until Element Is Visible    ${vydra_url}
     Click Element    ${vydra_url}
-    Element Should Contain    xpath=//h1    ${productName}    
-    Element Should Contain    xpath=//span[@id='price-including-tax-1361']    ${productPrice}    
+    Element Should Contain    ${vydra_title}    ${productName}    
+    Element Should Contain    ${vydra_price}    ${productPrice}    
     Page Should Contain Element    xpath=//div[@class='short-description']    
     Page Should Contain Element    xpath=//input[@id='qty']    
     Page Should Contain Element    xpath=//button[@title='Přidat do košíku']    

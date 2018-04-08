@@ -1,3 +1,5 @@
 *** Variables ***
-#vydra
+#vydra detail
 ${vydra_url}    xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128/magnetka-vydra.html']
+${vydra_title}    xpath=//h1
+${vydra_price}    xpath=//span[@id='price-including-tax-1361']

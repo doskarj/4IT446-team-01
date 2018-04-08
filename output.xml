@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180408 16:49:11.000" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<robot generated="20180408 17:18:46.085" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
 <suite source="H:\4IT446-team-01" id="s1" name="4IT446-team-01">
 <suite source="H:\4IT446-team-01\tests" id="s1-s1" name="Tests">
-<suite source="H:\4IT446-team-01\tests\tc01_e2e1.robot" id="s1-s1-s1" name="Tc01 E2E1">
-<test id="s1-s1-s1-t1" name="TC-01 E2E test -pozitivni test zakladni funkcionality eshopu">
+<suite source="H:\4IT446-team-01\tests\tc02_vyhledavaniZbozi.robot" id="s1-s1-s1" name="tc02 vyhledavaniZbozi">
+<test id="s1-s1-s1-t1" name="TC-02 Vyhledavani zbozi pres vyhledavaci listu - pozitivni test">
 <kw name="Open browser to Zoo eshop" library="keywords">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -11,20 +11,20 @@
 <arg>https://eshop.zoopraha.cz</arg>
 <arg>browser=chrome</arg>
 </arguments>
-<msg timestamp="20180408 16:49:11.312" level="INFO">Opening browser 'chrome' to base url 'https://eshop.zoopraha.cz'.</msg>
-<status status="PASS" endtime="20180408 16:49:18.946" starttime="20180408 16:49:11.312"></status>
+<msg timestamp="20180408 17:18:46.320" level="INFO">Opening browser 'chrome' to base url 'https://eshop.zoopraha.cz'.</msg>
+<status status="PASS" endtime="20180408 17:18:53.875" starttime="20180408 17:18:46.320"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20180408 16:49:20.365" starttime="20180408 16:49:18.947"></status>
+<status status="PASS" endtime="20180408 17:18:55.297" starttime="20180408 17:18:53.875"></status>
 </kw>
 <kw name="Get Title" library="Selenium2Library">
 <doc>Returns the title of current page.</doc>
 <assign>
 <var>${pageTitle}</var>
 </assign>
-<msg timestamp="20180408 16:49:20.372" level="INFO">${pageTitle} = Zoo Praha | Internetový obchod</msg>
-<status status="PASS" endtime="20180408 16:49:20.372" starttime="20180408 16:49:20.365"></status>
+<msg timestamp="20180408 17:18:55.303" level="INFO">${pageTitle} = Zoo Praha | Internetový obchod</msg>
+<status status="PASS" endtime="20180408 17:18:55.303" starttime="20180408 17:18:55.298"></status>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
@@ -32,475 +32,130 @@
 <arg>${pageTitle}</arg>
 <arg>${eshopPageTitle}</arg>
 </arguments>
-<status status="PASS" endtime="20180408 16:49:20.373" starttime="20180408 16:49:20.372"></status>
+<status status="PASS" endtime="20180408 17:18:55.305" starttime="20180408 17:18:55.304"></status>
 </kw>
-<status status="PASS" endtime="20180408 16:49:20.373" starttime="20180408 16:49:11.312"></status>
-</kw>
-<kw name="Navigate to souveniers/magnets" library="keywords">
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry.html']</arg>
-</arguments>
-<status status="PASS" endtime="20180408 16:49:20.409" starttime="20180408 16:49:20.374"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry.html']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:20.411" level="INFO">Clicking element 'xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry.html']'.</msg>
-<status status="PASS" endtime="20180408 16:49:22.575" starttime="20180408 16:49:20.410"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//ul[@class='category-list']/li/a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128.html']</arg>
-</arguments>
-<status status="PASS" endtime="20180408 16:49:22.615" starttime="20180408 16:49:22.576"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//ul[@class='category-list']/li/a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128.html']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:22.615" level="INFO">Clicking element 'xpath=//ul[@class='category-list']/li/a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128.html']'.</msg>
-<status status="PASS" endtime="20180408 16:49:24.786" starttime="20180408 16:49:22.615"></status>
+<status status="PASS" endtime="20180408 17:18:55.305" starttime="20180408 17:18:46.320"></status>
 </kw>
 <kw name="Get Title" library="Selenium2Library">
 <doc>Returns the title of current page.</doc>
 <assign>
-<var>${pageTitle}</var>
+<var>${page_title}</var>
 </assign>
-<msg timestamp="20180408 16:49:24.797" level="INFO">${pageTitle} = Magnetky s motivem zvířete</msg>
-<status status="PASS" endtime="20180408 16:49:24.798" starttime="20180408 16:49:24.787"></status>
+<msg timestamp="20180408 17:18:55.309" level="INFO">${page_title} = Zoo Praha | Internetový obchod</msg>
+<status status="PASS" endtime="20180408 17:18:55.310" starttime="20180408 17:18:55.306"></status>
 </kw>
-<kw name="Should Contain" library="BuiltIn">
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
 <arguments>
-<arg>${pageTitle}</arg>
-<arg>Magnetky</arg>
+<arg>${page_title}</arg>
+<arg>${eshop_page_title}</arg>
 </arguments>
-<status status="PASS" endtime="20180408 16:49:24.799" starttime="20180408 16:49:24.798"></status>
+<status status="PASS" endtime="20180408 17:18:55.311" starttime="20180408 17:18:55.310"></status>
+</kw>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${class_search_icon}</arg>
+</arguments>
+<msg timestamp="20180408 17:18:55.312" level="INFO">Clicking link 'xpath=//a[@class='search-icon']'.</msg>
+<status status="PASS" endtime="20180408 17:18:55.394" starttime="20180408 17:18:55.311"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${input_search}</arg>
+<arg>${search_query}</arg>
+</arguments>
+<msg timestamp="20180408 17:18:55.395" level="INFO">Typing text 'Pexeso' into text field 'xpath=//input[@id='search']'.</msg>
+<status status="PASS" endtime="20180408 17:18:55.532" starttime="20180408 17:18:55.395"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${button_search}</arg>
+</arguments>
+<msg timestamp="20180408 17:18:55.533" level="INFO">Clicking button 'xpath=//button[@title='Hledat']'.</msg>
+<status status="PASS" endtime="20180408 17:18:57.946" starttime="20180408 17:18:55.533"></status>
 </kw>
 <kw name="Get Location" library="Selenium2Library">
 <doc>Returns the current browser URL.</doc>
 <assign>
 <var>${url}</var>
 </assign>
-<msg timestamp="20180408 16:49:24.804" level="INFO">${url} = https://eshop.zoopraha.cz/suvenyry/magnetky-128.html</msg>
-<status status="PASS" endtime="20180408 16:49:24.804" starttime="20180408 16:49:24.799"></status>
+<msg timestamp="20180408 17:18:57.962" level="INFO">${url} = https://eshop.zoopraha.cz/catalogsearch/result/?q=Pexeso&amp;cat=</msg>
+<status status="PASS" endtime="20180408 17:18:57.963" starttime="20180408 17:18:57.946"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
 <arguments>
 <arg>${url}</arg>
-<arg>${magnetsPageURL}</arg>
+<arg>${after_search_url}</arg>
 </arguments>
-<status status="PASS" endtime="20180408 16:49:24.805" starttime="20180408 16:49:24.805"></status>
+<status status="PASS" endtime="20180408 17:18:57.964" starttime="20180408 17:18:57.963"></status>
 </kw>
-<status status="PASS" endtime="20180408 16:49:24.806" starttime="20180408 16:49:20.374"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element ``locator`` is visible.</doc>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
 <arguments>
-<arg>${vydra_url}</arg>
+<arg>${found_product_title1}</arg>
 </arguments>
-<status status="PASS" endtime="20180408 16:49:24.841" starttime="20180408 16:49:24.806"></status>
+<msg timestamp="20180408 17:18:57.991" level="INFO">Current page contains text 'Pexeso Zoo Praha II'.</msg>
+<status status="PASS" endtime="20180408 17:18:57.991" starttime="20180408 17:18:57.964"></status>
 </kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
 <arguments>
-<arg>${vydra_url}</arg>
+<arg>${found_product_title2}</arg>
 </arguments>
-<msg timestamp="20180408 16:49:24.842" level="INFO">Clicking element 'xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128/magnetka-vydra.html']'.</msg>
-<status status="PASS" endtime="20180408 16:49:27.152" starttime="20180408 16:49:24.841"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>xpath=//h1</arg>
-<arg>${productName}</arg>
-</arguments>
-<msg timestamp="20180408 16:49:27.199" level="INFO">Element 'xpath=//h1' contains text 'Magnetka s motivem vydry'.</msg>
-<status status="PASS" endtime="20180408 16:49:27.199" starttime="20180408 16:49:27.153"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>xpath=//span[@id='price-including-tax-1361']</arg>
-<arg>${productPrice}</arg>
-</arguments>
-<msg timestamp="20180408 16:49:27.245" level="INFO">Element 'xpath=//span[@id='price-including-tax-1361']' contains text '35'.</msg>
-<status status="PASS" endtime="20180408 16:49:27.246" starttime="20180408 16:49:27.200"></status>
+<msg timestamp="20180408 17:18:58.014" level="INFO">Current page contains text 'Pexeso Let it grow'.</msg>
+<status status="PASS" endtime="20180408 17:18:58.014" starttime="20180408 17:18:57.992"></status>
 </kw>
 <kw name="Page Should Contain Element" library="Selenium2Library">
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
 <arguments>
-<arg>xpath=//div[@class='short-description']</arg>
+<arg>${order_by_relevance}</arg>
 </arguments>
-<msg timestamp="20180408 16:49:27.262" level="INFO">Current page contains element 'xpath=//div[@class='short-description']'.</msg>
-<status status="PASS" endtime="20180408 16:49:27.262" starttime="20180408 16:49:27.246"></status>
+<msg timestamp="20180408 17:18:58.032" level="INFO">Current page contains element 'xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&amp;dir=asc&amp;order=relevance&amp;q=Pexeso' and @selected='selected']'.</msg>
+<status status="PASS" endtime="20180408 17:18:58.032" starttime="20180408 17:18:58.015"></status>
 </kw>
 <kw name="Page Should Contain Element" library="Selenium2Library">
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
 <arguments>
-<arg>xpath=//input[@id='qty']</arg>
+<arg>${order_by_name}</arg>
 </arguments>
-<msg timestamp="20180408 16:49:27.279" level="INFO">Current page contains element 'xpath=//input[@id='qty']'.</msg>
-<status status="PASS" endtime="20180408 16:49:27.279" starttime="20180408 16:49:27.262"></status>
+<msg timestamp="20180408 17:18:58.050" level="INFO">Current page contains element 'xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&amp;dir=asc&amp;order=name&amp;q=Pexeso']'.</msg>
+<status status="PASS" endtime="20180408 17:18:58.050" starttime="20180408 17:18:58.033"></status>
 </kw>
 <kw name="Page Should Contain Element" library="Selenium2Library">
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
 <arguments>
-<arg>xpath=//button[@title='Přidat do košíku']</arg>
+<arg>${order_by_price}</arg>
 </arguments>
-<msg timestamp="20180408 16:49:27.295" level="INFO">Current page contains element 'xpath=//button[@title='Přidat do košíku']'.</msg>
-<status status="PASS" endtime="20180408 16:49:27.296" starttime="20180408 16:49:27.279"></status>
+<msg timestamp="20180408 17:18:58.066" level="INFO">Current page contains element 'xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&amp;dir=asc&amp;order=price&amp;q=Pexeso']'.</msg>
+<status status="PASS" endtime="20180408 17:18:58.067" starttime="20180408 17:18:58.050"></status>
 </kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//button[@title='Přidat do košíku']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:27.297" level="INFO">Clicking element 'xpath=//button[@title='Přidat do košíku']'.</msg>
-<status status="PASS" endtime="20180408 16:49:27.373" starttime="20180408 16:49:27.296"></status>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180408 17:19:01.232" starttime="20180408 17:18:58.067"></status>
 </kw>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//div[@id='success-message-container']</arg>
-</arguments>
-<status status="PASS" endtime="20180408 16:49:28.509" starttime="20180408 16:49:27.373"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>xpath=//div[@id='success-message-container']/div/div[@class='msg']/p</arg>
-<arg>${productName}</arg>
-</arguments>
-<msg timestamp="20180408 16:49:28.547" level="INFO">Element 'xpath=//div[@id='success-message-container']/div/div[@class='msg']/p' contains text 'Magnetka s motivem vydry'.</msg>
-<status status="PASS" endtime="20180408 16:49:28.548" starttime="20180408 16:49:28.509"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>xpath=//div[@id='success-message-container']/button[@id='finish_and_checkout']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:28.568" level="INFO">Current page contains element 'xpath=//div[@id='success-message-container']/button[@id='finish_and_checkout']'.</msg>
-<status status="PASS" endtime="20180408 16:49:28.568" starttime="20180408 16:49:28.548"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>xpath=//div[@id='success-message-container']/button[@id='continue_shopping']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:28.602" level="INFO">Current page contains element 'xpath=//div[@id='success-message-container']/button[@id='continue_shopping']'.</msg>
-<status status="PASS" endtime="20180408 16:49:28.603" starttime="20180408 16:49:28.569"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@id='success-message-container']/button[@id='finish_and_checkout']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:28.604" level="INFO">Clicking element 'xpath=//div[@id='success-message-container']/button[@id='finish_and_checkout']'.</msg>
-<status status="PASS" endtime="20180408 16:49:30.271" starttime="20180408 16:49:28.603"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>xpath=//table[@id='shopping-cart-table']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:30.293" level="INFO">Current page contains element 'xpath=//table[@id='shopping-cart-table']'.</msg>
-<status status="PASS" endtime="20180408 16:49:30.293" starttime="20180408 16:49:30.272"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>xpath=//div[@class='header']/div[@class='header-bottom']/div[@class='container']/div[@class='main-nav']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:30.312" level="INFO">Current page contains element 'xpath=//div[@class='header']/div[@class='header-bottom']/div[@class='container']/div[@class='main-nav']'.</msg>
-<status status="PASS" endtime="20180408 16:49:30.312" starttime="20180408 16:49:30.293"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>xpath=//table[@id='shopping-cart-table']/tbody/tr/td/h2/a</arg>
-<arg>${productName}</arg>
-</arguments>
-<msg timestamp="20180408 16:49:30.347" level="INFO">Element 'xpath=//table[@id='shopping-cart-table']/tbody/tr/td/h2/a' contains text 'Magnetka s motivem vydry'.</msg>
-<status status="PASS" endtime="20180408 16:49:30.348" starttime="20180408 16:49:30.312"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>xpath=//table[@id='shopping-cart-table']/tbody/tr/td/span[@class='cart-price']/span</arg>
-<arg>${productPrice}</arg>
-</arguments>
-<msg timestamp="20180408 16:49:30.383" level="INFO">Element 'xpath=//table[@id='shopping-cart-table']/tbody/tr/td/span[@class='cart-price']/span' contains text '35'.</msg>
-<status status="PASS" endtime="20180408 16:49:30.383" starttime="20180408 16:49:30.348"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>xpath=//table[@id='shopping-cart-table']/tbody/tr/td/div[@class='qty-holder']/input[@value=1]</arg>
-</arguments>
-<msg timestamp="20180408 16:49:30.400" level="INFO">Current page contains element 'xpath=//table[@id='shopping-cart-table']/tbody/tr/td/div[@class='qty-holder']/input[@value=1]'.</msg>
-<status status="PASS" endtime="20180408 16:49:30.400" starttime="20180408 16:49:30.384"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>xpath=//table[@id='shopping-cart-totals-table']/tbody/tr/td/span[@class='price']</arg>
-<arg>${productPrice}</arg>
-</arguments>
-<msg timestamp="20180408 16:49:30.436" level="INFO">Element 'xpath=//table[@id='shopping-cart-totals-table']/tbody/tr/td/span[@class='price']' contains text '35'.</msg>
-<status status="PASS" endtime="20180408 16:49:30.436" starttime="20180408 16:49:30.401"></status>
-</kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@class='totals']//button[@title='K pokladně']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:30.437" level="INFO">Clicking button 'xpath=//div[@class='totals']//button[@title='K pokladně']'.</msg>
-<status status="PASS" endtime="20180408 16:49:32.105" starttime="20180408 16:49:30.437"></status>
-</kw>
-<kw name="Element Should Be Visible" library="Selenium2Library">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//div[@id='checkout-step-login']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:32.181" level="INFO">Element 'xpath=//div[@id='checkout-step-login']' is displayed.</msg>
-<status status="PASS" endtime="20180408 16:49:32.182" starttime="20180408 16:49:32.106"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>xpath=//div[@id='checkout-step-login']//input[@id='login:guest']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:32.203" level="INFO">Current page contains element 'xpath=//div[@id='checkout-step-login']//input[@id='login:guest']'.</msg>
-<status status="PASS" endtime="20180408 16:49:32.203" starttime="20180408 16:49:32.182"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>xpath=//div[@class='header']/div[@class='header-bottom']/div[@class='container']/div[@class='main-nav']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:32.212" level="INFO">Current page contains element 'xpath=//div[@class='header']/div[@class='header-bottom']/div[@class='container']/div[@class='main-nav']'.</msg>
-<status status="PASS" endtime="20180408 16:49:32.213" starttime="20180408 16:49:32.204"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@id='checkout-step-login']//input[@id='login:guest']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:32.214" level="INFO">Clicking element 'xpath=//div[@id='checkout-step-login']//input[@id='login:guest']'.</msg>
-<status status="PASS" endtime="20180408 16:49:32.276" starttime="20180408 16:49:32.213"></status>
-</kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//button[@id='onepage-guest-register-button']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:32.278" level="INFO">Clicking button 'xpath=//button[@id='onepage-guest-register-button']'.</msg>
-<status status="PASS" endtime="20180408 16:49:32.392" starttime="20180408 16:49:32.277"></status>
-</kw>
-<kw name="Element Should Be Visible" library="Selenium2Library">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//div[@id='checkout-step-billing']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:32.428" level="INFO">Element 'xpath=//div[@id='checkout-step-billing']' is displayed.</msg>
-<status status="PASS" endtime="20180408 16:49:32.429" starttime="20180408 16:49:32.392"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>xpath=//input[@checked='checked']/following-sibling::label</arg>
-<arg>Zaslat Na Tuto Adresu</arg>
-</arguments>
-<msg timestamp="20180408 16:49:32.467" level="INFO">Element 'xpath=//input[@checked='checked']/following-sibling::label' contains text 'Zaslat Na Tuto Adresu'.</msg>
-<status status="PASS" endtime="20180408 16:49:32.468" starttime="20180408 16:49:32.430"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>xpath=//label[@for='billing:firstname']</arg>
-<arg>Jméno</arg>
-</arguments>
-<msg timestamp="20180408 16:49:32.506" level="INFO">Element 'xpath=//label[@for='billing:firstname']' contains text 'Jméno'.</msg>
-<status status="PASS" endtime="20180408 16:49:32.506" starttime="20180408 16:49:32.468"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>xpath=//label[@for='billing:lastname']</arg>
-<arg>Příjmení</arg>
-</arguments>
-<msg timestamp="20180408 16:49:32.545" level="INFO">Element 'xpath=//label[@for='billing:lastname']' contains text 'Příjmení'.</msg>
-<status status="PASS" endtime="20180408 16:49:32.546" starttime="20180408 16:49:32.506"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>xpath=//label[@for='billing:email']</arg>
-<arg>Emailová Adresa</arg>
-</arguments>
-<msg timestamp="20180408 16:49:32.584" level="INFO">Element 'xpath=//label[@for='billing:email']' contains text 'Emailová Adresa'.</msg>
-<status status="PASS" endtime="20180408 16:49:32.584" starttime="20180408 16:49:32.546"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>xpath=//label[@for='billing:street1']</arg>
-<arg>Adresa</arg>
-</arguments>
-<msg timestamp="20180408 16:49:32.622" level="INFO">Element 'xpath=//label[@for='billing:street1']' contains text 'Adresa'.</msg>
-<status status="PASS" endtime="20180408 16:49:32.622" starttime="20180408 16:49:32.585"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>xpath=//label[@for='billing:city']</arg>
-<arg>Město</arg>
-</arguments>
-<msg timestamp="20180408 16:49:32.660" level="INFO">Element 'xpath=//label[@for='billing:city']' contains text 'Město'.</msg>
-<status status="PASS" endtime="20180408 16:49:32.661" starttime="20180408 16:49:32.623"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>xpath=//label[@for='billing:country_id']</arg>
-<arg>Země</arg>
-</arguments>
-<msg timestamp="20180408 16:49:32.701" level="INFO">Element 'xpath=//label[@for='billing:country_id']' contains text 'Země'.</msg>
-<status status="PASS" endtime="20180408 16:49:32.701" starttime="20180408 16:49:32.661"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>xpath=//label[@for='billing:telephone']</arg>
-<arg>Telefon</arg>
-</arguments>
-<msg timestamp="20180408 16:49:32.738" level="INFO">Element 'xpath=//label[@for='billing:telephone']' contains text 'Telefon'.</msg>
-<status status="PASS" endtime="20180408 16:49:32.738" starttime="20180408 16:49:32.702"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//input[@id='billing:firstname']</arg>
-<arg>${firstName}</arg>
-</arguments>
-<msg timestamp="20180408 16:49:32.739" level="INFO">Typing text 'Pavel' into text field 'xpath=//input[@id='billing:firstname']'.</msg>
-<status status="PASS" endtime="20180408 16:49:32.865" starttime="20180408 16:49:32.739"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//input[@id='billing:lastname']</arg>
-<arg>${lastName}</arg>
-</arguments>
-<msg timestamp="20180408 16:49:32.866" level="INFO">Typing text 'Racek' into text field 'xpath=//input[@id='billing:lastname']'.</msg>
-<status status="PASS" endtime="20180408 16:49:33.007" starttime="20180408 16:49:32.866"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//input[@id='billing:email']</arg>
-<arg>${email}</arg>
-</arguments>
-<msg timestamp="20180408 16:49:33.008" level="INFO">Typing text 'pavel@mail.com' into text field 'xpath=//input[@id='billing:email']'.</msg>
-<status status="PASS" endtime="20180408 16:49:33.163" starttime="20180408 16:49:33.007"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//input[@id='billing:street1']</arg>
-<arg>${street}</arg>
-</arguments>
-<msg timestamp="20180408 16:49:33.165" level="INFO">Typing text 'U zvonu' into text field 'xpath=//input[@id='billing:street1']'.</msg>
-<status status="PASS" endtime="20180408 16:49:33.290" starttime="20180408 16:49:33.164"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//input[@id='billing:city']</arg>
-<arg>${city}</arg>
-</arguments>
-<msg timestamp="20180408 16:49:33.291" level="INFO">Typing text 'Praha' into text field 'xpath=//input[@id='billing:city']'.</msg>
-<status status="PASS" endtime="20180408 16:49:33.411" starttime="20180408 16:49:33.291"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//input[@id='billing:telephone']</arg>
-<arg>${telephone}</arg>
-</arguments>
-<msg timestamp="20180408 16:49:33.413" level="INFO">Typing text '999999999' into text field 'xpath=//input[@id='billing:telephone']'.</msg>
-<status status="PASS" endtime="20180408 16:49:33.553" starttime="20180408 16:49:33.412"></status>
-</kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//div[@id='billing-buttons-container']/button[@title='Pokračovat']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:33.554" level="INFO">Clicking button 'xpath=//div[@id='billing-buttons-container']/button[@title='Pokračovat']'.</msg>
-<status status="PASS" endtime="20180408 16:49:33.678" starttime="20180408 16:49:33.554"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//div[@id='checkout-step-shipping_method']</arg>
-</arguments>
-<status status="PASS" endtime="20180408 16:49:35.044" starttime="20180408 16:49:33.678"></status>
-</kw>
-<kw name="Element Should Be Visible" library="Selenium2Library">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//div[@id='checkout-step-shipping_method']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:35.059" level="INFO">Element 'xpath=//div[@id='checkout-step-shipping_method']' is displayed.</msg>
-<status status="PASS" endtime="20180408 16:49:35.059" starttime="20180408 16:49:35.044"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//input[@id='s_method_freeshipping_freeshipping']</arg>
-</arguments>
-<msg timestamp="20180408 16:49:35.059" level="INFO">Clicking element 'xpath=//input[@id='s_method_freeshipping_freeshipping']'.</msg>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20180408 16:49:35.393" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20180408 16:49:35.393" starttime="20180408 16:49:35.122"></status>
-</kw>
-<msg timestamp="20180408 16:49:35.397" level="FAIL">WebDriverException: Message: unknown error: Element &lt;input name="shipping_method" type="radio" value="freeshipping_freeshipping" id="s_method_freeshipping_freeshipping" class="radio"&gt; is not clickable at point (133, 40). Other element would receive the click: &lt;a href="https://eshop.zoopraha.cz/"&gt;...&lt;/a&gt;
-  (Session info: chrome=65.0.3325.181)
-  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64)
-</msg>
-<status status="FAIL" endtime="20180408 16:49:35.397" starttime="20180408 16:49:35.059"></status>
-</kw>
-<status status="FAIL" endtime="20180408 16:49:35.397" critical="yes" starttime="20180408 16:49:11.312">WebDriverException: Message: unknown error: Element &lt;input name="shipping_method" type="radio" value="freeshipping_freeshipping" id="s_method_freeshipping_freeshipping" class="radio"&gt; is not clickable at point (133, 40). Other element would receive the click: &lt;a href="https://eshop.zoopraha.cz/"&gt;...&lt;/a&gt;
-  (Session info: chrome=65.0.3325.181)
-  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64)
-</status>
+<status status="PASS" endtime="20180408 17:19:01.232" critical="yes" starttime="20180408 17:18:46.320"></status>
 </test>
-<status status="FAIL" endtime="20180408 16:49:35.399" starttime="20180408 16:49:11.109"></status>
+<status status="PASS" endtime="20180408 17:19:01.232" starttime="20180408 17:18:46.148"></status>
 </suite>
-<status status="FAIL" endtime="20180408 16:49:35.415" starttime="20180408 16:49:11.109"></status>
+<status status="PASS" endtime="20180408 17:19:01.232" starttime="20180408 17:18:46.148"></status>
 </suite>
-<status status="FAIL" endtime="20180408 16:49:35.415" starttime="20180408 16:49:11.078"></status>
+<status status="PASS" endtime="20180408 17:19:01.232" starttime="20180408 17:18:46.117"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="1" pass="0">Critical Tests</stat>
-<stat fail="1" pass="0">All Tests</stat>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="4IT446-team-01" pass="0">4IT446-team-01</stat>
-<stat fail="1" id="s1-s1" name="Tests" pass="0">4IT446-team-01.Tests</stat>
-<stat fail="1" id="s1-s1-s1" name="Tc01 E2E1" pass="0">4IT446-team-01.Tests.Tc01 E2E1</stat>
+<stat fail="0" id="s1" name="4IT446-team-01" pass="1">4IT446-team-01</stat>
+<stat fail="0" id="s1-s1" name="Tests" pass="1">4IT446-team-01.Tests</stat>
+<stat fail="0" id="s1-s1-s1" name="tc02 vyhledavaniZbozi" pass="1">4IT446-team-01.Tests.tc02 vyhledavaniZbozi</stat>
 </suite>
 </statistics>
 <errors>

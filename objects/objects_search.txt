@@ -1,0 +1,10 @@
+*** Variables ***
+${magnets_page_url}    https://eshop.zoopraha.cz/suvenyry/magnetky-128.html
+${after_search_url}    https://eshop.zoopraha.cz/catalogsearch/result/?q=Pexeso&cat=
+${after_search_with_category_url}    https://eshop.zoopraha.cz/catalogsearch/result/?q=Pexeso&cat=51
+${class_search_icon}    xpath=//a[@class='search-icon']
+${input_search}    xpath=//input[@id='search']
+${button_search}    xpath=//button[@title='Hledat']
+${order_by_relevance}    xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&dir=asc&order=relevance&q=Pexeso' and @selected='selected']
+${order_by_name}    xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&dir=asc&order=name&q=Pexeso']
+${order_by_price}    xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&dir=asc&order=price&q=Pexeso']

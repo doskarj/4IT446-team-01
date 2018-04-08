@@ -2,24 +2,25 @@
 Library    Selenium2Library
 Resource    ../keywords/keywords.txt
 Resource    ../variables/variables.txt
+Resource    ../objects/objects_search.txt
 
 *** Test Cases ***
 TC-02 Vyhledavani zbozi pres vyhledavaci listu - pozitivni test
     Open browser to Zoo eshop
-    ${pageTitle}=    Get Title
-    Should Be Equal    ${pageTitle}    ${eshopPageTitle}
+    ${page_title}=    Get Title
+    Should Be Equal    ${page_title}    ${eshop_page_title}
     
-    Click Link    xpath=//a[@class='search-icon']
-    Input Text    xpath=//input[@id='search']    ${searchQuery}
-    Click Button    xpath=//button[@title='Hledat']
+    Click Link    ${class_search_icon}
+    Input Text    ${input_search}    ${search_query}
+    Click Button    ${button_search}
     ${url}=    Get Location
-    Should Be Equal    ${url}    ${afterSearchURL}
+    Should Be Equal    ${url}    ${after_search_url}
     
-    Page Should Contain    ${foundProductTitle1}
-    Page Should Contain    ${foundProductTitle2}
+    Page Should Contain    ${found_product_title1}
+    Page Should Contain    ${found_product_title2}
     
-    Page Should Contain Element    xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&dir=asc&order=relevance&q=Pexeso' and @selected='selected']
-    Page Should Contain Element    xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&dir=asc&order=name&q=Pexeso']                
-    Page Should Contain Element    xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&dir=asc&order=price&q=Pexeso']                
+    Page Should Contain Element    ${order_by_relevance}
+    Page Should Contain Element    ${order_by_name}                
+    Page Should Contain Element    ${order_by_price}                
     
     Close Browser   
