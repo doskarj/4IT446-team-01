@@ -1,0 +1,26 @@
+*** Settings ***
+Library    Selenium2Library
+Resource    ../variables/variables.txt  
+*** Keywords ***
+Open browser to Zoo eshop
+    Open Browser    https://eshop.zoopraha.cz    browser=chrome
+    Maximize Browser Window
+    ${pageTitle}=    Get Title
+    Should Contain    ${pageTitle}    ${eshopPageTitle}
+    
+Navigate to souveniers/magnets
+    Wait Until Element Is Visible    xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry.html']
+    Click Element    xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry.html']
+    Wait Until Element Is Visible    xpath=//ul[@class='category-list']/li/a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128.html']
+    Click Element    xpath=//ul[@class='category-list']/li/a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128.html']
+    ${pageTitle}=    Get Title
+    Should Contain    ${pageTitle}    Magnetky
+    ${url}=    Get Location
+    Should Be Equal    ${url}    ${magnetsPageURL}
+    
+Check for product in list
+    Wait Until Element Is Visible    xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128/magnetka-vydra.html']
+    Element Text Should Be    xpath=//div[@class='item-area']//h2/a    ${productName}
+    Element Should Contain    xpath=//div[@class='item-area' and //h2/a[@title='${productName}']]//span[@id='price-including-tax-1361']    ${productPrice}
+    Page Should Contain Element    xpath=//div[@class='item-area' and //h2/a[@title='${productName}']]//img[@alt='${productImgAlt}']
+    
