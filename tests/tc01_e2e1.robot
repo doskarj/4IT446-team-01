@@ -3,6 +3,7 @@ Library    Selenium2Library
 Resource    ../keywords/keywords.txt
 Resource    ../variables/variables.txt
 Resource    ../objects/objects_vydra.txt
+Resource    ../objects/objects_shop_process.txt
 
 *** Test Cases ***
 TC-01 E2E test -pozitivni test zakladni funkcionality eshopu
@@ -34,49 +35,47 @@ TC-01 E2E test -pozitivni test zakladni funkcionality eshopu
     Element Should Contain    ${shop_cart_total_price}    ${product_price}
     
     Click Button    ${shop_cart_checkout}
-    Element Should Be Visible    xpath=//div[@id='checkout-step-login']
-    Page Should Contain Element    xpath=//div[@id='checkout-step-login']//input[@id='login:guest']
-    Page Should Contain Element    xpath=//div[@class='header']/div[@class='header-bottom']/div[@class='container']/div[@class='main-nav']
+    Element Should Be Visible    ${step_one_content}
+    Page Should Contain Element    ${step_one_quest}
+    Check header menu
     
-    Click Element    xpath=//div[@id='checkout-step-login']//input[@id='login:guest']
+    Click Element    ${step_one_quest}
     
-    Click Button    xpath=//button[@id='onepage-guest-register-button']
-    Element Should Be Visible    xpath=//div[@id='checkout-step-billing']
+    Click Button    ${step_one_continue}
+    Element Should Be Visible    ${step_two_content}
     #Radio Button Should Be Set To    group_name    value
-    Element Should Contain    xpath=//input[@checked='checked']/following-sibling::label   Zaslat Na Tuto Adresu    
-    Element Should Contain    xpath=//label[@for='billing:firstname']    Jméno    
-    Element Should Contain    xpath=//label[@for='billing:lastname']    Příjmení    
-    Element Should Contain    xpath=//label[@for='billing:email']    Emailová Adresa    
-    Element Should Contain    xpath=//label[@for='billing:street1']    Adresa    
-    Element Should Contain    xpath=//label[@for='billing:city']    Město    
-    Element Should Contain    xpath=//label[@for='billing:country_id']    Země    
-    Element Should Contain    xpath=//label[@for='billing:telephone']    Telefon
+    Element Should Contain    ${step_two_radio_btn}   Zaslat Na Tuto Adresu    
+    Element Should Contain    ${step_two_first_name_lb}    Jméno    
+    Element Should Contain    ${step_two_last_name_lb}    Příjmení    
+    Element Should Contain    ${step_two_email_lb}    Emailová Adresa    
+    Element Should Contain    ${step_two_street1_lb}    Adresa    
+    Element Should Contain    ${step_two_city_lb}    Město    
+    Element Should Contain    ${step_two_country_id_lb}    Země    
+    Element Should Contain    ${step_two_telephone_lb}    Telefon
+    Input Text    ${step_two_first_name}    ${firstName}
+    Input Text    ${step_two_last_name}    ${lastName}    
+    Input Text    ${step_two_email}    ${email}
+    Input Text    ${step_two_street1}    ${street}
+    Input Text    ${step_two_city}    ${city}
+    Input Text    ${step_two_telephone}    ${telephone}
+    Click Button    ${step_two_continue}
+    Wait Until Element Is Visible    ${step_four_content}    
     
-    Input Text    xpath=//input[@id='billing:firstname']    ${firstName}
-    Input Text    xpath=//input[@id='billing:lastname']    ${lastName}    
-    Input Text    xpath=//input[@id='billing:email']    ${email}
-    Input Text    xpath=//input[@id='billing:street1']    ${street}
-    Input Text    xpath=//input[@id='billing:city']    ${city}
-    Input Text    xpath=//input[@id='billing:telephone']    ${telephone}
-    Click Button    xpath=//div[@id='billing-buttons-container']/button[@title='Pokračovat']
-    Wait Until Element Is Visible    xpath=//div[@id='checkout-step-shipping_method']    
-    Element Should Be Visible    xpath=//div[@id='checkout-step-shipping_method']
+    Wait Until Element Is Visible    ${step_four_freeshipping}    
+    Click Element    ${step_four_freeshipping}
+    Click Button    ${step_four_continue}
+    Wait Until Element Is Visible    ${step_five_content}    
+
     
-    Click Element    xpath=//input[@id='s_method_freeshipping_freeshipping']
-    Click Button    xpath=//div[@id='shipping-method-buttons-container']/button
-    Wait Until Element Is Visible    xpath=//div[@id='checkout-step-payment']    
-    Element Should Be Visible    xpath=//div[@id='checkout-step-payment']
+    Click Element    ${step_five_cash}
+    Click Button    ${step_five_continue}
+    Wait Until Element Is Visible    ${step_six_content}     
     
-    Click Element    xpath=//input[@id='p_method_cashondelivery']
-    Click Button    xpath=//div[@id='payment-buttons-container']/button
-    Wait Until Element Is Visible    xpath=//div[@id='checkout-step-review']    
-    Element Should Be Visible    xpath=//div[@id='checkout-step-review']
-    
-    Element Should Contain    xpath=//table[@id='checkout-review-table']/tbody/tr/td/h3    ${productName}    
-    Element Should Contain    xpath=//table[@id='checkout-review-table']/tbody/tr/td//span[@class='price']    ${productPrice}
-    Element Should Contain    xpath=//table[@id='checkout-review-table']/tfoot/tr[@class='grand-total last']/td//span[@class='price']    ${productPrice}
+    Element Should Contain    ${step_six_product}    ${product_name}    
+    Element Should Contain    ${step_six_price}    ${product_price}
+    Element Should Contain    ${step_six_total_price}    ${productPrice}
     Page Should Contain    Dopravné (Osobní odběr)
-    Page Should Contain Element    xpath=//div[@id='review-buttons-container']/button        
+    Page Should Contain Element    ${step_six_submit}        
     
     Close Browser
     
