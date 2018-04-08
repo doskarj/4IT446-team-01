@@ -13,10 +13,7 @@ TC-05 Vložení produku do košíku z detailu produktu
     
     Mouse Over    xpath=//div[@class='item-area' and //h2/a[@title='${productName}']]
     Click Link    xpath=//div[@class='item-area' and //h2/a[@title='${productName}']]//a[@title='Přidat do košíku']
-    Wait Until Element Is Visible    xpath=//div[@id='success-message-container']
-    Element Should Contain    xpath=//div[@id='success-message-container']/div/div[@class='msg']/p    ${productName}
-    Page Should Contain Element    xpath=//div[@id='success-message-container']/button[@id='finish_and_checkout']
-    Page Should Contain Element    xpath=//div[@id='success-message-container']/button[@id='continue_shopping']
+    Valid success message
     
     Click Button    xpath=//div[@id='success-message-container']/button[@id='continue_shopping']
     Wait Until Element Is Not Visible    xpath=//div[@id='success-message-container']    

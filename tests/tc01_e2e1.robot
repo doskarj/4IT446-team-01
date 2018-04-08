@@ -10,6 +10,7 @@ TC-01 E2E test -pozitivni test zakladni funkcionality eshopu
     
     Navigate to souveniers/magnets    
     
+    #product detail
     Wait Until Element Is Visible    ${vydra_url}
     Click Element    ${vydra_url}
     Element Should Contain    ${vydra_title}    ${productName}    
@@ -18,15 +19,13 @@ TC-01 E2E test -pozitivni test zakladni funkcionality eshopu
     Page Should Contain Element    ${vydra_qty}    
     Page Should Contain Element    ${vydra_add_to_cart}    
     
+    #success message display
     Click Element    ${vydra_add_to_cart}
-    Wait Until Element Is Visible    xpath=//div[@id='success-message-container']
-    Element Should Contain    xpath=//div[@id='success-message-container']/div/div[@class='msg']/p    ${productName}
-    Page Should Contain Element    xpath=//div[@id='success-message-container']/button[@id='finish_and_checkout']
-    Page Should Contain Element    xpath=//div[@id='success-message-container']/button[@id='continue_shopping']
+    Valid success message
     
-    Click Element    xpath=//div[@id='success-message-container']/button[@id='finish_and_checkout']
-    Page Should Contain Element    xpath=//table[@id='shopping-cart-table']
-    Page Should Contain Element    xpath=//div[@class='header']/div[@class='header-bottom']/div[@class='container']/div[@class='main-nav']
+    #step to shopping cart
+    Step from success message to shopping cart
+    Check header menu
     
     
     Element Should Contain    xpath=//table[@id='shopping-cart-table']/tbody/tr/td/h2/a    ${productName}

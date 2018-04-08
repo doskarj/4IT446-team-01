@@ -3,6 +3,8 @@ Library    Selenium2Library
 Resource    ../variables/variables.txt 
 Resource    ../objects/objects_vydra.txt 
 Resource    ../objects/objects_search.txt
+Resource    ../objects/objects_success_msg.txt
+Resource    ../objects/objects_shopping_cart.txt
 *** Keywords ***
 Open browser to Zoo eshop
     Open Browser    https://eshop.zoopraha.cz    browser=chrome
@@ -22,7 +24,19 @@ Navigate to souveniers/magnets
     
 Check for product in list
     Wait Until Element Is Visible    ${vydra_url}
-    Element Text Should Be    ${product_list_item}    ${productName}
+    Element Text Should Be    ${product_list_item}    ${product_name}
     Element Should Contain    xpath=//div[@class='item-area' and //h2/a[@title='${product_name}']]//span[@id='price-including-tax-1361']    ${product_price}
-    Page Should Contain Element    xpath=//div[@class='item-area' and //h2/a[@title='${productName}']]//img[@alt='${productImgAlt}']
+    Page Should Contain Element    xpath=//div[@class='item-area' and //h2/a[@title='${product_name}']]//img[@alt='${productImgAlt}']
     
+Valid success message
+    Wait Until Element Is Visible    ${success_msg_containter}
+    Element Should Contain    ${success_msg_product}    ${product_name}
+    Page Should Contain Element    ${success_msg_checkout}
+    Page Should Contain Element    ${success_msg_continue}
+    
+Step from success message to shopping cart
+    Click Element    ${success_msg_checkout}
+    Page Should Contain Element    ${shop_cart_table}
+    
+Check header menu
+    Page Should Contain Element    ${header_menu}

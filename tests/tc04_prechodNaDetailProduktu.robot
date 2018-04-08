@@ -2,6 +2,7 @@
 Library    Selenium2Library
 Resource    ../keywords/keywords.txt
 Resource    ../variables/variables.txt
+Resource    ../objects/objects_vydra.txt
 
 *** Test Cases ***
 TC-04 Prechod na detail produktu pres menu
@@ -13,7 +14,7 @@ TC-04 Prechod na detail produktu pres menu
         
     Click Link    xpath=//a[@title='${productName}']
     ${url}=    Get Location
-    Should Be Equal    ${url}    ${productDetailURL}
+    Should Be Equal    ${url}    ${vydra_url}
     
     Element Text Should Be    xpath=//h1    ${productName}
     Page Should Contain Element    //p[@class='availability in-stock']

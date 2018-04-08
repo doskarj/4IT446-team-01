@@ -1,0 +1,5 @@
+*** Variables ***
+${success_msg_containter}    xpath=//div[@id='success-message-container']
+${success_msg_product}    xpath=//div[@id='success-message-container']/div/div[@class='msg']/p
+${success_msg_checkout}    xpath=//div[@id='success-message-container']/button[@id='finish_and_checkout']
+${success_msg_continue}    xpath=//div[@id='success-message-container']/button[@id='continue_shopping']

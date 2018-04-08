@@ -1,0 +1,2 @@
+*** Variables ***
+${shop_cart_table}    xpath=//table[@id='shopping-cart-table']
