@@ -11,10 +11,10 @@ Open browser to Zoo eshop
     Should Contain    ${page_title}    ${eshop_page_title}
     
 Navigate to souveniers/magnets
-    Wait Until Element Is Visible    xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry.html']
-    Click Element    xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry.html']
-    Wait Until Element Is Visible    xpath=//ul[@class='category-list']/li/a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128.html']
-    Click Element    xpath=//ul[@class='category-list']/li/a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128.html']
+    Wait Until Element Is Visible    ${suveniers_url}
+    Click Element    ${suveniers_url}
+    Wait Until Element Is Visible    ${magnets_category}
+    Click Element    ${magnets_category}
     ${page_title}=    Get Title
     Should Contain    ${page_title}    ${page_title_magnets}
     ${url}=    Get Location

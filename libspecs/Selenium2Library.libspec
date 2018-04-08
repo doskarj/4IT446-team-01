@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<keywordspec generated="20180408 16:37:55" type="library" name="Selenium2Library" format="ROBOT">
+<keywordspec generated="20180408 19:04:34" type="library" name="Selenium2Library" format="ROBOT">
 <version>3.0.0</version>
 <scope>global</scope>
 <namedargs>yes</namedargs>

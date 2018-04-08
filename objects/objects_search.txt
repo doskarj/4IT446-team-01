@@ -11,3 +11,5 @@ ${order_by_price}    xpath=//select/option[@value='https://eshop.zoopraha.cz/cat
 
 #List of products
 ${product_list_item}    xpath=//div[@class='item-area']//h2/a
+${suveniers_url}    xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry.html']
+${magnets_category}    xpath=//ul[@class='category-list']/li/a[@href='${magnets_page_url}']
