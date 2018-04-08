@@ -14,11 +14,11 @@ TC-01 E2E test -pozitivni test zakladni funkcionality eshopu
     Click Element    ${vydra_url}
     Element Should Contain    ${vydra_title}    ${productName}    
     Element Should Contain    ${vydra_price}    ${productPrice}    
-    Page Should Contain Element    xpath=//div[@class='short-description']    
-    Page Should Contain Element    xpath=//input[@id='qty']    
-    Page Should Contain Element    xpath=//button[@title='Přidat do košíku']    
+    Page Should Contain Element    ${vydra_short_description}    
+    Page Should Contain Element    ${vydra_qty}    
+    Page Should Contain Element    ${vydra_add_to_cart}    
     
-    Click Element    xpath=//button[@title='Přidat do košíku']
+    Click Element    ${vydra_add_to_cart}
     Wait Until Element Is Visible    xpath=//div[@id='success-message-container']
     Element Should Contain    xpath=//div[@id='success-message-container']/div/div[@class='msg']/p    ${productName}
     Page Should Contain Element    xpath=//div[@id='success-message-container']/button[@id='finish_and_checkout']

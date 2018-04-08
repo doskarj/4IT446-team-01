@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180408 17:18:46.085" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<robot generated="20180408 17:24:07.173" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
 <suite source="H:\4IT446-team-01" id="s1" name="4IT446-team-01">
 <suite source="H:\4IT446-team-01\tests" id="s1-s1" name="Tests">
-<suite source="H:\4IT446-team-01\tests\tc02_vyhledavaniZbozi.robot" id="s1-s1-s1" name="tc02 vyhledavaniZbozi">
-<test id="s1-s1-s1-t1" name="TC-02 Vyhledavani zbozi pres vyhledavaci listu - pozitivni test">
+<suite source="H:\4IT446-team-01\tests\tc01_e2e1.robot" id="s1-s1-s1" name="Tc01 E2E1">
+<test id="s1-s1-s1-t1" name="TC-01 E2E test -pozitivni test zakladni funkcionality eshopu">
 <kw name="Open browser to Zoo eshop" library="keywords">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -11,20 +11,20 @@
 <arg>https://eshop.zoopraha.cz</arg>
 <arg>browser=chrome</arg>
 </arguments>
-<msg timestamp="20180408 17:18:46.320" level="INFO">Opening browser 'chrome' to base url 'https://eshop.zoopraha.cz'.</msg>
-<status status="PASS" endtime="20180408 17:18:53.875" starttime="20180408 17:18:46.320"></status>
+<msg timestamp="20180408 17:24:07.439" level="INFO">Opening browser 'chrome' to base url 'https://eshop.zoopraha.cz'.</msg>
+<status status="PASS" endtime="20180408 17:24:14.764" starttime="20180408 17:24:07.439"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20180408 17:18:55.297" starttime="20180408 17:18:53.875"></status>
+<status status="PASS" endtime="20180408 17:24:16.199" starttime="20180408 17:24:14.765"></status>
 </kw>
 <kw name="Get Title" library="Selenium2Library">
 <doc>Returns the title of current page.</doc>
 <assign>
 <var>${pageTitle}</var>
 </assign>
-<msg timestamp="20180408 17:18:55.303" level="INFO">${pageTitle} = Zoo Praha | Internetový obchod</msg>
-<status status="PASS" endtime="20180408 17:18:55.303" starttime="20180408 17:18:55.298"></status>
+<msg timestamp="20180408 17:24:16.205" level="INFO">${pageTitle} = Zoo Praha | Internetový obchod</msg>
+<status status="PASS" endtime="20180408 17:24:16.205" starttime="20180408 17:24:16.200"></status>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
@@ -32,130 +32,95 @@
 <arg>${pageTitle}</arg>
 <arg>${eshopPageTitle}</arg>
 </arguments>
-<status status="PASS" endtime="20180408 17:18:55.305" starttime="20180408 17:18:55.304"></status>
+<status status="PASS" endtime="20180408 17:24:16.206" starttime="20180408 17:24:16.206"></status>
 </kw>
-<status status="PASS" endtime="20180408 17:18:55.305" starttime="20180408 17:18:46.320"></status>
+<status status="PASS" endtime="20180408 17:24:16.207" starttime="20180408 17:24:07.439"></status>
+</kw>
+<kw name="Navigate to souveniers/magnets" library="keywords">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry.html']</arg>
+</arguments>
+<status status="PASS" endtime="20180408 17:24:16.243" starttime="20180408 17:24:16.208"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry.html']</arg>
+</arguments>
+<msg timestamp="20180408 17:24:16.244" level="INFO">Clicking element 'xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry.html']'.</msg>
+<status status="PASS" endtime="20180408 17:24:18.192" starttime="20180408 17:24:16.243"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//ul[@class='category-list']/li/a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128.html']</arg>
+</arguments>
+<status status="PASS" endtime="20180408 17:24:18.232" starttime="20180408 17:24:18.193"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//ul[@class='category-list']/li/a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128.html']</arg>
+</arguments>
+<msg timestamp="20180408 17:24:18.233" level="INFO">Clicking element 'xpath=//ul[@class='category-list']/li/a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128.html']'.</msg>
+<status status="PASS" endtime="20180408 17:24:20.059" starttime="20180408 17:24:18.233"></status>
 </kw>
 <kw name="Get Title" library="Selenium2Library">
 <doc>Returns the title of current page.</doc>
 <assign>
-<var>${page_title}</var>
+<var>${pageTitle}</var>
 </assign>
-<msg timestamp="20180408 17:18:55.309" level="INFO">${page_title} = Zoo Praha | Internetový obchod</msg>
-<status status="PASS" endtime="20180408 17:18:55.310" starttime="20180408 17:18:55.306"></status>
+<msg timestamp="20180408 17:24:20.071" level="INFO">${pageTitle} = Magnetky s motivem zvířete</msg>
+<status status="PASS" endtime="20180408 17:24:20.071" starttime="20180408 17:24:20.060"></status>
 </kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<doc>Fails if the given objects are unequal.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
 <arguments>
-<arg>${page_title}</arg>
-<arg>${eshop_page_title}</arg>
+<arg>${pageTitle}</arg>
+<arg>Magnetky</arg>
 </arguments>
-<status status="PASS" endtime="20180408 17:18:55.311" starttime="20180408 17:18:55.310"></status>
-</kw>
-<kw name="Click Link" library="Selenium2Library">
-<doc>Clicks a link identified by ``locator``.</doc>
-<arguments>
-<arg>${class_search_icon}</arg>
-</arguments>
-<msg timestamp="20180408 17:18:55.312" level="INFO">Clicking link 'xpath=//a[@class='search-icon']'.</msg>
-<status status="PASS" endtime="20180408 17:18:55.394" starttime="20180408 17:18:55.311"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${input_search}</arg>
-<arg>${search_query}</arg>
-</arguments>
-<msg timestamp="20180408 17:18:55.395" level="INFO">Typing text 'Pexeso' into text field 'xpath=//input[@id='search']'.</msg>
-<status status="PASS" endtime="20180408 17:18:55.532" starttime="20180408 17:18:55.395"></status>
-</kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>${button_search}</arg>
-</arguments>
-<msg timestamp="20180408 17:18:55.533" level="INFO">Clicking button 'xpath=//button[@title='Hledat']'.</msg>
-<status status="PASS" endtime="20180408 17:18:57.946" starttime="20180408 17:18:55.533"></status>
+<status status="PASS" endtime="20180408 17:24:20.073" starttime="20180408 17:24:20.072"></status>
 </kw>
 <kw name="Get Location" library="Selenium2Library">
 <doc>Returns the current browser URL.</doc>
 <assign>
 <var>${url}</var>
 </assign>
-<msg timestamp="20180408 17:18:57.962" level="INFO">${url} = https://eshop.zoopraha.cz/catalogsearch/result/?q=Pexeso&amp;cat=</msg>
-<status status="PASS" endtime="20180408 17:18:57.963" starttime="20180408 17:18:57.946"></status>
+<msg timestamp="20180408 17:24:20.078" level="INFO">${url} = https://eshop.zoopraha.cz/suvenyry/magnetky-128.html</msg>
+<status status="PASS" endtime="20180408 17:24:20.078" starttime="20180408 17:24:20.073"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
 <arguments>
 <arg>${url}</arg>
-<arg>${after_search_url}</arg>
+<arg>${magnetsPageURL}</arg>
 </arguments>
-<status status="PASS" endtime="20180408 17:18:57.964" starttime="20180408 17:18:57.963"></status>
+<msg timestamp="20180408 17:24:20.081" level="FAIL">Variable '${magnetsPageURL}' not found.</msg>
+<status status="FAIL" endtime="20180408 17:24:20.081" starttime="20180408 17:24:20.079"></status>
 </kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>${found_product_title1}</arg>
-</arguments>
-<msg timestamp="20180408 17:18:57.991" level="INFO">Current page contains text 'Pexeso Zoo Praha II'.</msg>
-<status status="PASS" endtime="20180408 17:18:57.991" starttime="20180408 17:18:57.964"></status>
+<status status="FAIL" endtime="20180408 17:24:20.082" starttime="20180408 17:24:16.207"></status>
 </kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>${found_product_title2}</arg>
-</arguments>
-<msg timestamp="20180408 17:18:58.014" level="INFO">Current page contains text 'Pexeso Let it grow'.</msg>
-<status status="PASS" endtime="20180408 17:18:58.014" starttime="20180408 17:18:57.992"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>${order_by_relevance}</arg>
-</arguments>
-<msg timestamp="20180408 17:18:58.032" level="INFO">Current page contains element 'xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&amp;dir=asc&amp;order=relevance&amp;q=Pexeso' and @selected='selected']'.</msg>
-<status status="PASS" endtime="20180408 17:18:58.032" starttime="20180408 17:18:58.015"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>${order_by_name}</arg>
-</arguments>
-<msg timestamp="20180408 17:18:58.050" level="INFO">Current page contains element 'xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&amp;dir=asc&amp;order=name&amp;q=Pexeso']'.</msg>
-<status status="PASS" endtime="20180408 17:18:58.050" starttime="20180408 17:18:58.033"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>${order_by_price}</arg>
-</arguments>
-<msg timestamp="20180408 17:18:58.066" level="INFO">Current page contains element 'xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&amp;dir=asc&amp;order=price&amp;q=Pexeso']'.</msg>
-<status status="PASS" endtime="20180408 17:18:58.067" starttime="20180408 17:18:58.050"></status>
-</kw>
-<kw name="Close Browser" library="Selenium2Library">
-<doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180408 17:19:01.232" starttime="20180408 17:18:58.067"></status>
-</kw>
-<status status="PASS" endtime="20180408 17:19:01.232" critical="yes" starttime="20180408 17:18:46.320"></status>
+<status status="FAIL" endtime="20180408 17:24:20.082" critical="yes" starttime="20180408 17:24:07.439">Variable '${magnetsPageURL}' not found.</status>
 </test>
-<status status="PASS" endtime="20180408 17:19:01.232" starttime="20180408 17:18:46.148"></status>
+<status status="FAIL" endtime="20180408 17:24:20.084" starttime="20180408 17:24:07.267"></status>
 </suite>
-<status status="PASS" endtime="20180408 17:19:01.232" starttime="20180408 17:18:46.148"></status>
+<status status="FAIL" endtime="20180408 17:24:20.088" starttime="20180408 17:24:07.267"></status>
 </suite>
-<status status="PASS" endtime="20180408 17:19:01.232" starttime="20180408 17:18:46.117"></status>
+<status status="FAIL" endtime="20180408 17:24:20.090" starttime="20180408 17:24:07.236"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="4IT446-team-01" pass="1">4IT446-team-01</stat>
-<stat fail="0" id="s1-s1" name="Tests" pass="1">4IT446-team-01.Tests</stat>
-<stat fail="0" id="s1-s1-s1" name="tc02 vyhledavaniZbozi" pass="1">4IT446-team-01.Tests.tc02 vyhledavaniZbozi</stat>
+<stat fail="1" id="s1" name="4IT446-team-01" pass="0">4IT446-team-01</stat>
+<stat fail="1" id="s1-s1" name="Tests" pass="0">4IT446-team-01.Tests</stat>
+<stat fail="1" id="s1-s1-s1" name="Tc01 E2E1" pass="0">4IT446-team-01.Tests.Tc01 E2E1</stat>
 </suite>
 </statistics>
 <errors>

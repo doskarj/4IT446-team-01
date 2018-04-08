@@ -8,3 +8,6 @@ ${button_search}    xpath=//button[@title='Hledat']
 ${order_by_relevance}    xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&dir=asc&order=relevance&q=Pexeso' and @selected='selected']
 ${order_by_name}    xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&dir=asc&order=name&q=Pexeso']
 ${order_by_price}    xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&dir=asc&order=price&q=Pexeso']
+
+#List of products
+${product_list_item}    xpath=//div[@class='item-area']//h2/a

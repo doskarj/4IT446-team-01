@@ -1,26 +1,28 @@
 *** Settings ***
 Library    Selenium2Library
-Resource    ../variables/variables.txt  
+Resource    ../variables/variables.txt 
+Resource    ../objects/objects_vydra.txt 
+Resource    ../objects/objects_search.txt
 *** Keywords ***
 Open browser to Zoo eshop
     Open Browser    https://eshop.zoopraha.cz    browser=chrome
     Maximize Browser Window
-    ${pageTitle}=    Get Title
-    Should Contain    ${pageTitle}    ${eshopPageTitle}
+    ${page_title}=    Get Title
+    Should Contain    ${page_title}    ${eshop_page_title}
     
 Navigate to souveniers/magnets
     Wait Until Element Is Visible    xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry.html']
     Click Element    xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry.html']
     Wait Until Element Is Visible    xpath=//ul[@class='category-list']/li/a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128.html']
     Click Element    xpath=//ul[@class='category-list']/li/a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128.html']
-    ${pageTitle}=    Get Title
-    Should Contain    ${pageTitle}    Magnetky
+    ${page_title}=    Get Title
+    Should Contain    ${page_title}    ${page_title_magnets}
     ${url}=    Get Location
-    Should Be Equal    ${url}    ${magnetsPageURL}
+    Should Be Equal    ${url}    ${magnets_page_url}
     
 Check for product in list
-    Wait Until Element Is Visible    xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128/magnetka-vydra.html']
-    Element Text Should Be    xpath=//div[@class='item-area']//h2/a    ${productName}
-    Element Should Contain    xpath=//div[@class='item-area' and //h2/a[@title='${productName}']]//span[@id='price-including-tax-1361']    ${productPrice}
+    Wait Until Element Is Visible    ${vydra_url}
+    Element Text Should Be    ${product_list_item}    ${productName}
+    Element Should Contain    xpath=//div[@class='item-area' and //h2/a[@title='${product_name}']]//span[@id='price-including-tax-1361']    ${product_price}
     Page Should Contain Element    xpath=//div[@class='item-area' and //h2/a[@title='${productName}']]//img[@alt='${productImgAlt}']
     
