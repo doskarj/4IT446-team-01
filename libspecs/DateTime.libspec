@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<keywordspec generated="20180404 13:10:53" type="library" name="DateTime" format="ROBOT">
-<version>3.0</version>
+<keywordspec generated="20180408 16:37:53" type="library" name="DateTime" format="ROBOT">
+<version>3.0.2</version>
 <scope>global</scope>
 <namedargs>yes</namedargs>
 <doc>A test library for handling date and time values.
@@ -90,6 +90,9 @@ Examples:
 | Should Be Equal | ${date}      | 2014-05-28 12:05:00.000 |
 | ${date} =       | Convert Date | ${date}                 | result_format=%d.%m.%Y |
 | Should Be Equal | ${date}      | 28.05.2014              |
+
+Notice that locale aware directives like ``%b``  do not work correctly with
+Jython on non-English locales: http://bugs.jython.org/issue2285
 
 == Python datetime ==
 

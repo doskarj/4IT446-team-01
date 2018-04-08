@@ -2,6 +2,7 @@
 Library    Selenium2Library
 Resource    ../keywords/keywords.txt
 Resource    ../variables/variables.txt
+Resource    ../objects/objects_vydra.txt
 
 *** Test Cases ***
 TC-01 E2E test -pozitivni test zakladni funkcionality eshopu
@@ -9,8 +10,8 @@ TC-01 E2E test -pozitivni test zakladni funkcionality eshopu
     
     Navigate to souveniers/magnets    
     
-    Wait Until Element Is Visible    xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128/magnetka-vydra.html']
-    Click Element    xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128/magnetka-vydra.html']
+    Wait Until Element Is Visible    ${vydra_url}
+    Click Element    ${vydra_url}
     Element Should Contain    xpath=//h1    ${productName}    
     Element Should Contain    xpath=//span[@id='price-including-tax-1361']    ${productPrice}    
     Page Should Contain Element    xpath=//div[@class='short-description']    

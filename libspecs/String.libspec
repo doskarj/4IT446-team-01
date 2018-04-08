@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<keywordspec generated="20180404 13:10:53" type="library" name="String" format="ROBOT">
-<version>3.0</version>
+<keywordspec generated="20180408 16:37:52" type="library" name="String" format="ROBOT">
+<version>3.0.2</version>
 <scope>global</scope>
 <namedargs>yes</namedargs>
 <doc>A test library for string manipulation and verification.
@@ -77,9 +77,7 @@ Examples:
 
 Use `Encode String To Bytes` if you need to convert Unicode strings to
 byte strings, and `Convert To String` in ``BuiltIn`` if you need to
-convert arbitrary objects to Unicode strings.
-
-New in Robot Framework 2.7.7.</doc>
+convert arbitrary objects to Unicode strings.</doc>
 <tags>
 </tags>
 </kw>
@@ -107,9 +105,7 @@ Examples:
 Use `Convert To Bytes` in ``BuiltIn`` if you want to create bytes based
 on character or integer sequences. Use `Decode Bytes To String` if you
 need to convert byte strings to Unicode strings and `Convert To String`
-in ``BuiltIn`` if you need to convert arbitrary objects to Unicode.
-
-New in Robot Framework 2.7.7.</doc>
+in ``BuiltIn`` if you need to convert arbitrary objects to Unicode.</doc>
 <tags>
 </tags>
 </kw>
@@ -465,12 +461,11 @@ Examples:
 
 Use `Should Be Unicode String` if you want to verify the ``item`` is a
 Unicode string, or `Should Be String` if both Unicode and byte strings
-are fine.
+are fine. See `Should Be String` for more details about Unicode strings
+and byte strings.
 
 The default error message can be overridden with the optional
-``msg`` argument.
-
-New in Robot Framework 2.7.7.</doc>
+``msg`` argument.</doc>
 <tags>
 </tags>
 </kw>
@@ -498,9 +493,17 @@ See also `Should Be Uppercase` and `Should Be Titlecase`.</doc>
 </arguments>
 <doc>Fails if the given ``item`` is not a string.
 
-This keyword passes regardless is the ``item`` is a Unicode string or
-a byte string. Use `Should Be Unicode String` or `Should Be Byte
-String` if you want to restrict the string type.
+With Python 2, except with IronPython, this keyword passes regardless
+is the ``item`` a Unicode string or a byte string. Use `Should Be
+Unicode String` or `Should Be Byte String` if you want to restrict
+the string type. Notice that with Python 2, except with IronPython,
+``'string'`` creates a byte string and ``u'unicode'`` must be used to
+create a Unicode string.
+
+With Python 3 and IronPython, this keyword passes if the string is
+a Unicode string but fails if it is bytes. Notice that with both
+Python 3 and IronPython, ``'string'`` creates a Unicode string, and
+``b'bytes'`` must be used to create a byte string.
 
 The default error message can be overridden with the optional
 ``msg`` argument.</doc>
@@ -537,12 +540,11 @@ See also `Should Be Uppercase` and `Should Be Lowercase`.</doc>
 
 Use `Should Be Byte String` if you want to verify the ``item`` is a
 byte string, or `Should Be String` if both Unicode and byte strings
-are fine.
+are fine. See `Should Be String` for more details about Unicode
+strings and byte strings.
 
 The default error message can be overridden with the optional
-``msg`` argument.
-
-New in Robot Framework 2.7.7.</doc>
+``msg`` argument.</doc>
 <tags>
 </tags>
 </kw>
@@ -569,6 +571,9 @@ See also `Should Be Titlecase` and `Should Be Lowercase`.</doc>
 <arg>msg=None</arg>
 </arguments>
 <doc>Fails if the given ``item`` is a string.
+
+See `Should Be String` for more details about Unicode strings and byte
+strings.
 
 The default error message can be overridden with the optional
 ``msg`` argument.</doc>
@@ -626,9 +631,7 @@ Examples:
 <doc>Splits the given ``string`` to characters.
 
 Example:
-| @{characters} = | Split String To Characters | ${string} |
-
-New in Robot Framework 2.7.</doc>
+| @{characters} = | Split String To Characters | ${string} |</doc>
 <tags>
 </tags>
 </kw>

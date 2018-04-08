@@ -1,0 +1,3 @@
+*** Variables ***
+#vydra
+${vydra_url}    xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128/magnetka-vydra.html']

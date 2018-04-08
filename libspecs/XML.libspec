@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<keywordspec generated="20180404 13:10:53" type="library" name="XML" format="ROBOT">
-<version>3.0</version>
+<keywordspec generated="20180408 16:37:52" type="library" name="XML" format="ROBOT">
+<version>3.0.2</version>
 <scope>global</scope>
 <namedargs>yes</namedargs>
 <doc>Robot Framework test library for verifying and modifying XML documents.
@@ -282,8 +282,9 @@ the namespace URI to tag names in so called Clark Notation. That is
 inconvenient especially with xpaths, and by default this library strips
 those namespaces away and moves them to ``xmlns`` attribute instead. That
 can be avoided by passing ``keep_clark_notation`` argument to `Parse XML`
-keyword. The pros and cons of both approaches are discussed in more detail
-below.
+keyword. Alternatively `Parse XML` supports stripping namespace information
+altogether by using ``strip_namespaces`` argument. The pros and cons of
+different approaches are discussed in more detail below.
 
 == How ElementTree handles namespaces ==
 
@@ -354,9 +355,20 @@ had only default namespaces, the output would also look identical.
 
 == Namespaces when using lxml ==
 
-Namespaces are handled the same way also when `using lxml`. The only
-difference is that lxml stores information about namespace prefixes and
-thus they are preserved if XML is saved.
+This library handles namespaces same way both when `using lxml` and when
+not using it. There are, however, differences how lxml internally handles
+namespaces compared to the standard ElementTree. The main difference is
+that lxml stores information about namespace prefixes and they are thus
+preserved if XML is saved. Another visible difference is that lxml includes
+namespace information in child elements got with `Get Element` if the
+parent element has namespaces.
+
+== Stripping namespaces altogether ==
+
+Because namespaces often add unnecessary complexity, `Parse XML` supports
+stripping them altogether by using ``strip_namespaces=True``. When this
+option is enabled, namespaces are not shown anywhere nor are they included
+if XML is saved.
 
 == Attribute namespaces ==
 
@@ -449,9 +461,7 @@ Examples using ``${XML}`` structure from `Example`:
 | ${new} = | Get Element | ${XML} | new |
 | Elements Should Be Equal | ${new} | &lt;new id="x"&gt;&lt;c1/&gt;&lt;c3/&gt;&lt;c2/&gt;&lt;/new&gt; |
 
-Use `Remove Element` or `Remove Elements` to remove elements.
-
-New in Robot Framework 2.7.5.</doc>
+Use `Remove Element` or `Remove Elements` to remove elements.</doc>
 <tags>
 </tags>
 </kw>
@@ -483,9 +493,7 @@ Examples using ``${XML}`` structure from `Example`:
 | Clear Element            | ${XML}   |
 | Elements Should Be Equal | ${XML}   | &lt;example/&gt; |
 
-Use `Remove Element` to remove the whole element.
-
-New in Robot Framework 2.7.5.</doc>
+Use `Remove Element` to remove the whole element.</doc>
 <tags>
 </tags>
 </kw>
@@ -510,9 +518,7 @@ Examples using ``${XML}`` structure from `Example`:
 | Set Element Attribute    | ${copy1} | id          | new              |
 | Elements Should Be Equal | ${elem}  | &lt;first id="1"&gt;new text&lt;/first&gt; |
 | Elements Should Be Equal | ${copy1} | &lt;first id="new"&gt;text&lt;/first&gt;   |
-| Elements Should Be Equal | ${copy2} | &lt;first id="1"&gt;text&lt;/first&gt;     |
-
-New in Robot Framework 2.7.5.</doc>
+| Elements Should Be Equal | ${copy2} | &lt;first id="1"&gt;text&lt;/first&gt;     |</doc>
 <tags>
 </tags>
 </kw>
@@ -584,9 +590,7 @@ one or more elements in the ``source``. The default error message can
 be overridden with the ``message`` argument.
 
 See also `Element Should Not Exist` as well as `Get Element Count`
-that this keyword uses internally.
-
-New in Robot Framework 2.7.5.</doc>
+that this keyword uses internally.</doc>
 <tags>
 </tags>
 </kw>
@@ -604,9 +608,7 @@ element in the ``source``. The default error message can be overridden
 with the ``message`` argument.
 
 See also `Element Should Exist` as well as `Get Element Count`
-that this keyword uses internally.
-
-New in Robot Framework 2.7.5.</doc>
+that this keyword uses internally.</doc>
 <tags>
 </tags>
 </kw>
@@ -631,9 +633,7 @@ Examples using ``${XML}`` structure from `Example`:
 | Element Should Not Have Attribute | ${XML} | xxx | xpath=first |
 
 See also `Get Element Attribute`, `Get Element Attributes`,
-`Element Text Should Be` and `Element Text Should Match`.
-
-New in Robot Framework 2.7.5.</doc>
+`Element Text Should Be` and `Element Text Should Match`.</doc>
 <tags>
 </tags>
 </kw>
@@ -927,9 +927,7 @@ Use `Get Element Attribute` to get the value of a single attribute.</doc>
 Arguments ``source`` and ``xpath`` have exactly the same semantics as
 with `Get Elements` keyword that this keyword uses internally.
 
-See also `Element Should Exist` and `Element Should Not Exist`.
-
-New in Robot Framework 2.7.5.</doc>
+See also `Element Should Exist` and `Element Should Not Exist`.</doc>
 <tags>
 </tags>
 </kw>
@@ -946,11 +944,11 @@ The element whose text to return is specified using ``source`` and
 keyword.
 
 This keyword returns all the text of the specified element, including
-all the text its children and grandchildren contains. If the element
+all the text its children and grandchildren contain. If the element
 has no text, an empty string is returned. The returned text is thus not
 always the same as the `text` attribute of the element.
 
-Be default all whitespace, including newlines and indentation, inside
+By default all whitespace, including newlines and indentation, inside
 the element is returned as-is. If ``normalize_whitespace`` is given
 a true value (see `Boolean arguments`), then leading and trailing
 whitespace is stripped, newlines and tabs converted to spaces, and
@@ -1038,6 +1036,7 @@ The logged string is also returned.</doc>
 <arguments>
 <arg>source</arg>
 <arg>keep_clark_notation=False</arg>
+<arg>strip_namespaces=False</arg>
 </arguments>
 <doc>Parses the given XML file or string into an element structure.
 
@@ -1048,22 +1047,27 @@ and the root element is returned. Possible comments and processing
 instructions in the source XML are removed.
 
 As discussed in `Handling XML namespaces` section, this keyword, by
-default, strips possible namespaces added by ElementTree into tag names.
-This typically eases handling XML documents with namespaces
-considerably. If you do not want that to happen, or want to avoid
-the small overhead of going through the element structure when your
-XML does not have namespaces, you can disable this feature by giving
-``keep_clark_notation`` argument a true value (see `Boolean arguments`).
+default, removes namespace information ElementTree has added to tag
+names and moves it into ``xmlns`` attributes. This typically eases
+handling XML documents with namespaces considerably. If you do not
+want that to happen, or want to avoid the small overhead of going
+through the element structure when your XML does not have namespaces,
+you can disable this feature by giving ``keep_clark_notation`` argument
+a true value (see `Boolean arguments`).
+
+If you want to strip namespace information altogether so that it is
+not included even if XML is saved, you can give a true value to
+``strip_namespaces`` argument. This functionality is new in Robot
+Framework 3.0.2.
 
 Examples:
 | ${root} = | Parse XML | &lt;root&gt;&lt;child/&gt;&lt;/root&gt; |
-| ${xml} =  | Parse XML | ${CURDIR}/test.xml    | no namespace cleanup |
+| ${xml} = | Parse XML | ${CURDIR}/test.xml | keep_clark_notation=True |
+| ${xml} = | Parse XML | ${CURDIR}/test.xml | strip_namespaces=True |
 
 Use `Get Element` keyword if you want to get a certain element and not
 the whole structure. See `Parsing XML` section for more details and
-examples.
-
-Stripping namespaces is a new feature in Robot Framework 2.7.5.</doc>
+examples.</doc>
 <tags>
 </tags>
 </kw>
@@ -1092,9 +1096,7 @@ Examples using ``${XML}`` structure from `Example`:
 | Remove Element           | ${XML} | xpath=second |
 | Element Should Not Exist | ${XML} | xpath=second |
 | Remove Element           | ${XML} | xpath=html/p/b | remove_tail=yes |
-| Element Text Should Be   | ${XML} | Text with italics. | xpath=html/p | normalize_whitespace=yes |
-
-New in Robot Framework 2.7.5.</doc>
+| Element Text Should Be   | ${XML} | Text with italics. | xpath=html/p | normalize_whitespace=yes |</doc>
 <tags>
 </tags>
 </kw>
@@ -1120,9 +1122,7 @@ Examples using ``${XML}`` structure from `Example`:
 | Element Should Not Have Attribute | ${XML} | id | xpath=first |
 
 Can only remove an attribute from a single element. Use `Remove Elements
-Attribute` to remove an attribute of multiple elements in one call.
-
-New in Robot Framework 2.7.5.</doc>
+Attribute` to remove an attribute of multiple elements in one call.</doc>
 <tags>
 </tags>
 </kw>
@@ -1146,9 +1146,7 @@ Examples using ``${XML}`` structure from `Example`:
 | Element Should Not Have Attribute | ${XML} | id | xpath=first |
 
 Can only remove attributes from a single element. Use `Remove Elements
-Attributes` to remove all attributes of multiple elements in one call.
-
-New in Robot Framework 2.7.5.</doc>
+Attributes` to remove all attributes of multiple elements in one call.</doc>
 <tags>
 </tags>
 </kw>
@@ -1174,9 +1172,7 @@ by using ``remove_tail`` argument similarly as with `Remove Element`.
 Examples using ``${XML}`` structure from `Example`:
 | Remove Elements          | ${XML} | xpath=*/child      |
 | Element Should Not Exist | ${XML} | xpath=second/child |
-| Element Should Not Exist | ${XML} | xpath=third/child  |
-
-New in Robot Framework 2.7.5.</doc>
+| Element Should Not Exist | ${XML} | xpath=third/child  |</doc>
 <tags>
 </tags>
 </kw>
@@ -1232,9 +1228,7 @@ The resulting XML file may not be exactly the same as the original:
   or lxml version.
 
 Use `Element To String` if you just need a string representation of
-the element.
-
-New in Robot Framework 2.7.5.</doc>
+the element.</doc>
 <tags>
 </tags>
 </kw>
@@ -1263,9 +1257,7 @@ Examples using ``${XML}`` structure from `Example`:
 | Element Attribute Should Be | ${XML} | id   | new   | xpath=first |
 
 Can only set an attribute of a single element. Use `Set Elements
-Attribute` to set an attribute of multiple elements in one call.
-
-New in Robot Framework 2.7.5.</doc>
+Attribute` to set an attribute of multiple elements in one call.</doc>
 <tags>
 </tags>
 </kw>
@@ -1290,9 +1282,7 @@ Examples using ``${XML}`` structure from `Example`:
 | Element Should Not Exist | ${XML} | second/child |
 
 Can only set the tag of a single element. Use `Set Elements Tag` to set
-the tag of multiple elements in one call.
-
-New in Robot Framework 2.7.5.</doc>
+the tag of multiple elements in one call.</doc>
 <tags>
 </tags>
 </kw>
@@ -1323,9 +1313,7 @@ Examples using ``${XML}`` structure from `Example`:
 | Element Text Should Be | ${XML} | Text with bold&amp;slanted!! | xpath=html/p  | normalize_whitespace=yes |
 
 Can only set the text/tail of a single element. Use `Set Elements Text`
-to set the text/tail of multiple elements in one call.
-
-New in Robot Framework 2.7.5.</doc>
+to set the text/tail of multiple elements in one call.</doc>
 <tags>
 </tags>
 </kw>

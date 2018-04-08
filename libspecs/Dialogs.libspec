@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<keywordspec generated="20180404 13:10:53" type="library" name="Dialogs" format="ROBOT">
-<version>3.0</version>
+<keywordspec generated="20180408 16:37:52" type="library" name="Dialogs" format="ROBOT">
+<version>3.0.2</version>
 <scope>global</scope>
 <namedargs>yes</namedargs>
 <doc>A test library providing dialogs for interacting with users.
