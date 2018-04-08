@@ -33,7 +33,7 @@ TC-05 Vložení produku do košíku z detailu produktu
     ${number}=    Convert To Integer    ${product_price}    
     ${total_price}=    Evaluate    ${number}*${3}
     ${total_price_string}=    Convert To String    ${total_price}
-    Element Should Contain    //table[@id='shopping-cart-totals-table']//tr[@class='grand-total']//span[@class='price']    ${total_price_string}
+    Element Should Contain    ${shop_cart_total_price}    ${total_price_string}
     
     Click Link    ${shop_cart_table}//tr[td/a[@title='${product_name}']]//a[@title='Odstranit položku']
     Page Should Contain    V košíku nejsou žádné položky.       

@@ -28,12 +28,12 @@ TC-01 E2E test -pozitivni test zakladni funkcionality eshopu
     Check header menu
     
     
-    Element Should Contain    xpath=//table[@id='shopping-cart-table']/tbody/tr/td/h2/a    ${productName}
-    Element Should Contain    xpath=//table[@id='shopping-cart-table']/tbody/tr/td/span[@class='cart-price']/span    ${productPrice}
-    Page Should Contain Element    xpath=//table[@id='shopping-cart-table']/tbody/tr/td/div[@class='qty-holder']/input[@value=1]
-    Element Should Contain    xpath=//table[@id='shopping-cart-totals-table']/tbody/tr/td/span[@class='price']    ${productPrice}
+    Element Should Contain    ${shop_cart_title}    ${product_name}
+    Element Should Contain    ${shop_cart_price}    ${product_price}
+    Page Should Contain Element    ${shop_cart_qty_1}
+    Element Should Contain    ${shop_cart_total_price}    ${product_price}
     
-    Click Button    xpath=//div[@class='totals']//button[@title='K pokladně']
+    Click Button    ${shop_cart_checkout}
     Element Should Be Visible    xpath=//div[@id='checkout-step-login']
     Page Should Contain Element    xpath=//div[@id='checkout-step-login']//input[@id='login:guest']
     Page Should Contain Element    xpath=//div[@class='header']/div[@class='header-bottom']/div[@class='container']/div[@class='main-nav']
