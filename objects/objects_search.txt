@@ -1,5 +1,4 @@
 *** Variables ***
-${magnets_page_url}    https://eshop.zoopraha.cz/suvenyry/magnetky-128.html
 ${after_search_url}    https://eshop.zoopraha.cz/catalogsearch/result/?q=Pexeso&cat=
 ${after_search_with_category_url}    https://eshop.zoopraha.cz/catalogsearch/result/?q=Pexeso&cat=51
 ${class_search_icon}    xpath=//a[@class='search-icon']
@@ -15,6 +14,7 @@ ${search_sorter_element}    xpath=//div[@class='sorter']/div[@class='sort-by']
 #List of products
 ${product_list_item}    xpath=//div[@class='item-area']//h2/a
 ${suveniers_url}    xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry.html']
+${magnets_page_url}    https://eshop.zoopraha.cz/suvenyry/magnetky-128.html
 ${magnets_category}    xpath=//ul[@class='category-list']/li/a[@href='${magnets_page_url}']
 
 #header menu

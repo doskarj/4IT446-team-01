@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180409 17:15:17.741" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<robot generated="20180409 17:40:03.132" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
 <suite source="H:\4IT446-team-01" id="s1" name="4IT446-team-01">
 <suite source="H:\4IT446-team-01\tests" id="s1-s1" name="Tests">
-<suite source="H:\4IT446-team-01\tests\tc03_vyhledavaniZboziNegativni.robot" id="s1-s1-s1" name="tc03 vyhledavaniZboziNegativni">
-<test id="s1-s1-s1-t1" name="TC-03 Vyhledavani zbozi pres vyhledavaci listu - negativni test">
+<suite source="H:\4IT446-team-01\tests\tc04_prechodNaDetailProduktu.robot" id="s1-s1-s1" name="tc04 prechodNaDetailProduktu">
+<test id="s1-s1-s1-t1" name="TC-04 Prechod na detail produktu pres menu">
 <kw name="Open browser to Zoo eshop" library="keywords">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -11,20 +11,20 @@
 <arg>https://eshop.zoopraha.cz</arg>
 <arg>browser=chrome</arg>
 </arguments>
-<msg timestamp="20180409 17:15:18.007" level="INFO">Opening browser 'chrome' to base url 'https://eshop.zoopraha.cz'.</msg>
-<status status="PASS" endtime="20180409 17:15:26.070" starttime="20180409 17:15:18.007"></status>
+<msg timestamp="20180409 17:40:03.406" level="INFO">Opening browser 'chrome' to base url 'https://eshop.zoopraha.cz'.</msg>
+<status status="PASS" endtime="20180409 17:40:11.177" starttime="20180409 17:40:03.406"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20180409 17:15:27.485" starttime="20180409 17:15:26.070"></status>
+<status status="PASS" endtime="20180409 17:40:12.620" starttime="20180409 17:40:11.177"></status>
 </kw>
 <kw name="Get Title" library="Selenium2Library">
 <doc>Returns the title of current page.</doc>
 <assign>
 <var>${page_title}</var>
 </assign>
-<msg timestamp="20180409 17:15:27.491" level="INFO">${page_title} = Zoo Praha | Internetový obchod</msg>
-<status status="PASS" endtime="20180409 17:15:27.491" starttime="20180409 17:15:27.485"></status>
+<msg timestamp="20180409 17:40:12.626" level="INFO">${page_title} = Zoo Praha | Internetový obchod</msg>
+<status status="PASS" endtime="20180409 17:40:12.626" starttime="20180409 17:40:12.620"></status>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
@@ -32,112 +32,1179 @@
 <arg>${page_title}</arg>
 <arg>${eshop_page_title}</arg>
 </arguments>
-<status status="PASS" endtime="20180409 17:15:27.492" starttime="20180409 17:15:27.492"></status>
+<status status="PASS" endtime="20180409 17:40:12.627" starttime="20180409 17:40:12.627"></status>
 </kw>
-<status status="PASS" endtime="20180409 17:15:27.493" starttime="20180409 17:15:18.007"></status>
+<status status="PASS" endtime="20180409 17:40:12.628" starttime="20180409 17:40:03.405"></status>
+</kw>
+<kw name="Navigate to souveniers/magnets" library="keywords">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${suveniers_url}</arg>
+</arguments>
+<status status="PASS" endtime="20180409 17:40:12.663" starttime="20180409 17:40:12.629"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${suveniers_url}</arg>
+</arguments>
+<msg timestamp="20180409 17:40:12.664" level="INFO">Clicking element 'xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry.html']'.</msg>
+<status status="PASS" endtime="20180409 17:40:14.937" starttime="20180409 17:40:12.663"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${magnets_category}</arg>
+</arguments>
+<status status="PASS" endtime="20180409 17:40:14.979" starttime="20180409 17:40:14.938"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${magnets_category}</arg>
+</arguments>
+<msg timestamp="20180409 17:40:14.981" level="INFO">Clicking element 'xpath=//ul[@class='category-list']/li/a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128.html']'.</msg>
+<status status="PASS" endtime="20180409 17:40:17.055" starttime="20180409 17:40:14.980"></status>
 </kw>
 <kw name="Get Title" library="Selenium2Library">
 <doc>Returns the title of current page.</doc>
 <assign>
 <var>${page_title}</var>
 </assign>
-<msg timestamp="20180409 17:15:27.498" level="INFO">${page_title} = Zoo Praha | Internetový obchod</msg>
-<status status="PASS" endtime="20180409 17:15:27.498" starttime="20180409 17:15:27.494"></status>
+<msg timestamp="20180409 17:40:17.078" level="INFO">${page_title} = Magnetky s motivem zvířete</msg>
+<status status="PASS" endtime="20180409 17:40:17.079" starttime="20180409 17:40:17.056"></status>
 </kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<doc>Fails if the given objects are unequal.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
 <arguments>
 <arg>${page_title}</arg>
-<arg>${eshop_page_title}</arg>
+<arg>${page_title_magnets}</arg>
 </arguments>
-<status status="PASS" endtime="20180409 17:15:27.499" starttime="20180409 17:15:27.498"></status>
-</kw>
-<kw name="Click Link" library="Selenium2Library">
-<doc>Clicks a link identified by ``locator``.</doc>
-<arguments>
-<arg>${class_search_icon}</arg>
-</arguments>
-<msg timestamp="20180409 17:15:27.500" level="INFO">Clicking link 'xpath=//a[@class='search-icon']'.</msg>
-<status status="PASS" endtime="20180409 17:15:27.588" starttime="20180409 17:15:27.500"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${input_search}</arg>
-<arg>${search_query}</arg>
-</arguments>
-<msg timestamp="20180409 17:15:27.590" level="INFO">Typing text 'Pexeso' into text field 'xpath=//input[@id='search']'.</msg>
-<status status="PASS" endtime="20180409 17:15:27.730" starttime="20180409 17:15:27.589"></status>
-</kw>
-<kw name="Select From List By Value" library="Selenium2Library">
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<arguments>
-<arg>${category_list_search}</arg>
-<arg>${search_category}</arg>
-</arguments>
-<msg timestamp="20180409 17:15:27.732" level="INFO">Selecting options from selection list 'xpath=//select[@id='cat']' by value 51.</msg>
-<status status="PASS" endtime="20180409 17:15:27.839" starttime="20180409 17:15:27.731"></status>
-</kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>${button_search}</arg>
-</arguments>
-<msg timestamp="20180409 17:15:27.841" level="INFO">Clicking button 'xpath=//button[@title='Hledat']'.</msg>
-<status status="PASS" endtime="20180409 17:15:29.755" starttime="20180409 17:15:27.840"></status>
+<status status="PASS" endtime="20180409 17:40:17.080" starttime="20180409 17:40:17.079"></status>
 </kw>
 <kw name="Get Location" library="Selenium2Library">
 <doc>Returns the current browser URL.</doc>
 <assign>
 <var>${url}</var>
 </assign>
-<msg timestamp="20180409 17:15:29.779" level="INFO">${url} = https://eshop.zoopraha.cz/catalogsearch/result/?q=Pexeso&amp;cat=51</msg>
-<status status="PASS" endtime="20180409 17:15:29.780" starttime="20180409 17:15:29.756"></status>
+<msg timestamp="20180409 17:40:17.089" level="INFO">${url} = https://eshop.zoopraha.cz/suvenyry/magnetky-128.html</msg>
+<status status="PASS" endtime="20180409 17:40:17.089" starttime="20180409 17:40:17.080"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
 <arguments>
 <arg>${url}</arg>
-<arg>${afterSearchWithCategoryURL}</arg>
+<arg>${magnets_page_url}</arg>
 </arguments>
-<status status="PASS" endtime="20180409 17:15:29.781" starttime="20180409 17:15:29.780"></status>
+<status status="PASS" endtime="20180409 17:40:17.090" starttime="20180409 17:40:17.089"></status>
+</kw>
+<status status="PASS" endtime="20180409 17:40:17.090" starttime="20180409 17:40:12.628"></status>
+</kw>
+<kw name="Check for product in list" library="keywords">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${vydra_url}</arg>
+</arguments>
+<status status="PASS" endtime="20180409 17:40:17.125" starttime="20180409 17:40:17.091"></status>
 </kw>
 <kw name="Element Text Should Be" library="Selenium2Library">
 <doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
 <arguments>
-<arg>${search_msg_negative}</arg>
-<arg>Hledání nenašlo žádné výsledky.</arg>
-</arguments>
-<msg timestamp="20180409 17:15:29.782" level="INFO">Verifying element 'xpath=//p[@class='note-msg']' contains exact text 'Hledání nenašlo žádné výsledky.'.</msg>
-<status status="PASS" endtime="20180409 17:15:29.829" starttime="20180409 17:15:29.781"></status>
-</kw>
-<kw name="Page Should Not Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
 <arg>${product_list_item}</arg>
+<arg>${product_name}</arg>
 </arguments>
-<msg timestamp="20180409 17:15:29.847" level="INFO">Current page does not contain element 'xpath=//div[@class='item-area']//h2/a'.</msg>
-<status status="PASS" endtime="20180409 17:15:29.847" starttime="20180409 17:15:29.829"></status>
+<msg timestamp="20180409 17:40:17.127" level="INFO">Verifying element 'xpath=//div[@class='item-area']//h2/a' contains exact text 'Magnetka s motivem vydry'.</msg>
+<status status="PASS" endtime="20180409 17:40:17.164" starttime="20180409 17:40:17.126"></status>
 </kw>
-<kw name="Page Should Not Contain Element" library="Selenium2Library">
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>xpath=//div[@class='item-area' and //h2/a[@title='${product_name}']]//span[@id='price-including-tax-1361']</arg>
+<arg>${product_price}</arg>
+</arguments>
+<msg timestamp="20180409 17:40:17.201" level="INFO">Element 'xpath=//div[@class='item-area' and //h2/a[@title='Magnetka s motivem vydry']]//span[@id='price-including-tax-1361']' contains text '35'.</msg>
+<status status="PASS" endtime="20180409 17:40:17.202" starttime="20180409 17:40:17.164"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
 <arguments>
-<arg>${search_sorter_element}</arg>
+<arg>xpath=//div[@class='item-area' and //h2/a[@title='${product_name}']]//img[@alt='${productImgAlt}']</arg>
 </arguments>
-<msg timestamp="20180409 17:15:29.865" level="INFO">Current page does not contain element 'xpath=//div[@class='sorter']/div[@class='sort-by']'.</msg>
-<status status="PASS" endtime="20180409 17:15:29.865" starttime="20180409 17:15:29.848"></status>
+<msg timestamp="20180409 17:40:17.220" level="INFO">Current page contains element 'xpath=//div[@class='item-area' and //h2/a[@title='Magnetka s motivem vydry']]//img[@alt='Magnetka Vydra']'.</msg>
+<status status="PASS" endtime="20180409 17:40:17.221" starttime="20180409 17:40:17.202"></status>
+</kw>
+<status status="PASS" endtime="20180409 17:40:17.221" starttime="20180409 17:40:17.091"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${vydra_url}</arg>
+</arguments>
+<msg timestamp="20180409 17:40:17.222" level="INFO">Clicking element 'xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128/magnetka-vydra.html']'.</msg>
+<status status="PASS" endtime="20180409 17:40:19.455" starttime="20180409 17:40:17.222"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current browser URL.</doc>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20180409 17:40:19.461" level="INFO">${url} = https://eshop.zoopraha.cz/suvenyry/magnetky-128/magnetka-vydra.html</msg>
+<status status="PASS" endtime="20180409 17:40:19.461" starttime="20180409 17:40:19.456"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${product_page_vydra}</arg>
+</arguments>
+<status status="PASS" endtime="20180409 17:40:19.462" starttime="20180409 17:40:19.462"></status>
+</kw>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
+<arguments>
+<arg>${vydra_title}</arg>
+<arg>${productName}</arg>
+</arguments>
+<msg timestamp="20180409 17:40:19.464" level="INFO">Verifying element 'xpath=//h1' contains exact text 'Magnetka s motivem vydry'.</msg>
+<status status="PASS" endtime="20180409 17:40:19.508" starttime="20180409 17:40:19.463"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${vydra_img}</arg>
+</arguments>
+<msg timestamp="20180409 17:40:19.527" level="INFO">Current page contains element 'xpath=//img[@alt='Magnetka Vydra']'.</msg>
+<status status="PASS" endtime="20180409 17:40:19.527" starttime="20180409 17:40:19.509"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${vydra_availabitily}</arg>
+</arguments>
+<msg timestamp="20180409 17:40:19.545" level="INFO">Current page contains element 'xpath=//p[@class='availability in-stock']'.</msg>
+<status status="PASS" endtime="20180409 17:40:19.545" starttime="20180409 17:40:19.528"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${vydra_price}</arg>
+<arg>${productPrice}</arg>
+</arguments>
+<msg timestamp="20180409 17:40:19.583" level="INFO">Element 'xpath=//span[@id='price-including-tax-1361']' contains text '35'.</msg>
+<status status="PASS" endtime="20180409 17:40:19.583" starttime="20180409 17:40:19.546"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${vydra_qty}</arg>
+</arguments>
+<msg timestamp="20180409 17:40:19.603" level="INFO">Current page contains element 'xpath=//div[@class='qty-holder']/input[@id='qty']'.</msg>
+<status status="PASS" endtime="20180409 17:40:19.603" starttime="20180409 17:40:19.584"></status>
+</kw>
+<kw name="Page Should Contain Button" library="Selenium2Library">
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${vydra_add_to_cart}</arg>
+</arguments>
+<msg timestamp="20180409 17:40:19.642" level="INFO">&lt;!DOCTYPE html&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="cs" style="" class="js no-touch localstorage no-ios"&gt;&lt;head&gt;&lt;script type="text/javascript" src="//api-public.addthis.com/url/shares.json?url=https%3A%2F%2Feshop.zoopraha.cz%2Fmagnetka-vydra.html&amp;amp;callback=_ate.cbs.sc_httpseshopzooprahaczmagnetkavydrahtml0"&gt;&lt;/script&gt;&lt;script type="text/javascript" src="//m.addthis.com/live/red_lojson/300lo.json?si=5acb8962704c16f3&amp;amp;bkl=0&amp;amp;bl=1&amp;amp;pdt=1394&amp;amp;sid=5acb8962704c16f3&amp;amp;pub=unknown&amp;amp;rev=v8.3.0-wp&amp;amp;ln=cs&amp;amp;pc=mag&amp;amp;cb=0&amp;amp;ab=-&amp;amp;dp=eshop.zoopraha.cz&amp;amp;fp=magnetka-vydra.html&amp;amp;fr=suvenyry%2Fmagnetky-128.html&amp;amp;of=0&amp;amp;pd=0&amp;amp;irt=0&amp;amp;vcl=0&amp;amp;md=0&amp;amp;ct=1&amp;amp;tct=0&amp;amp;abt=0&amp;amp;cdn=0&amp;amp;pi=1&amp;amp;rb=2&amp;amp;gen=100&amp;amp;chr=UTF-8&amp;amp;mk=Magnetka%20s%20motivem%20vydry&amp;amp;colc=1523288419070&amp;amp;jsl=3&amp;amp;uvs=5acb8962d932a970000&amp;amp;skipb=1&amp;amp;callback=addthis.cbs.oln9_0069204094964063770"&gt;&lt;/script&gt;&lt;script type="text/javascript" src="//m.addthisedge.com/live/boost/unknown/_ate.track.config_resp"&gt;&lt;/script&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+&lt;title&gt;Magnetka Vydra&lt;/title&gt;
+&lt;meta name="description" content="magnetka, vydra" /&gt;
+&lt;meta name="keywords" content="Magnetka s motivem vydry" /&gt;
+&lt;meta name="robots" content="INDEX,FOLLOW" /&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;link rel="icon" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/favicon.ico" type="image/x-icon" /&gt;
+&lt;link rel="shortcut icon" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/favicon.ico" type="image/x-icon" /&gt;
+
+&lt;link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:600,700,800,900,400,300,500&amp;amp;subset=latin%2Clatin-ext" type="text/css" media="screen" /&gt;
+&lt;link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A300%2C300italic%2C400%2C400italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic&amp;amp;v1&amp;amp;subset=latin%2Clatin-ext" type="text/css" media="screen" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/js/smartwave/ajaxcart/ajaxaddto.css" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/js/calendar/calendar-win2k-1.css" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/js/smartwave/jquery/jquery-ui-1.11.4.min.css" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/js/smartwave/jquery/plugins/fancybox/jquery.fancybox.css" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/js/smartwave/jquery/plugins/selectbox/selectbox.css" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/js/smartwave/bootstrap/css/bootstrap.min.css" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/js/smartwave/bootstrap/css/bootstrap-theme.min.css" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/js/smartwave/jquery/plugins/owl.carousel/assets/owl.carousel.css" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/js/smartwave/jquery/plugins/owl.carousel/assets/animate.css" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/base/default/css/widgets.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/css/configurableswatches.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/catalogcategorysearch/catalogcategorysearch.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/filterproducts/css/style.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/megamenu/css/font-awesome.min.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/megamenu/css/megamenu.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/megamenu/css/megamenu_responsive.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/default/quickview/css/styles.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/icons/css/animation.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/icons/css/mango.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/css/local.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/css/responsive.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/css/custom.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/css/configed/design_cz.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/css/configed/settings_cz.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/default/zoom/css/style.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/base/default/css/nwdthemes/revslider/rs/settings.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/base/default/css/nwdthemes/revslider/dynamic.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/base/default/css/nwdthemes/revslider/static.css" media="all" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/css/print.css" media="print" /&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/prototype/prototype.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/lib/ccard.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/prototype/validation.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/scriptaculous/builder.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/scriptaculous/effects.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/scriptaculous/dragdrop.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/scriptaculous/controls.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/scriptaculous/slider.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/varien/js.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/varien/form.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/varien/menu.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/mage/translate.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/mage/cookies.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/smartwave/jquery/jquery-1.11.2.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/smartwave/jquery/jquery-noconflict.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/smartwave/ajaxcart/ajaxaddto.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/varien/product.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/varien/configurable.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/calendar/calendar.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/calendar/calendar-setup.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/smartwave/jquery/jquery-ui-1.11.4.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/varien/product_options.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/smartwave/jquery/plugins/fancybox/jquery.fancybox.pack.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/smartwave/jquery/plugins/selectbox/jquery.selectbox.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/smartwave/jquery/plugins/parallax/jquery.parallax.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/smartwave/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/smartwave/jquery/plugins/owl.carousel/owl.carousel.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/smartwave/jquery/plugins/elevate/jquery.elevatezoom.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/smartwave/jquery/plugins/fancybox/jquery.fancybox.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/nwdthemes/jquery-migrate-1.2.1.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/nwdthemes/jquery.noconflict.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/js/lib/imagesloaded.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/js/configurableswatches/app.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/js/lib/modernizr.custom.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/js/lib/enquire.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/megamenu/js/megamenu.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/skin/frontend/base/default/js/bundle.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/skin/frontend/smartwave/default/quickview/js/sw_quickview.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/js/mango.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/skin/frontend/smartwave/default/zoom/js/imagesloaded.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/skin/frontend/smartwave/default/zoom/js/zoom.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/js/nwdthemes/revslider/rs/jquery.themepunch.tools.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/js/nwdthemes/revslider/rs/jquery.themepunch.revolution.min.js"&gt;&lt;/script&gt;
+&lt;link rel="canonical" href="https://eshop.zoopraha.cz/magnetka-vydra.html" /&gt;
+&lt;!--[if gt IE 7]&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/css/styles-ie.css" media="all" /&gt;
+&lt;![endif]--&gt;
+&lt;!--[if lt IE 7]&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/js/lib/ds-sleight.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://eshop.zoopraha.cz/skin/frontend/base/default/js/ie6.js"&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+
+&lt;script type="text/javascript"&gt;
+//&amp;lt;![CDATA[
+Mage.Cookies.path     = '/';
+Mage.Cookies.domain   = '.eshop.zoopraha.cz';
+//]]&amp;gt;
+&lt;/script&gt;
+
+&lt;script type="text/javascript"&gt;
+//&amp;lt;![CDATA[
+optionalZipCountries = ["CZ"];
+//]]&amp;gt;
+&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+	jQuery(function($){
+		var scrolled = false;
+		$(window).scroll(function(){
+			if(450&amp;lt;$(window).scrollTop() &amp;amp;&amp;amp; !scrolled){
+				$('.header-container').addClass("sticky-header");
+                				$('.header-container .header-wrapper &amp;gt; div').each(function(){
+					if($(this).hasClass("container")){
+						$(this).addClass("already");
+					} else {
+						$(this).addClass("container");
+					}
+				});
+				scrolled = true;
+			}
+			if(450&amp;gt;=$(window).scrollTop() &amp;amp;&amp;amp; scrolled){
+				$('.header-container').removeClass("sticky-header");
+                				scrolled = false;
+				$('.header-container .header-wrapper &amp;gt; div').each(function(){
+					if($(this).hasClass("already")){
+						$(this).removeClass("already");
+					} else {
+						$(this).removeClass("container");
+					}
+				});
+			}
+		});
+	});
+&lt;/script&gt;&lt;script type="text/javascript"&gt;
+//&amp;lt;![CDATA[
+	if (typeof EM == 'undefined') EM = {};
+	EM.Quickview = {
+		QS_FRM_WIDTH    :"1000",
+		QS_FRM_HEIGHT   : "730"
+	};
+//]]	
+&lt;/script&gt; &lt;script type="text/javascript"&gt;//&amp;lt;![CDATA[
+        var Translator = new Translate({"Please select an option.":"Vyberte pros\u00edm mo\u017enost.","This is a required field.":"Toto pole je povinn\u00e9.","Please enter a valid number in this field.":"Zadejte pros\u00edm do tohoto pole platn\u00e9 \u010d\u00edslo.","Please use letters only (a-z or A-Z) in this field.":"V tomto poli pros\u00edm pou\u017eijte pouze p\u00edsmena (a-z nebo A-Z).","Please use only letters (a-z), numbers (0-9) or underscore(_) in this field, first character should be a letter.":"V tomto poli pros\u00edm pou\u017eijte pouze p\u00edsmena (a-z), \u010d\u00edslice (0-9), nebo podtr\u017e\u00edtka(_), prvn\u00ed znak by m\u011blo b\u00fdt p\u00edsmeno.","Please enter a valid phone number. For example (123) 456-7890 or 123-456-7890.":"Vlo\u017ete pros\u00edm platn\u00e9 telefonn\u00ed \u010d\u00edslo. Nap\u0159\u00edklad (123) 456-7890 nebo 123-456-7890.","Please enter a valid date.":"Vlo\u017ete pros\u00edm platn\u00e9 datum.","Please enter a valid email address. For example johndoe@domain.com.":"Vlo\u017ete pros\u00edm platnou emailovou adresu. Nap\u0159\u00edklad johndoe@domain.com.","Please make sure your passwords match.":"Ujist\u011bte se pros\u00edm, \u017ee hesla souhlas\u00ed.","Please enter a valid URL. For example http:\/\/www.example.com or www.example.com":"Vlo\u017ete pros\u00edm platnou URL. Nap\u0159\u00edklad http:\/\/www.example.com nebo www.example.com","Please enter a valid social security number. For example 123-45-6789.":"Vlo\u017ete pros\u00edm platn\u00e9 \u010d\u00edslo soci\u00e1ln\u00edho poji\u0161t\u011bn\u00ed. Nap\u0159\u00edklad 123-45-6789.","Please enter a valid zip code. For example 90602 or 90602-1234.":"Zadejte pros\u00edm platn\u00e9 PS\u010c. Nap\u0159\u00edklad 10000.","Please enter a valid zip code.":"Zadejte pros\u00edm platn\u00e9 PS\u010c.","Please use this date format: dd\/mm\/yyyy. For example 17\/03\/2006 for the 17th of March, 2006.":"Pou\u017eijte pros\u00edm tento form\u00e1t data: dd\/mm\/rrrr. Nap\u0159\u00edklad 17\/03\/2006 pro 17. b\u0159ezna, 2006.","Please enter a valid $ amount. For example $100.00.":"Vlo\u017ete pros\u00edm platn\u00fd obnos $. Nap\u0159\u00edklad $100,00.","Please select one of the above options.":"Vyberte pros\u00edm jednu z uveden\u00fdch mo\u017enost\u00ed","Please select one of the options.":"Vyberte pros\u00edm jednu z mo\u017enost\u00ed.","Please select State\/Province.":"Vyberte pros\u00edm st\u00e1t\/provincii.","Please enter a number greater than 0 in this field.":"Do tohoto pole pros\u00edm vlo\u017ete \u010d\u00edslo v\u011bt\u0161\u00ed ne\u017e 0.","Please enter a valid credit card number.":"Vlo\u017ete pros\u00edm platn\u00e9 \u010d\u00edslo kreditn\u00ed karty.","Please wait, loading...":"\u010cekejte pros\u00edm, na\u010d\u00edt\u00e1 se...","Complete":"Hotovo","Add Products":"P\u0159idat produkty","Please choose to register or to checkout as a guest":"Pros\u00edm zaregistrujte se, nebo pokra\u010dujte jako host","Please specify shipping method.":"Vyberte pros\u00edm zp\u016fsob doru\u010den\u00ed.","Please specify payment method.":"Vyberte pros\u00edm zp\u016fsob platby a doru\u010den\u00ed.","Insert Widget...":"Vlo\u017eit Widget...","Add to Cart":"P\u0159idat do ko\u0161\u00edku","In Stock":"Skladem","Out of Stock":"Vyprod\u00e1no"});
+        //]]&amp;gt;&lt;/script&gt;&lt;script type="text/javascript"&gt;
+    //&amp;lt;![CDATA[
+    if (typeof dailydealTimeCountersCategory == 'undefined') {
+        var dailydealTimeCountersCategory = new Array();
+        var i = 0;
+    }
+    //]]&amp;gt;
+&lt;/script&gt;
+
+&lt;!--Mango Magento Theme: v1.1.4--&gt;&lt;style type="text/css"&gt;.at-icon{fill:#fff;border:0}.at-icon-wrapper{display:inline-block;overflow:hidden}a .at-icon-wrapper{cursor:pointer}.at-rounded,.at-rounded-element .at-icon-wrapper{border-radius:12%}.at-circular,.at-circular-element .at-icon-wrapper{border-radius:50%}.addthis_32x32_style .at-icon{width:2pc;height:2pc}.addthis_24x24_style .at-icon{width:24px;height:24px}.addthis_20x20_style .at-icon{width:20px;height:20px}.addthis_16x16_style .at-icon{width:1pc;height:1pc}#at16lb{display:none;position:absolute;top:0;left:0;width:100%;height:100%;z-index:1001;background-color:#000;opacity:.001}#at_complete,#at_error,#at_share,#at_success{position:static!important}.at15dn{display:none}#at15s,#at16p,#at16p form input,#at16p label,#at16p textarea,#at_share .at_item{font-family:arial,helvetica,tahoma,verdana,sans-serif!important;font-size:9pt!important;outline-style:none;outline-width:0;line-height:1em}* html #at15s.mmborder{position:absolute!important}#at15s.mmborder{position:fixed!important;width:250px!important}#at15s{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);float:none;line-height:1em;margin:0;overflow:visible;padding:5px;text-align:left;position:absolute}#at15s a,#at15s span{outline:0;direction:ltr;text-transform:none}#at15s .at-label{margin-left:5px}#at15s .at-icon-wrapper{width:1pc;height:1pc;vertical-align:middle}#at15s .at-icon{width:1pc;height:1pc}.at4-icon{display:inline-block;background-repeat:no-repeat;background-position:top left;margin:0;overflow:hidden;cursor:pointer}.addthis_16x16_style .at4-icon,.addthis_default_style .at4-icon,.at4-icon,.at-16x16{width:1pc;height:1pc;line-height:1pc;background-size:1pc!important}.addthis_32x32_style .at4-icon,.at-32x32{width:2pc;height:2pc;line-height:2pc;background-size:2pc!important}.addthis_24x24_style .at4-icon,.at-24x24{width:24px;height:24px;line-height:24px;background-size:24px!important}.addthis_20x20_style .at4-icon,.at-20x20{width:20px;height:20px;line-height:20px;background-size:20px!important}.at4-icon.circular,.circular .at4-icon,.circular.aticon{border-radius:50%}.at4-icon.rounded,.rounded .at4-icon{border-radius:4px}.at4-icon-left{float:left}#at15s .at4-icon{text-indent:20px;padding:0;overflow:visible;white-space:nowrap;background-size:1pc;width:1pc;height:1pc;background-position:top left;display:inline-block;line-height:1pc}.addthis_vertical_style .at4-icon,.at4-follow-container .at4-icon{margin-right:5px}html&amp;gt;body #at15s{width:250px!important}#at15s.atm{background:none!important;padding:0!important;width:10pc!important}#at15s_inner{background:#fff;border:1px solid #fff;margin:0}#at15s_head{position:relative;background:#f2f2f2;padding:4px;cursor:default;border-bottom:1px solid #e5e5e5}.at15s_head_success{background:#cafd99!important;border-bottom:1px solid #a9d582!important}.at15s_head_success a,.at15s_head_success span{color:#000!important;text-decoration:none}#at15s_brand,#at15sptx,#at16_brand{position:absolute}#at15s_brand{top:4px;right:4px}.at15s_brandx{right:20px!important}a#at15sptx{top:4px;right:4px;text-decoration:none;color:#4c4c4c;font-weight:700}#at15sptx:hover{text-decoration:underline}#at16_brand{top:5px;right:30px;cursor:default}#at_hover{padding:4px}#at_hover .at_item,#at_share .at_item{background:#fff!important;float:left!important;color:#4c4c4c!important}#at_share .at_item .at-icon-wrapper{margin-right:5px}#at_hover .at_bold{font-weight:700;color:#000!important}#at_hover .at_item{width:7pc!important;padding:2px 3px!important;margin:1px;text-decoration:none!important}#at_hover .at_item.athov,#at_hover .at_item:focus,#at_hover .at_item:hover{margin:0!important}#at_hover .at_item.athov,#at_hover .at_item:focus,#at_hover .at_item:hover,#at_share .at_item.athov,#at_share .at_item:hover{background:#f2f2f2!important;border:1px solid #e5e5e5;color:#000!important;text-decoration:none}.ipad #at_hover .at_item:focus{background:#fff!important;border:1px solid #fff}.at15t{display:block!important;height:1pc!important;line-height:1pc!important;padding-left:20px!important;background-position:0 0;text-align:left}.addthis_button,.at15t{cursor:pointer}.addthis_toolbox a.at300b,.addthis_toolbox a.at300m{width:auto}.addthis_toolbox a{margin-bottom:5px;line-height:initial}.addthis_toolbox.addthis_vertical_style{width:200px}.addthis_button_facebook_like .fb_iframe_widget{line-height:100%}.addthis_button_facebook_like iframe.fb_iframe_widget_lift{max-width:none}.addthis_toolbox a.addthis_button_counter,.addthis_toolbox a.addthis_button_facebook_like,.addthis_toolbox a.addthis_button_facebook_send,.addthis_toolbox a.addthis_button_facebook_share,.addthis_toolbox a.addthis_button_foursquare,.addthis_toolbox a.addthis_button_google_plusone,.addthis_toolbox a.addthis_button_linkedin_counter,.addthis_toolbox a.addthis_button_pinterest_pinit,.addthis_toolbox a.addthis_button_stumbleupon_badge,.addthis_toolbox a.addthis_button_tweet{display:inline-block}.at-share-tbx-element .google_plusone_iframe_widget&amp;gt;span&amp;gt;div{vertical-align:top!important}.addthis_toolbox span.addthis_follow_label{display:none}.addthis_toolbox.addthis_vertical_style span.addthis_follow_label{display:block;white-space:nowrap}.addthis_toolbox.addthis_vertical_style a{display:block}.addthis_toolbox.addthis_vertical_style.addthis_32x32_style a{line-height:2pc;height:2pc}.addthis_toolbox.addthis_vertical_style .at300bs{margin-right:4px;float:left}.addthis_toolbox.addthis_20x20_style span{line-height:20px}.addthis_toolbox.addthis_32x32_style span{line-height:2pc}.addthis_toolbox.addthis_pill_combo_style .addthis_button_compact .at15t_compact,.addthis_toolbox.addthis_pill_combo_style a{float:left}.addthis_toolbox.addthis_pill_combo_style a.addthis_button_tweet{margin-top:-2px}.addthis_toolbox.addthis_pill_combo_style .addthis_button_compact .at15t_compact{margin-right:4px}.addthis_default_style .addthis_separator{margin:0 5px;display:inline}div.atclear{clear:both}.addthis_default_style .addthis_separator,.addthis_default_style .at4-icon,.addthis_default_style .at300b,.addthis_default_style .at300bo,.addthis_default_style .at300bs,.addthis_default_style .at300m{float:left}.at300b img,.at300bo img{border:0}a.at300b .at4-icon,a.at300m .at4-icon{display:block}.addthis_default_style .at300b,.addthis_default_style .at300bo,.addthis_default_style .at300m{padding:0 2px}.at300b,.at300bo,.at300bs,.at300m{cursor:pointer}.addthis_button_facebook_like.at300b:hover,.addthis_button_facebook_like.at300bs:hover,.addthis_button_facebook_send.at300b:hover,.addthis_button_facebook_send.at300bs:hover{opacity:1}.addthis_20x20_style .at15t,.addthis_20x20_style .at300bs{overflow:hidden;display:block;height:20px!important;width:20px!important;line-height:20px!important}.addthis_32x32_style .at15t,.addthis_32x32_style .at300bs{overflow:hidden;display:block;height:2pc!important;width:2pc!important;line-height:2pc!important}.at300bs{overflow:hidden;display:block;background-position:0 0;height:1pc;width:1pc;line-height:1pc!important}.addthis_default_style .at15t_compact,.addthis_default_style .at15t_expanded{margin-right:4px}#at_share .at_item{width:123px!important;padding:4px;margin-right:2px;border:1px solid #fff}#at16p{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);z-index:10000001;position:absolute;top:50%;left:50%;width:300px;padding:10px;margin:0 auto;margin-top:-185px;margin-left:-155px;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt;color:#5e5e5e}#at_share{margin:0;padding:0}#at16pt{position:relative;background:#f2f2f2;height:13px;padding:5px 10px}#at16pt a,#at16pt h4{font-weight:700}#at16pt h4{display:inline;margin:0;padding:0;font-size:9pt;color:#4c4c4c;cursor:default}#at16pt a{position:absolute;top:5px;right:10px;color:#4c4c4c;text-decoration:none;padding:2px}#at15sptx:focus,#at16pt a:focus{outline:thin dotted}#at15s #at16pf a{top:1px}#_atssh{width:1px!important;height:1px!important;border:0!important}.atm{width:10pc!important;padding:0;margin:0;line-height:9pt;letter-spacing:normal;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt;color:#444;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);padding:4px}.atm-f{text-align:right;border-top:1px solid #ddd;padding:5px 8px}.atm-i{background:#fff;border:1px solid #d5d6d6;padding:0;margin:0;box-shadow:1px 1px 5px rgba(0,0,0,.15)}.atm-s{margin:0!important;padding:0!important}.atm-s a:focus{border:transparent;outline:0;transition:none}#at_hover.atm-s a,.atm-s a{display:block;text-decoration:none;padding:4px 10px;color:#235dab!important;font-weight:400;font-style:normal;transition:none}#at_hover.atm-s .at_bold{color:#235dab!important}#at_hover.atm-s a:hover,.atm-s a:hover{background:#2095f0;text-decoration:none;color:#fff!important}#at_hover.atm-s .at_bold{font-weight:700}#at_hover.atm-s a:hover .at_bold{color:#fff!important}.atm-s a .at-label{vertical-align:middle;margin-left:5px;direction:ltr}.at_PinItButton{display:block;width:40px;height:20px;padding:0;margin:0;background-image:url(//s7.addthis.com/static/t00/pinit00.png);background-repeat:no-repeat}.at_PinItButton:hover{background-position:0 -20px}.addthis_toolbox .addthis_button_pinterest_pinit{position:relative}.at-share-tbx-element .fb_iframe_widget span{vertical-align:baseline!important}#at16pf{height:auto;text-align:right;padding:4px 8px}.at-privacy-info{position:absolute;left:7px;bottom:7px;cursor:pointer;text-decoration:none;font-family:helvetica,arial,sans-serif;font-size:10px;line-height:9pt;letter-spacing:.2px;color:#666}.at-privacy-info:hover{color:#000}.body .wsb-social-share .wsb-social-share-button-vert{padding-top:0;padding-bottom:0}.body .wsb-social-share.addthis_counter_style .addthis_button_tweet.wsb-social-share-button{padding-top:40px}.body .wsb-social-share.addthis_counter_style .addthis_button_google_plusone.wsb-social-share-button{padding-top:0}.body .wsb-social-share.addthis_counter_style .addthis_button_facebook_like.wsb-social-share-button{padding-top:21px}@media print{#at4-follow,#at4-share,#at4-thankyou,#at4-whatsnext,#at4m-mobile,#at15s,.at4,.at4-recommended{display:none!important}}@media screen and (max-width:400px){.at4win{width:100%}}@media screen and (max-height:700px) and (max-width:400px){.at4-thankyou-inner .at4-recommended-container{height:122px;overflow:hidden}.at4-thankyou-inner .at4-recommended .at4-recommended-item:first-child{border-bottom:1px solid #c5c5c5}}&lt;/style&gt;&lt;style type="text/css"&gt;.at-branding-logo{font-family:helvetica,arial,sans-serif;text-decoration:none;font-size:10px;display:inline-block;margin:2px 0;letter-spacing:.2px}.at-branding-logo .at-branding-icon{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////+GlNUkcc1QAAAB1JREFUeNpiYIQDBjQmAwMmkwEM0JnY1WIxFyDAABGeAFEudiZsAAAAAElFTkSuQmCC")}.at-branding-logo .at-branding-icon,.at-branding-logo .at-privacy-icon{display:inline-block;height:10px;width:10px;margin-left:4px;margin-right:3px;margin-bottom:-1px;background-repeat:no-repeat}.at-branding-logo .at-privacy-icon{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAMAAABR24SMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABhQTFRF8fr9ot/xXcfn2/P5AKva////////AKTWodjhjAAAAAd0Uk5T////////ABpLA0YAAAA6SURBVHjaJMzBDQAwCAJAQaj7b9xifV0kUKJ9ciWxlzWEWI5gMF65KUTv0VKkjVeTerqE/x7+9BVgAEXbAWI8QDcfAAAAAElFTkSuQmCC")}.at-branding-logo span{text-decoration:none}.at-branding-logo .at-branding-addthis,.at-branding-logo .at-branding-powered-by{color:#666}.at-branding-logo .at-branding-addthis:hover{color:#333}.at-cv-with-image .at-branding-addthis,.at-cv-with-image .at-branding-addthis:hover{color:#fff}a.at-branding-logo:visited{color:initial}.at-branding-info{display:inline-block;padding:0 5px;color:#666;border:1px solid #666;border-radius:50%;font-size:10px;line-height:9pt;opacity:.7;transition:all .3s ease;text-decoration:none}.at-branding-info span{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.at-branding-info:before{content:'i';font-family:Times New Roman}.at-branding-info:hover{color:#0780df;border-color:#0780df}&lt;/style&gt;&lt;style type="text/css"&gt;.fancybox-margin{margin-right:16px;}&lt;/style&gt;&lt;style type="text/css"&gt;.fancybox-margin{margin-right:16px;}&lt;/style&gt;&lt;style type="text/css"&gt;&lt;/style&gt;&lt;script type="text/javascript" charset="utf-8" async="" src="//s7.addthis.com/static/counter.45f8ce1bbe702fd0d9fd.js"&gt;&lt;/script&gt;&lt;style type="text/css"&gt;.addthis_counter{font-weight:700;display:inline-block;border:0;outline:0;cursor:pointer;color:#fff}.addthis_counter a{display:block;font-family:arial,helvetica,sans-serif!important;text-decoration:none!important;border:0}.addthis_counter{text-decoration:none!important;text-align:left}.addthis_counter .addthis_button_expanded{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAACaCAMAAADcrusAAAAA21BMVEX////+bUznWjrnWjrBwcGJiYnm5ubFxcWMjIyRkZH39/f19fX////nWjr+bUzys6n+uq7/7+z87evqd2H+hm3/5+P+sKPxqJz65OH/9/b+el3paU//zcT2yMDshXH99vX+kXz+nIn/w7n0vrX30cz9bEv/3tn529f/1s/ukYH3aUn+ppbvnY/bUjTmWTn/3dX+9fP3aEj/9vT52NH/5d/aUTP9a0r74tzlWDjfWz386+f/7en4b1H/7uv4b1D/3db/9/X/7uraUjT+9vT87Oj87OnpZEb52dH+dlezszuQAAAABHRSTlMAExMAzBw6IQAAAnlJREFUeF6009eKKzEMBuBJriW5T2/pPdvbqb28/xMdGbOQiyxZZ9n/QnjAH8KWJxl8uqeI3H8ZJFcUmatkFktmCUXnXHIBIRevJ/AcBuUSQI0onZ8k1/QxkNqVJIvyNPl8S1/ZMFkuuYxtqhQoS2MA1RNIGKUArjwk/4Lk0jtXp0QpjEjJHiw5SbzZQlo6eUi+fafba0985LKwqSOqJdNaMdmQ5O+NOn6WYsNlPk7nnvRF6iF3lOBz/MZqZ6kvZCBS+bUn1h/MvTCXmumYArEKijlYJr6N6t8y/fcn5zz+dfwvNlhH9ZmtB8nw6REj8vg0TO4wMnfJPpbsE4zOueQGQm5eT+A5DKopgF5htjhJLvFDIE1eoeiq0+T3A/5lw2Q65TIxmdagDU4AdIsgYJUB5NUh+RMklzbPmwwxgxVq0YLBXCBvNpBVuTgkP3/hw6UnPmLamSxHbATTRjPZouDvrT5+lm7LZTHJFp60XeYhdxTgc/zGmtxg24lAhPZrT4w/WP7CXBqmEwzEaOgWYJj4Nrp9y/Tfn5zz+Hex5Ecy3EX12e+G/9mrQxUAYBgGooEFAm3//3snZmviJnL+6cMRrXSgHqsWOGb8iISEhISEqDxRAsSld5De/nLbr4MViEEYDMI5mFQ3ff/nXejx33YHcyqtc/8QQSXaRYfJZpAaFWx2FdwfMXyqYdYjp4punpP5fcgiiyyyyCKVl9+6nxQHCP+t20WHCTdIjQo2KjgDAT/Y7UQk/li1tkPtyaQlEhBARABBUV+lvhc1rz4w+FX4bKWLrA0cp7Ue+KhqnpA/mXggAQFEBBAU9VXqe1HzzgNTv2Iyx9Dc8gWOjkKMG1wfQQAAAABJRU5ErkJggg==");background-repeat:no-repeat;display:inline-block}.addthis_counter .atc_s{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAFVBMVEUAAAD///////////////////////9Iz20EAAAABnRSTlMAwPm7kB4+mBDvAAAAP0lEQVQI12MIVksDgyRTBrM0KEhmAApChRnS4ACdKcCIl5ko6MAiKAZmJjAAARsKE6GAsGE43IBwJLLTER4CAHvvQkc3Hji8AAAAAElFTkSuQmCC");background-size:10px;background-repeat:no-repeat;background-color:#fe6d4c;background-position:5px 5px;display:inline-block;border-radius:2px;min-width:25px;text-decoration:none}.addthis_counter .atc_s:hover{background-color:#e75a3a}.addthis_counter.addthis_bubble_style{background-image:url("data:image/gif;base64,R0lGODlhUgBkAKIEAOrq6sLCwoWFhf///////wAAAAAAAAAAACH5BAEAAAQALAAAAABSAGQAAAP/SLoa/jDKSetkOGsdwPhgKI5kaYpAsK1sd75wPKZsjQVyrpuq7eO7YLDnqwGFyBixuDomn6UlkwOtkqTTm3ULwmYXTi7U+3WJreSp+VxNF9fs8ZcBjz/dRo8dPSfU90l4TXqAcn1/hTuCLYSJQ31gjY45i3mTipB0kpcnlTZhnDyZdKFKo2ClMJ5GqS+rLa2dpw2xorOgtR+vg7kou7y9AzSzYBbGx8gRxAwCzc7P0NHS09TSywoCm60AAsvZwSDcxALgId2z5OUf56fp6uyj7uXwmfLg9JD2wfh9+r38X76pGwBwisCBBYscRFhP2718Dh/OWThwXb+IEidi/New+SKIhD4ozmu3sRVIhSVLnVRYcWXIluNgopPZjmY8m/VwQlQnblxKRz29VRtKtCg0YsmSOsBgtGmzNz9zDCMgEkpQWGyI+KuyElebBVuhdI2jNc5JRF+pRtUBEu3XqlYSum0DNy6jPQHqcrVEVq2ds2spYQssY2xWsGZ/9MWW+NNiqo35cpmqV8jVFkqTMXVqlEnmz1I4i4Y3twplwjqCehVTthC71VxaA3qdSPYe2oVs/0WVG7HrBqgx+f1deouKylsEFDeOPPlyNM3tPpcTXSzw2oMT4QakOzJs475n8+Ye/vZ4vOV30+rN+Pf1PacBXQWdefPopgQSAAA7");background-repeat:no-repeat}.addthis_counter a.atc_s{font-size:11px;font-weight:100;color:#fff;padding:0 5px 0 20px;line-height:20px;overflow:hidden;cursor:pointer;transition:none}.addthis_counter .atc_s-span,.addthis_counter a.atc_s{display:block;height:20px}.addthis_counter .addthis_button_expanded.at300m .at4-icon{display:none!important}.addthis_counter a.addthis_button_expanded:hover,.addthis_counter.addthis_pill_style a.addthis_button_expanded:hover{text-decoration:none;color:#000}.addthis_counter .addthis_button_expanded{display:block;background-repeat:no-repeat;background-position:0 -40px;width:50px;height:33px;line-height:33px;padding-bottom:4px;margin-bottom:3px;text-align:center;text-decoration:none;font-size:1pc;font-weight:700;color:#333}.addthis_counter{vertical-align:top}.addthis_counter.addthis_native_counter .addthis_button_expanded{font-weight:400}* html .addthis_counter.compatmode0 .addthis_button_expanded{padding-bottom:0!important}* html .addthis_counter .addthis_button_expanded{height:37px}.addthis_counter .addthis_button_expanded:hover{background-position:0 -77px;cursor:pointer;color:#000}.addthis_counter .addthis_button_expanded .at300bs{display:none!important}.addthis_counter.addthis_pill_style{display:block;height:25px;overflow:hidden}.addthis_counter.addthis_pill_style a.atc_s{float:left}.addthis_counter.addthis_pill_style a.addthis_button_expanded{display:none;background-repeat:no-repeat;background-position:0 -114px;width:34px!important;height:20px;line-height:20px;margin:0 0 0 3px;padding:0 0 0 4px;float:left;text-align:center;text-decoration:none;font-family:arial,helvetica,sans-serif;font-weight:700;font-size:11px;color:#333;-ms-box-sizing:content-box;-o-box-sizing:content-box;box-sizing:content-box}.addthis_counter.addthis_pill_style.addthis_nonzero a.addthis_button_expanded{display:block!important;transition:none}.addthis_counter.addthis_pill_style a.addthis_button_expanded:hover{background-position:0 -134px!important}.addthis_counter.addthis_bubble_style{margin:0 0 0 -2px;text-align:center;font-weight:700;font-family:arial,helvetica,sans-serif;color:#000;background-repeat:no-repeat;background-position:0 -4pc;padding:0 0 0 4px;height:1pc;width:2pc!important;-ms-box-sizing:content-box;-o-box-sizing:content-box;box-sizing:content-box}.addthis_native_counter_parent .addthis_counter.addthis_bubble_style{background-position:0 -4pc!important}.addthis_counter.addthis_bubble_style.addthis_native_counter{margin:0 2px}.addthis_counter.addthis_bubble_style a.addthis_button_expanded{font-size:11px;height:1pc;line-height:1pc;width:34px;background:none}.addthis_counter.addthis_bubble_style:hover{background-position:-36px -4pc!important}.addthis_20x20_style .addthis_counter.addthis_bubble_style{background-repeat:no-repeat;background-position:0 -5pc!important;height:20px;width:35px!important;line-height:20px;padding:0 0 0 6px}.addthis_20x20_style .addthis_counter.addthis_bubble_style:hover{background-position:-41px -5pc!important}.addthis_20x20_style .addthis_counter.addthis_bubble_style a.addthis_button_expanded{background:none;font-size:9pt;line-height:20px;height:20px;margin:0;width:35px!important;padding:0!important}.addthis_20x20_style .addthis_counter.addthis_bubble_style.addthis_native_counter a.addthis_button_expanded{font-size:11px}.addthis_32x32_style .addthis_counter.addthis_bubble_style,.addthis_32x32_white_style .addthis_counter.addthis_bubble_style{background-repeat:no-repeat;background-position:0 0!important;height:2pc;width:56px!important;line-height:2pc;padding:0 0 0 6px}.addthis_32x32_style .addthis_counter.addthis_bubble_style a.addthis_button_expanded,.addthis_32x32_white_style .addthis_counter.addthis_bubble_style a.addthis_button_expanded{background:none;font-size:1pc;line-height:2pc;height:2pc;margin:0;width:56px!important;padding:0!important}.addthis_32x32_style .addthis_counter.addthis_bubble_style:hover,.addthis_32x32_white_style .addthis_counter.addthis_bubble_style:hover{background-position:0 -2pc!important}.addthis_counter.addthis_bubble_style .atc_s{display:none!important}* html .addthis_counter.addthis_bubble_style{width:36px!important;display:inline}* html .addthis_counter.bubblecompatmode0{width:2pc!important;display:block}* html .addthis_counter.addthis_bubble_style a.addthis_button_expanded{width:24px!important;height:14px!important;line-height:14px!important;padding:0;margin-top:1px!important;display:inline}* html .addthis_counter.bubblecompatmode0 a.addthis_button_expanded{width:36px}* html .addthis_32x32_style .addthis_counter.addthis_bubble_style{width:60px!important}* html .addthis_32x32_style .addthis_counter.addthis_bubble_style a.addthis_button_expanded{width:46px;height:26px!important;line-height:26px!important;margin-top:2px!important}* html .addthis_32x32_style .addthis_counter.bubblecompatmode0 a.addthis_button_expanded{height:2pc!important;line-height:2pc!important}&lt;/style&gt;&lt;/head&gt;
+&lt;body class=" catalog-product-view catalog-product-view product-magnetka-vydra categorypath-suvenyry-magnetky-128-html category-magnetky"&gt;
+&lt;div class="wrapper"&gt;
+        &lt;noscript&gt;
+        &amp;lt;div class="global-site-notice noscript"&amp;gt;
+            &amp;lt;div class="notice-inner"&amp;gt;
+                &amp;lt;p&amp;gt;
+                    &amp;lt;strong&amp;gt;Váš prohlížeč nepodporuje JavaScript.&amp;lt;/strong&amp;gt;&amp;lt;br /&amp;gt;
+                    Pro využití funkcí tohoto webu, prosím povolte JavaScript ve Vašem prohlížeči.                &amp;lt;/p&amp;gt;
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+    &lt;/noscript&gt;
+    &lt;div class="page"&gt;
+        &lt;div class="header-container type12"&gt;
+    &lt;div class="header"&gt;
+        &lt;div class="container"&gt;
+            &lt;a href="https://eshop.zoopraha.cz/" title="Zoo Praha" class="logo"&gt;&lt;img src="https://eshop.zoopraha.cz/skin/frontend/smartwave/mango/images/logo.png" alt="Zoo Praha" /&gt;&lt;/a&gt;
+            &lt;div class="custom-block"&gt;&lt;span class="nav-text-big"&gt;UŽ JSTE NĚKDY ZKOUŠELI KRMIT ŽIRAFU?&lt;/span&gt;&lt;/div&gt;            &lt;div class="header-right"&gt;
+                &lt;div class="header-right-top"&gt;
+                    &lt;div class="search-area"&gt;
+                        &lt;a href="javascript:void(0);" class="search-icon"&gt;&lt;i class="icon-mango-search"&gt;&lt;/i&gt;&lt;span&gt;Hledat&lt;/span&gt;&lt;/a&gt;
+                        &lt;form id="search_mini_form" action="//eshop.zoopraha.cz/catalogsearch/result/" method="get"&gt;
+    &lt;div class="form-search category-search"&gt;
+        &lt;label for="search"&gt;Hledat:&lt;/label&gt;
+                &lt;input id="search" type="text" name="q" class="input-text" placeholder="Hledat..." autocomplete="off" /&gt;
+                &lt;select id="cat" name="cat"&gt;
+            &lt;option value=""&gt;All Categories&lt;/option&gt;
+                            &lt;option value="3"&gt;Oblečení&lt;/option&gt;
+                                                            &lt;option value="6"&gt;- Ostatní&lt;/option&gt;
+                                            &lt;option value="4"&gt;- Trička&lt;/option&gt;
+                                                                &lt;option value="7"&gt;Suvenýry&lt;/option&gt;
+                                                            &lt;option value="68"&gt;- Retro Zoo Praha&lt;/option&gt;
+                                            &lt;option value="28"&gt;- Pohledy&lt;/option&gt;
+                                            &lt;option value="30"&gt;- Hrnky a kelímky&lt;/option&gt;
+                                            &lt;option value="45"&gt;- Psací potřeby, zápisníky&lt;/option&gt;
+                                            &lt;option value="51"&gt;- Magnetky&lt;/option&gt;
+                                            &lt;option value="55"&gt;- Plyšové hračky&lt;/option&gt;
+                                            &lt;option value="62"&gt;- Ze sloního papíru&lt;/option&gt;
+                                            &lt;option value="18"&gt;- Ostatní&lt;/option&gt;
+                                            &lt;option value="63"&gt;- Let It Grow&lt;/option&gt;
+                                                                &lt;option value="16"&gt;Publikace&lt;/option&gt;
+                                                            &lt;option value="26"&gt;- Knihy&lt;/option&gt;
+                                            &lt;option value="27"&gt;- Trojský koník&lt;/option&gt;
+                                            &lt;option value="25"&gt;- CD a DVD&lt;/option&gt;
+                                            &lt;option value="57"&gt;- Kalendáře a ostatní&lt;/option&gt;
+                                            &lt;option value="69"&gt;- Fotografie&lt;/option&gt;
+                                                                &lt;option value="31"&gt;Zážitkové programy&lt;/option&gt;
+                                                            &lt;option value="40"&gt;- Ostatní&lt;/option&gt;
+                                                                &lt;option value="17"&gt;Pomáháme jim přežít&lt;/option&gt;
+                                                                        &lt;/select&gt;
+                &lt;button type="submit" title="Hledat" class="button"&gt;&lt;i class="icon-mango-search"&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;div id="search_autocomplete" class="search-autocomplete" style="display: none;"&gt;&lt;/div&gt;
+        &lt;div class="clearer"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+&lt;script type="text/javascript"&gt;
+//&amp;lt;![CDATA[
+    var searchForm = new Varien.searchForm('search_mini_form', 'search', 'Hledat...');
+    searchForm.initAutocomplete('https://eshop.zoopraha.cz/catalogsearch/ajax/suggest/', 'search_autocomplete');
+//]]&amp;gt;
+&lt;/script&gt;
+                    &lt;/div&gt;
+                    &lt;span class="split"&gt;&lt;/span&gt;
+                    &lt;div class="top-links-area"&gt;
+                        &lt;div class="top-links-icon"&gt;&lt;a href="javascript:void(0)"&gt;&lt;i class="icon-mango-user"&gt;&lt;/i&gt; Uživatel &lt;i class="icon-mango-angle-down" style="color: #6e6e6e;"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;
+                        &lt;ul class="links"&gt;
+                        &lt;li class="first"&gt;&lt;a href="https://eshop.zoopraha.cz/customer/account/" title="Můj účet"&gt;Můj účet&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=" last"&gt;&lt;a href="https://eshop.zoopraha.cz/customer/account/login/" title="Přihlásit se"&gt;Přihlásit se&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+                    &lt;/div&gt;
+                                    &lt;/div&gt;
+                &lt;div class="header-right-bottom"&gt;
+                    &lt;div class="menu-icon"&gt;&lt;a href="javascript:void(0)"&gt;&lt;i class="icon-mango-nav-icon"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;
+                    &lt;div class="mini-cart"&gt;
+                        &lt;a href="javascript:void(0)" class="mybag-link"&gt;&lt;i class="icon-mango-cart"&gt;&lt;/i&gt;&lt;span class="cart-info"&gt;Můj košík&lt;/span&gt;&lt;span class="cart-qty"&gt;&lt;span class="price"&gt;0,00 Kč&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;
+            &lt;div class="topCartContent block-content" style="display: none;"&gt;
+            &lt;div class="inner-wrapper"&gt;                                                    &lt;p class="cart-empty"&gt;
+                        V košíku nejsou žádné položky.                    &lt;/p&gt;
+                            &lt;/div&gt;
+        &lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+    jQuery(function($){
+        $('.mini-cart').mouseover(function(e){
+            $(this).children('.topCartContent').fadeIn(200);
+            return false;
+        }).mouseleave(function(e){
+            $(this).children('.topCartContent').fadeOut(200);
+            return false;
+        });
+    });
+&lt;/script&gt;
+&lt;/div&gt;                                    &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="header-bottom"&gt;
+            &lt;div class="container"&gt;
+                &lt;div class="main-nav"&gt;
+    &lt;ul class="menu"&gt;
+        &lt;li class=""&gt;
+    &lt;a href="https://eshop.zoopraha.cz/"&gt;
+       &lt;span&gt;Domů&lt;/span&gt;
+    &lt;/a&gt;
+&lt;/li&gt;
+&lt;li class="menu-full-width  "&gt;
+&lt;a href="https://eshop.zoopraha.cz/obleceni.html"&gt;Oblečení&lt;/a&gt;
+&lt;div class="nav-sublist-dropdown" style="display: none;"&gt;
+&lt;div class="container"&gt;
+&lt;div class="mega-columns row"&gt;
+&lt;div class="block1 col-sm-12"&gt;
+&lt;div class="row"&gt;
+&lt;ul&gt;
+&lt;li class="menu-item col-sw-6  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/obleceni/ostatni.html"&gt;&lt;span&gt;Ostatní&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item col-sw-6  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/obleceni/tricka.html"&gt;&lt;span&gt;Trička&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li class="menu-full-width  act "&gt;
+&lt;a href="https://eshop.zoopraha.cz/suvenyry.html"&gt;Suvenýry&lt;/a&gt;
+&lt;div class="nav-sublist-dropdown" style="display: none;"&gt;
+&lt;div class="container"&gt;
+&lt;div class="mega-columns row"&gt;
+&lt;div class="block1 col-sm-12"&gt;
+&lt;div class="row"&gt;
+&lt;ul&gt;
+&lt;li class="menu-item col-sw-6  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/retro-zoo-praha.html"&gt;&lt;span&gt;Retro Zoo Praha&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item col-sw-6  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/pohledy.html"&gt;&lt;span&gt;Pohledy&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item col-sw-6  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/hrnky-a-kelimky.html"&gt;&lt;span&gt;Hrnky a kelímky&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item col-sw-6  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/psaci-potreby-zapisniky.html"&gt;&lt;span&gt;Psací potřeby, zápisníky&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item col-sw-6  act "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/magnetky-128.html"&gt;&lt;span&gt;Magnetky&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item col-sw-6  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/plys.html"&gt;&lt;span&gt;Plyšové hračky&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item col-sw-6  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/ze-sloniho-papiru.html"&gt;&lt;span&gt;Ze sloního papíru&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item col-sw-6  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/ostatni.html"&gt;&lt;span&gt;Ostatní&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item col-sw-6  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/let-it-grow.html"&gt;&lt;span&gt;Let It Grow&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li class="menu-full-width  "&gt;
+&lt;a href="https://eshop.zoopraha.cz/publikace.html"&gt;Publikace&lt;/a&gt;
+&lt;div class="nav-sublist-dropdown" style="display: none;"&gt;
+&lt;div class="container"&gt;
+&lt;div class="mega-columns row"&gt;
+&lt;div class="block1 col-sm-12"&gt;
+&lt;div class="row"&gt;
+&lt;ul&gt;
+&lt;li class="menu-item col-sw-6  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/publikace/knihy.html"&gt;&lt;span&gt;Knihy&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item col-sw-6  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/publikace/trojsky-konik.html"&gt;&lt;span&gt;Trojský koník&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item col-sw-6  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/publikace/cd-a-dvd.html"&gt;&lt;span&gt;CD a DVD&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item col-sw-6  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/publikace/ostatni.html"&gt;&lt;span&gt;Kalendáře a ostatní&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item col-sw-6  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/publikace/fotoobrazy.html"&gt;&lt;span&gt;Fotografie&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li class="menu-full-width  "&gt;
+&lt;a href="https://eshop.zoopraha.cz/zazitkove-programy.html"&gt;Zážitkové programy&lt;/a&gt;
+&lt;div class="nav-sublist-dropdown" style="display: none;"&gt;
+&lt;div class="container"&gt;
+&lt;div class="mega-columns row"&gt;
+&lt;div class="block1 col-sm-12"&gt;
+&lt;div class="row"&gt;
+&lt;ul&gt;
+&lt;li class="menu-item col-sw-6  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/zazitkove-programy/ostatni.html"&gt;&lt;span&gt;Ostatní&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li class=" "&gt;
+&lt;a href="https://eshop.zoopraha.cz/pomahame-jim-prezit.html"&gt;Pomáháme jim přežít&lt;/a&gt;
+&lt;/li&gt;
+
+    &lt;li class="menu-full-width "&gt;&lt;a href="#" onclick="return false;"&gt;Vstupenky&lt;/a&gt;
+        &lt;div class="nav-sublist-dropdown" style="display: none; list-style: none;"&gt;
+            &lt;div class="container"&gt;
+                &lt;div class="mega-columns row"&gt;
+                    &lt;div class="block1 col-sm-12"&gt;
+                        &lt;div class="row"&gt;
+                            &lt;ul&gt;
+                                &lt;li class="menu-item menu-item-has-children menu-parent-item col-sw-5" style="list-style: none;"&gt;&lt;a href="https://eshop.zoopraha.cz/vstupenky.html/" class="level1"&gt;&lt;span&gt;Standardní vstupenky&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li class="menu-item menu-item-has-children menu-parent-item col-sw-5" style="list-style: none;"&gt;&lt;a href="https://vstupenka.zoopraha.cz/" class="level1" target="_blank"&gt;&lt;span&gt;Elektronické vstupenky&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;script type="text/javascript"&gt;
+    var SW_MENU_POPUP_WIDTH = 0;
+    jQuery(function($){
+        $(".menu_thumb_img").parent().addClass("has-thumb-img");
+    });
+&lt;/script&gt;            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="mobile-nav side-block container"&gt;
+    &lt;div class="close-mobile-nav close-block"&gt;Navigation&lt;/div&gt;
+    &lt;div class="menu-all-pages-container"&gt;
+        &lt;ul class="menu sw-mobile-menu"&gt;
+            &lt;li class=""&gt;
+    &lt;a href="https://eshop.zoopraha.cz/"&gt;
+       &lt;span&gt;Domů&lt;/span&gt;
+    &lt;/a&gt;
+&lt;/li&gt;
+&lt;li class="menu-item menu-item-has-children menu-parent-item  "&gt;&lt;span class="open-child"&gt;(open)&lt;/span&gt;
+&lt;a href="https://eshop.zoopraha.cz/obleceni.html"&gt;Oblečení&lt;/a&gt;
+&lt;ul&gt;
+&lt;li class="menu-item  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/obleceni/ostatni.html"&gt;&lt;span&gt;Ostatní&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/obleceni/tricka.html"&gt;&lt;span&gt;Trička&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li class="menu-item menu-item-has-children menu-parent-item  act "&gt;&lt;span class="open-child"&gt;(open)&lt;/span&gt;
+&lt;a href="https://eshop.zoopraha.cz/suvenyry.html"&gt;Suvenýry&lt;/a&gt;
+&lt;ul&gt;
+&lt;li class="menu-item  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/retro-zoo-praha.html"&gt;&lt;span&gt;Retro Zoo Praha&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/pohledy.html"&gt;&lt;span&gt;Pohledy&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/hrnky-a-kelimky.html"&gt;&lt;span&gt;Hrnky a kelímky&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/psaci-potreby-zapisniky.html"&gt;&lt;span&gt;Psací potřeby, zápisníky&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item  act "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/magnetky-128.html"&gt;&lt;span&gt;Magnetky&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/plys.html"&gt;&lt;span&gt;Plyšové hračky&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/ze-sloniho-papiru.html"&gt;&lt;span&gt;Ze sloního papíru&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/ostatni.html"&gt;&lt;span&gt;Ostatní&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/suvenyry/let-it-grow.html"&gt;&lt;span&gt;Let It Grow&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li class="menu-item menu-item-has-children menu-parent-item  "&gt;&lt;span class="open-child"&gt;(open)&lt;/span&gt;
+&lt;a href="https://eshop.zoopraha.cz/publikace.html"&gt;Publikace&lt;/a&gt;
+&lt;ul&gt;
+&lt;li class="menu-item  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/publikace/knihy.html"&gt;&lt;span&gt;Knihy&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/publikace/trojsky-konik.html"&gt;&lt;span&gt;Trojský koník&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/publikace/cd-a-dvd.html"&gt;&lt;span&gt;CD a DVD&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/publikace/ostatni.html"&gt;&lt;span&gt;Kalendáře a ostatní&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="menu-item  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/publikace/fotoobrazy.html"&gt;&lt;span&gt;Fotografie&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li class="menu-item menu-item-has-children menu-parent-item  "&gt;&lt;span class="open-child"&gt;(open)&lt;/span&gt;
+&lt;a href="https://eshop.zoopraha.cz/zazitkove-programy.html"&gt;Zážitkové programy&lt;/a&gt;
+&lt;ul&gt;
+&lt;li class="menu-item  "&gt;&lt;a class="level1" href="https://eshop.zoopraha.cz/zazitkove-programy/ostatni.html"&gt;&lt;span&gt;Ostatní&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li class=" "&gt;
+&lt;a href="https://eshop.zoopraha.cz/pomahame-jim-prezit.html"&gt;Pomáháme jim přežít&lt;/a&gt;
+&lt;/li&gt;
+
+                &lt;li class="menu-item menu-item-has-children menu-parent-item"&gt;&lt;span class="open-child"&gt;(open)&lt;/span&gt;
+                    &lt;a href="#" onclick="return false;"&gt;Vstupenky&lt;/a&gt;
+                    &lt;ul&gt;
+                        &lt;li class="menu-item menu-item-has-children menu-parent-item"&gt;
+                            &lt;a href="https://eshop.zoopraha.cz/vstupenky.html/"&gt;&lt;span&gt;Standardní vstupenky&lt;/span&gt;&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="menu-item menu-item-has-children menu-parent-item"&gt;
+                            &lt;a class="level1" href="https://vstupenka.zoopraha.cz/" target="_blank"&gt;&lt;span&gt;Elektronické vstupenky&lt;/span&gt;&lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                    &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="mobile-nav-overlay"&gt;&lt;/div&gt;                &lt;div class="main-container col1-layout"&gt;
+                        &lt;div class="main container"&gt;
+                &lt;div class="col-main"&gt;
+                                        &lt;div id="loading-mask"&gt;
+&lt;div class="background-overlay"&gt;&lt;/div&gt;
+	&lt;p id="loading_mask_loader" class="loader"&gt;
+        &lt;i class="ajax-loader large"&gt;&lt;/i&gt;
+	&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id="after-loading-success-message"&gt;
+	&lt;div class="background-overlay"&gt;&lt;/div&gt;
+	&lt;div id="success-message-container" class="loader"&gt;&lt;div class="msg-box"&gt;Product was successfully added to your shopping cart.&lt;/div&gt;
+    	&lt;button type="button" name="finish_and_checkout" id="finish_and_checkout" class="button btn-cart"&gt;&lt;span&gt;&lt;span&gt;
+				Do košíku		&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
+	&lt;button type="button" name="continue_shopping" id="continue_shopping" class="button btn-cart"&gt;
+	&lt;span&gt;&lt;span&gt;
+				Pokračovat		&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;	
+&lt;script type="text/javascript"&gt;
+	jQuery('#finish_and_checkout').click(function(){
+        try{
+            parent.location.href = 'https://eshop.zoopraha.cz/checkout/cart/';
+        }catch(err){
+            location.href = 'https://eshop.zoopraha.cz/checkout/cart/';
+        }
+    });
+	jQuery('#continue_shopping').click(function(){
+        jQuery('#after-loading-success-message').fadeOut(200);
+        clearTimeout(ajaxcart_timer);
+        setTimeout(function(){
+            jQuery('#after-loading-success-message .timer').text(ajaxcart_sec);
+        }, 1000);});
+&lt;/script&gt;&lt;script type="text/javascript"&gt;
+    var optionsPrice = new Product.OptionsPrice([]);
+&lt;/script&gt;
+&lt;div id="messages_product_view"&gt;&lt;/div&gt;
+&lt;div class="product-view product-view-type2"&gt;
+    &lt;div class="product-essential"&gt;
+    &lt;form action="https://eshop.zoopraha.cz/checkout/cart/add/uenc/aHR0cHM6Ly9lc2hvcC56b29wcmFoYS5jei9zdXZlbnlyeS9tYWduZXRreS0xMjgvbWFnbmV0a2EtdnlkcmEuaHRtbA,,/product/1361/form_key/IXF9hT9iGp8NJPpv/" method="post" id="product_addtocart_form"&gt;
+        &lt;input name="form_key" type="hidden" value="IXF9hT9iGp8NJPpv" /&gt;
+        &lt;div class="no-display"&gt;
+            &lt;input type="hidden" name="product" value="1361" /&gt;
+            &lt;input type="hidden" name="related_product" id="related-products-field" value="" /&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-sm-6"&gt;
+                &lt;div class="product-img-box"&gt;
+                    
+
+&lt;div class="product-image product-image-zoom"&gt;
+    &lt;div class="product-image-gallery"&gt;
+                                
+                                                         &lt;img id="image-0" class="gallery-image visible" alt="Magnetka Vydra" title="Magnetka Vydra" src="https://eshop.zoopraha.cz/media/catalog/product/cache/1/thumbnail/500x/17f82f742ffe127f42dca9de82fb58b1/d/s/dsc_6860_export.jpg" data-zoom-image="https://eshop.zoopraha.cz/media/catalog/product/cache/1/thumbnail/1000x/17f82f742ffe127f42dca9de82fb58b1/d/s/dsc_6860_export.jpg" /&gt;
+                                 
+                    &lt;a class="fancybox vt-icon image-fancy-0 cur-active" rel="lightbox-gallery" href="https://eshop.zoopraha.cz/media/catalog/product/cache/1/thumbnail/960x/17f82f742ffe127f42dca9de82fb58b1/d/s/dsc_6860_export.jpg" title="Magnetka Vydra"&gt;Magnetka Vydra&lt;/a&gt;
+                                                                     
+                                      
+                    
+                            &lt;div class="rt_bt lb-icon"&gt;
+                    &lt;a class="lb-main-icon"&gt;&lt;i class="fa fa-expend"&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;/div&gt;
+                            
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="more-views"&gt;
+    &lt;ul class="product-image-thumbs owl-carousel owl-theme owl-loaded" id="more_img_gal"&gt;
+                            
+        &lt;div class="owl-stage-outer"&gt;&lt;div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 143.75px;"&gt;&lt;div class="owl-item active" style="width: 138.75px; margin-right: 5px;"&gt;&lt;li&gt;
+            &lt;a class="thumb-link" href="#" title="Magnetka Vydra" data-image-index="0"&gt;
+                                    &lt;img src="https://eshop.zoopraha.cz/media/catalog/product/cache/1/thumbnail/130x/17f82f742ffe127f42dca9de82fb58b1/d/s/dsc_6860_export.jpg" width="130" height="auto" alt="Magnetka Vydra" /&gt;    
+                                
+            &lt;/a&gt;
+        &lt;/li&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="owl-controls"&gt;&lt;div class="owl-nav"&gt;&lt;div class="owl-prev" style=""&gt;&lt;i class="demo-icon icon-mango-angle-left"&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class="owl-next" style=""&gt;&lt;i class="demo-icon icon-mango-angle-right"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="owl-dots" style=""&gt;&lt;div class="owl-dot active"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;script type="text/javascript"&gt;    
+    if (typeof GI == "undefined") GI = {};
+    GI.Options = {
+        ITEMS   : 4,
+        MARGIN  : 5    };                                                                                     
+    
+    function getZoomParameter() {
+        var options;
+        		var options = {easing:true,lazyLoad:true,cursor:"crosshair",zoomWindowFadeIn:500, zoomWindowFadeOut:500,zoomType:'inner',scrollZoom:0};
+        return options;        
+    }    
+&lt;/script&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-sm-6"&gt;
+                &lt;div class="product-shop-wrapper"&gt;
+                    &lt;div class="product-shop"&gt;
+                                                &lt;div class="product-name"&gt;
+                            &lt;h1&gt;Magnetka s motivem vydry&lt;/h1&gt;
+                        &lt;/div&gt;
+
+                                                    &lt;p class="email-friend"&gt;&lt;a href="https://eshop.zoopraha.cz/sendfriend/product/send/id/1361/cat_id/51/"&gt;Poslat známému&lt;/a&gt;&lt;/p&gt;
+                        
+                                                                            &lt;div class="short-description"&gt;                            
+                                &lt;div class="std"&gt;Magnetka s motivem vydry.&lt;/div&gt;
+                            &lt;/div&gt;
+                                                &lt;div&gt;
+                                                
+            &lt;p class="availability in-stock"&gt;Dostupnost: &lt;span&gt;Skladem&lt;/span&gt;&lt;/p&gt;
+    
+
+                        
+    &lt;div class="price-box"&gt;
+                                                                &lt;span class="price-excluding-tax"&gt;
+                    &lt;span class="label"&gt;Bez daně:&lt;/span&gt;
+                    &lt;span class="price" id="price-excluding-tax-1361"&gt;
+                                                    28,93 Kč                                            &lt;/span&gt;
+                &lt;/span&gt;
+                &lt;span class="price-including-tax"&gt;
+                    &lt;span class="label"&gt;(s DPH)&lt;/span&gt;
+                    &lt;span class="price" id="price-including-tax-1361"&gt;
+                        35,00 Kč                    &lt;/span&gt;
+                &lt;/span&gt;
+                        
+        &lt;/div&gt;
+
+                        
+                                                                        &lt;/div&gt;
+                                                    &lt;div class="add-to-box"&gt;
+                                                                        &lt;div class="add-to-cart"&gt;
+                &lt;label for="qty"&gt;Počet:&lt;/label&gt;
+        &lt;div class="qty-holder"&gt;
+            &lt;a href="javascript:void(0)" class="table_qty_dec"&gt;-&lt;/a&gt;&lt;input type="text" name="qty" id="qty" maxlength="12" value="1" title="Množství" class="input-text qty" /&gt;&lt;a href="javascript:void(0)" class="table_qty_inc"&gt;+&lt;/a&gt;            
+        &lt;/div&gt;
+                &lt;button type="button" title="Přidat do košíku" class="button btn-cart" onclick="productAddToCartForm.submit(this)"&gt;&lt;span&gt;&lt;span&gt;&lt;i class="icon-cart"&gt;&lt;/i&gt;Přidat do košíku&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
+        &lt;span id="ajax_loader" style="display:none"&gt;&lt;i class="ajax-loader small"&gt;&lt;/i&gt;&lt;/span&gt;
+		    &lt;/div&gt;
+                                    
+                                                                	&lt;ul class="add-to-links"&gt;
+					&lt;li&gt;&lt;a href="#" onclick="ajaxCompare('https://eshop.zoopraha.cz/catalog/product_compare/add/product/1361/uenc/aHR0cHM6Ly9lc2hvcC56b29wcmFoYS5jei9zdXZlbnlyeS9tYWduZXRreS0xMjgvbWFnbmV0a2EtdnlkcmEuaHRtbA,,/form_key/IXF9hT9iGp8NJPpv/','1361'); return false;" class="link-compare"&gt;Přidat do srovnání&lt;/a&gt;&lt;/li&gt;
+	    
+	&lt;/ul&gt;
+	                            &lt;/div&gt;
+                                                     
+
+                        
+                                            &lt;/div&gt;
+                                     
+                    &lt;div class="share-box"&gt;
+                        &lt;span class="share-label"&gt;Share &lt;span class="visible-lg-inline"&gt;in social media&lt;/span&gt;&lt;/span&gt;
+                        &lt;!-- Check whether the plugin is enabled --&gt;
+
+&lt;!-- AddThis Button BEGIN --&gt;
+
+&lt;!-- AddThis API Config --&gt;
+
+&lt;script type="text/javascript"&gt;
+var addthis_product = 'mag-1.0.1';
+var addthis_config 	= {
+pubid : 'unknown'
+
+}
+&lt;/script&gt;
+&lt;!-- AddThis API Config END --&gt;
+&lt;div class="sharing-tool-area"&gt;
+&lt;div class="addthis_toolbox addthis_default_style "&gt;
+&lt;a class="addthis_button_preferred_1"&gt;&lt;/a&gt;
+&lt;a class="addthis_button_preferred_2"&gt;&lt;/a&gt;
+&lt;a class="addthis_button_preferred_3"&gt;&lt;/a&gt;
+&lt;a class="addthis_button_preferred_4"&gt;&lt;/a&gt;
+&lt;a class="addthis_button_compact at300m" href="#"&gt;&lt;span class="at-icon-wrapper" style="background-color: rgb(255, 101, 80); line-height: 16px; height: 16px; width: 16px;"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-addthis-1" title="More" alt="More" class="at-icon at-icon-addthis" style="width: 16px; height: 16px;"&gt;&lt;title xmlns="http://www.w3.org/1999/xhtml" id="at-svg-addthis-1"&gt;Addthis&lt;/title&gt;&lt;g&gt;&lt;path d="M18 14V8h-4v6H8v4h6v6h4v-6h6v-4h-6z" fill-rule="evenodd"/&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="addthis_counter addthis_bubble_style" href="#" style="display: inline-block;"&gt;&lt;a class="addthis_button_expanded" target="_blank" title="Více..." href="#"&gt;2&lt;/a&gt;&lt;a class="atc_s addthis_button_compact"&gt;Sdílet&lt;span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/a&gt;
+&lt;div class="atclear"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js"&gt;&lt;/script&gt;
+&lt;!-- AddThis Button END --&gt;
+&lt;style type="text/css"&gt;
+#at3win #at3winheader h3 {
+	text-align:left !important;
+}
+&lt;/style&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;            
+        &lt;/div&gt;        
+    &lt;/form&gt;
+    &lt;script type="text/javascript"&gt;
+    //&amp;lt;![CDATA[
+        var productAddToCartForm = new VarienForm('product_addtocart_form');
+        productAddToCartForm.submit = function(button, url) {
+            if (this.validator.validate()) {
+                var form = this.form;
+                var oldUrl = form.action;
+
+                if (url) {
+                   form.action = url;
+                }
+                var e = null;
+                if (!url) {
+                    url = jQuery('#product_addtocart_form').attr('action');
+                }
+                if(url.indexOf("wishlist/index/cart") != -1){
+                    url = url.replace("wishlist/index/cart","ajaxcart/index/add"); // New Code
+                } else {
+                    url = url.replace("checkout/cart","ajaxcart/index"); // New Code
+                }
+                url = url.replace("http://", "//");
+                url = url.replace("https://", "//");
+                var data = jQuery('#product_addtocart_form').serialize();
+                data += '&amp;amp;isAjax=1';
+                var is_quickview = false;
+                if(jQuery("body").hasClass("quickview-index-view")){
+                    is_quickview = true;
+                }
+                if(is_quickview)
+                    window.parent.jQuery("#loading-mask").show();
+                else
+                    jQuery('#loading-mask').show();
+                try {
+                    jQuery.ajax({
+                        url : url,
+                        dataType : 'json',
+                        type : 'post',
+                        data : data,
+                        success : function(data) {
+                            if(is_quickview)
+                                window.parent.jQuery('#loading-mask').hide();
+                            else
+                                jQuery('#loading-mask').hide();
+                            if(data.status == 'ERROR'){
+                                if(is_quickview)
+                                    window.parent.alert(data.message.replace("&amp;lt;br/&amp;gt;",""));
+                                else
+                                    alert(data.message.replace("&amp;lt;br/&amp;gt;",""));
+                            }else{
+                                if(is_quickview){
+                                    if(window.parent.jQuery('.header .mini-cart')){
+                                        window.parent.jQuery('.header .mini-cart').replaceWith(data.toplink);
+                                    }
+                                    if(window.parent.jQuery('.col-right .block.block-cart')){
+                                        window.parent.jQuery('.col-right .block.block-cart').replaceWith(data.cart_sidebar);
+                                    }
+                                    window.parent.jQuery('#after-loading-success-message #success-message-container .msg-box').html(data.message);
+                                                                        ajaxcart_sec = 5;
+                                    timer_sec = ajaxcart_sec;
+                                    window.parent.jQuery('#after-loading-success-message').fadeIn(200);
+                                    ajaxcart_timer = setInterval(function(){
+                                        timer_sec --;
+                                        window.parent.jQuery('#after-loading-success-message .timer').html(timer_sec);
+                                    },1000)
+                                    setTimeout(function(){
+                                        window.parent.jQuery('#after-loading-success-message').fadeOut(200);
+                                        clearTimeout(ajaxcart_timer);
+                                        setTimeout(function(){
+                                            window.parent.jQuery('#after-loading-success-message .timer').html(ajaxcart_sec);
+                                        }, 1000);
+                                    },ajaxcart_sec*1000);
+                                }
+                                else {
+                                    if(jQuery('.header .mini-cart')){
+                                        jQuery('.header .mini-cart').replaceWith(data.toplink);
+                                    }
+                                    if(jQuery('.col-right .block.block-cart')){
+                                        jQuery('.col-right .block.block-cart').replaceWith(data.cart_sidebar);
+                                    }
+                                    jQuery('#after-loading-success-message #success-message-container .msg-box').html(data.message);
+                                                                        ajaxcart_sec = 5;
+                                    timer_sec = ajaxcart_sec;
+                                    jQuery('#after-loading-success-message').fadeIn(200);
+                                    ajaxcart_timer = setInterval(function(){
+                                        timer_sec --;
+                                        jQuery('#after-loading-success-message .timer').html(timer_sec);
+                                    },1000)
+                                    setTimeout(function(){
+                                        jQuery('#after-loading-success-message').fadeOut(200);
+                                        clearTimeout(ajaxcart_timer);
+                                        setTimeout(function(){
+                                            jQuery('#after-loading-success-message .timer').html(ajaxcart_sec);
+                                        }, 1000);
+                                    },ajaxcart_sec*1000);
+                                }
+                            }
+                        }
+                    });
+                } catch (e) {
+                }                
+                this.form.action = oldUrl;
+                if (e) {
+                    throw e;
+                }
+            }
+        }.bind(productAddToCartForm);
+    //]]&amp;gt;
+    &lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+        productAddToCartForm.submitLight = function(button, url){
+            if(this.validator) {
+                var nv = Validation.methods;
+                delete Validation.methods['required-entry'];
+                delete Validation.methods['validate-one-required'];
+                delete Validation.methods['validate-one-required-by-name'];
+                // Remove custom datetime validators
+                for (var methodName in Validation.methods) {
+                    if (methodName.match(/^validate-datetime-.*/i)) {
+                        delete Validation.methods[methodName];
+                    }
+                }
+
+                if (this.validator.validate()) {
+                    if (url) {
+                        this.form.action = url;
+                    }
+                    this.form.submit();
+                }
+                Object.extend(Validation.methods, nv);
+            }
+        }.bind(productAddToCartForm);
+    //]]&amp;gt;
+    &lt;/script&gt;
+    &lt;/div&gt;
+
+    &lt;div class="product-collateral"&gt;                
+            &lt;div class="product-tabs tabs type1"&gt;
+    &lt;ul&gt;
+                                            &lt;li id="tab_description_tabbed" class=" active first"&gt;&lt;a href="javascript:void(0)"&gt;Popis&lt;/a&gt;&lt;/li&gt;
+                                                                                                                    &lt;/ul&gt;
+    &lt;div class="clearer"&gt;&lt;/div&gt;
+                        &lt;div class="tab-content" id="tab_description_tabbed_contents"&gt;    &lt;h2&gt;Detaily&lt;/h2&gt;
+    &lt;div class="std"&gt;
+        Velikost: 8,6 cm x 6 cm    &lt;/div&gt;
+&lt;/div&gt;
+                                                                &lt;script type="text/javascript"&gt;
+    //&amp;lt;![CDATA[
+    new Varien.Tabs('.product-tabs ul');
+    //]]&amp;gt;
+    &lt;/script&gt;
+&lt;/div&gt;    &lt;/div&gt;
+    &lt;div class="block-related"&gt;    
+    &lt;div class="block-title"&gt;
+        &lt;h2 class="title-underblock"&gt;&lt;span class="theme-bd-color"&gt;Související produkty&lt;/span&gt;&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;div class="block-content type2"&gt;
+        &lt;p class="block-subtitle"&gt;Vybrat položku pro přidání do košíku, nebo &lt;a href="#" onclick="selectAllRelated(this); return false;"&gt;Vybrat vše&lt;/a&gt;&lt;/p&gt;
+        &lt;div class="owl-products owl-carousel owl-theme owl-responsive-1200 owl-loaded"&gt;
+        		            
+        		            
+                    
+        &lt;div class="owl-stage-outer"&gt;&lt;div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 478px;"&gt;&lt;div class="owl-item active" style="width: 214px; margin-right: 25px;"&gt;&lt;div class="item"&gt;
+                &lt;div class="item-area"&gt;
+                    &lt;div class="product-image-area"&gt;
+                        &lt;div class="actions"&gt;
+                                                                                                                                                                                    &lt;div&gt;&lt;input type="checkbox" class="checkbox related-checkbox" id="related-checkbox740" name="related_products[]" value="740" /&gt;&lt;/div&gt;
+                                                                                    &lt;/div&gt;
+                                                    &lt;a href="https://eshop.zoopraha.cz/magnetka-s-blockem-gorila.html" title="Magnetka s bločkem - Gorila" class="product-image"&gt;
+                                &lt;img class="" src="https://eshop.zoopraha.cz/media/catalog/product/cache/1/small_image/400x/17f82f742ffe127f42dca9de82fb58b1/_/t/_ttt0088_600.jpg" alt="Magnetka s bločkem - Gorila" /&gt;
+                                
+                            &lt;/a&gt;
+                                                                                            &lt;/div&gt;
+                    &lt;div class="details-area"&gt;
+                        &lt;h2 class="product-name"&gt;&lt;a href="https://eshop.zoopraha.cz/magnetka-s-blockem-gorila.html" title="Magnetka s bločkem - Gorila"&gt;Magnetka s bločkem - Gorila&lt;/a&gt;&lt;/h2&gt;
+                                                                        
+
+                        
+    &lt;div class="price-box"&gt;
+                                                                &lt;span class="price-excluding-tax"&gt;
+                    &lt;span class="label"&gt;Bez daně:&lt;/span&gt;
+                    &lt;span class="price" id="price-excluding-tax-740"&gt;
+                                                    33,06 Kč                                            &lt;/span&gt;
+                &lt;/span&gt;
+                &lt;span class="price-including-tax"&gt;
+                    &lt;span class="label"&gt;(s DPH)&lt;/span&gt;
+                    &lt;span class="price" id="price-including-tax-740"&gt;
+                        40,00 Kč                    &lt;/span&gt;
+                &lt;/span&gt;
+                        
+        &lt;/div&gt;
+
+                                            &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;&lt;/div&gt;&lt;div class="owl-item active" style="width: 214px; margin-right: 25px;"&gt;&lt;div class="item"&gt;
+                &lt;div class="item-area"&gt;
+                    &lt;div class="product-image-area"&gt;
+                        &lt;div class="actions"&gt;
+                                                                                                                                                                                    &lt;div&gt;&lt;input type="checkbox" class="checkbox related-checkbox" id="related-checkbox742" name="related_products[]" value="742" /&gt;&lt;/div&gt;
+                                                                                    &lt;/div&gt;
+                                                    &lt;a href="https://eshop.zoopraha.cz/magnetka-s-blockem-slon.html" title="Magnetka s bločkem - Slon" class="product-image"&gt;
+                                &lt;img class="" src="https://eshop.zoopraha.cz/media/catalog/product/cache/1/small_image/400x/17f82f742ffe127f42dca9de82fb58b1/_/t/_ttt0089_600.jpg" alt="Magnetka s bločkem - Slon" /&gt;
+                                
+                            &lt;/a&gt;
+                                                                                            &lt;/div&gt;
+                    &lt;div class="details-area"&gt;
+                        &lt;h2 class="product-name"&gt;&lt;a href="https://eshop.zoopraha.cz/magnetka-s-blockem-slon.html" title="Magnetka s bločkem - Slon"&gt;Magnetka s bločkem - Slon&lt;/a&gt;&lt;/h2&gt;
+                                                                        
+
+                        
+    &lt;div class="price-box"&gt;
+                                                                &lt;span class="price-excluding-tax"&gt;
+                    &lt;span class="label"&gt;Bez daně:&lt;/span&gt;
+                    &lt;span class="price" id="price-excluding-tax-742"&gt;
+                                                    33,06 Kč                                            &lt;/span&gt;
+                &lt;/span&gt;
+                &lt;span class="price-including-tax"&gt;
+                    &lt;span class="label"&gt;(s DPH)&lt;/span&gt;
+                    &lt;span class="price" id="price-including-tax-742"&gt;
+                        40,00 Kč                    &lt;/span&gt;
+                &lt;/span&gt;
+                        
+        &lt;/div&gt;
+
+                                            &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="owl-controls"&gt;&lt;div class="owl-nav"&gt;&lt;div class="owl-prev" style="display: none;"&gt;prev&lt;/div&gt;&lt;div class="owl-next" style="display: none;"&gt;next&lt;/div&gt;&lt;/div&gt;&lt;div class="owl-dots" style="display: none;"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;        
+        &lt;script type="text/javascript"&gt;decorateList('block-related', 'none-recursive')&lt;/script&gt;
+    &lt;/div&gt;
+    &lt;script type="text/javascript"&gt;
+    //&amp;lt;![CDATA[
+    $$('.related-checkbox').each(function(elem){        
+        Event.observe(elem, 'click', addRelatedToProduct)
+    });
+
+    var relatedProductsCheckFlag = false;
+    function selectAllRelated(txt){
+        if (relatedProductsCheckFlag == false) {
+            $$('.related-checkbox').each(function(elem){
+                elem.checked = true;
+            });
+            relatedProductsCheckFlag = true;
+            txt.innerHTML="Odznačit vše";
+        } else {
+            $$('.related-checkbox').each(function(elem){
+                elem.checked = false;
+            });
+            relatedProductsCheckFlag = false;
+            txt.innerHTML="Vybrat vše";
+        }
+        addRelatedToProduct();
+    }
+
+    function addRelatedToProduct(){                
+        var checkboxes = $$('.related-checkbox');
+        var values = [];
+        for(var i=0;i&amp;lt;checkboxes.length;i++){
+            if(checkboxes[i].checked) values.push(checkboxes[i].value);
+        }
+        if($('related-products-field')){
+            $('related-products-field').value = values.join(',');
+        }
+    }
+    jQuery(window).load(function(){
+        jQuery(".block-related .owl-products").owlCarousel({
+            loop: false,
+            margin: 25,
+            responsiveClass: true, 
+            nav: false,
+            dots: false,
+            responsive: {
+                0: { items: 1 },
+                480: { items: 2},
+                768: { items: 3 },
+                992: { items: 4 },
+                1200: {items: 5}
+            }
+        }); 
+        var owl_product_image = jQuery(".block-related .owl-product-image-gallery");
+        owl_product_image.owlCarousel({
+            items: 1,
+            loop: false,
+            margin: 2,
+            lazyLoad: true,
+            responsiveClass: true,
+            animateOut: "fadeOut",
+            nav: true,
+            navText:["",""],
+            dots: false,
+            mouseDrag: false,
+            touchDrag: false
+        });
+    });    
+    //]]&amp;gt;
+    &lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script type="text/javascript"&gt;
+    var lifetime = 3600;
+    var expireAt = Mage.Cookies.expires;
+    if (lifetime &amp;gt; 0) {
+        expireAt = new Date();
+        expireAt.setTime(expireAt.getTime() + lifetime * 1000);
+    }
+    Mage.Cookies.set('external_no_cache', 1, expireAt);
+&lt;/script&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;        
+        &lt;div class="footer-container"&gt;
+    &lt;div class="footer"&gt;
+            &lt;div class="footer-middle"&gt;
+            &lt;div class="container"&gt;                
+                &lt;div class="row"&gt;
+                &lt;div class="col-md-3 col-sm-12"&gt;&lt;div class="widget"&gt;
+                &lt;h4 class="widget-title"&gt;INFORMACE&lt;/h4&gt;
+                &lt;ul class="links"&gt;
+                    &lt;li&gt;&lt;a href="http://www.zoopraha.cz"&gt;O nás&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="https://eshop.zoopraha.cz/obchodni-podminky"&gt;Obchodní podmínky&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="http://eshop.zoopraha.cz/casto-kladene-dotazy/"&gt;Často kladené dotazy&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="http://eshop.zoopraha.cz/vydejni-misto/"&gt;Výdejní místo&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;&lt;/div&gt;&lt;div class="col-md-3 col-sm-12"&gt;&lt;div class="widget"&gt;
+                &lt;h4 class="widget-title"&gt;MŮJ ÚČET&lt;/h4&gt;
+                &lt;ul class="links"&gt;
+                    &lt;li&gt;&lt;a href="https://eshop.zoopraha.cz/customer/account/login/"&gt;Přihlásit se&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="https://eshop.zoopraha.cz/checkout/cart/"&gt;Zobrazit košík&lt;/a&gt;&lt;/li&gt;                  
+                &lt;/ul&gt;
+            &lt;/div&gt;&lt;/div&gt;&lt;div class="col-md-3 col-sm-12"&gt;&lt;div class="widget"&gt;
+                &lt;h4 class="widget-title"&gt;ZOOPRAHA.CZ&lt;/h4&gt;
+                &lt;ul class="links"&gt;
+                    &lt;li&gt;&lt;a href="http://www.zoopraha.cz/navsteva"&gt;Návštěva&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="http://www.zoopraha.cz/zvirata-a-expozice"&gt;Zvířata a expozice&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="http://www.zoopraha.cz/vse-o-zoo"&gt;Vše o zoo&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="http://www.zoopraha.cz/skoly-a-deti"&gt;Školy a děti&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="http://www.zoopraha.cz/jak-pomoci"&gt;Jak pomoci&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;&lt;/div&gt;&lt;div class="col-md-3 col-sm-12"&gt;&lt;div class="widget describe-widget"&gt;
+                &lt;h4 class="widget-title"&gt;KONTAKT&lt;/h4&gt;
+                &lt;p&gt;Zoologická zahrada hl. m. Prahy&lt;/p&gt;
+
+                &lt;ul class="contact-list"&gt;
+                    &lt;li&gt;U Trojského zámku 3/120&lt;/li&gt;
+                    &lt;li&gt;171 00 Praha 7&lt;/li&gt;
+                    &lt;li&gt;&lt;span&gt;Tel:&lt;/span&gt; +420 296 112 267&lt;/li&gt;
+                    &lt;li&gt;&lt;span&gt;Email:&lt;/span&gt; eshop@zoopraha.cz&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="https://www.zoopraha.cz/"&gt;www.zoopraha.cz&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;&lt;/div&gt;                &lt;/div&gt;
+                            &lt;/div&gt;
+        &lt;/div&gt;
+            &lt;div class="footer-bottom"&gt;
+            &lt;div class="container"&gt;
+                        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;a href="#" id="totop"&gt;&lt;i class="icon-mango-angle-up"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;script type="text/javascript"&gt;
+    var windowScroll_t;
+    jQuery(window).scroll(function(){
+        clearTimeout(windowScroll_t);
+        windowScroll_t = setTimeout(function(){
+            if(jQuery(this).scrollTop() &amp;gt; 100){
+                jQuery('#totop').fadeIn();
+            }else{
+                jQuery('#totop').fadeOut();
+            }
+        }, 500);
+    });
+    jQuery('#totop').click(function(){
+        jQuery('html, body').animate({scrollTop: 0}, 600);
+        return false;
+    });
+&lt;/script&gt;                
+
+    &lt;/div&gt;
+&lt;/div&gt;&lt;div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; top: -9999px; z-index: 100000;"&gt;&lt;iframe id="_atssh850" title="AddThis utility frame" style="height: 1px; width: 1px; position: absolute; top: 0px; z-index: 100000; border: 0px; left: 0px;" src="https://s7.addthis.com/static/sh.bb33dde1e68b50ad374644e5.html#rand=0.7985126219810961&amp;amp;iit=1523288419057&amp;amp;tmr=load%3D1523288418898%26core%3D1523288418947%26main%3D1523288419050%26ifr%3D1523288419063&amp;amp;cb=0&amp;amp;cdn=0&amp;amp;md=0&amp;amp;kw=Magnetka%20s%20motivem%20vydry&amp;amp;ab=-&amp;amp;dh=eshop.zoopraha.cz&amp;amp;dr=https%3A%2F%2Feshop.zoopraha.cz%2Fsuvenyry%2Fmagnetky-128.html&amp;amp;du=https%3A%2F%2Feshop.zoopraha.cz%2Fmagnetka-vydra.html&amp;amp;href=https%3A%2F%2Feshop.zoopraha.cz%2Fsuvenyry%2Fmagnetky-128%2Fmagnetka-vydra.html&amp;amp;dt=Magnetka%20Vydra&amp;amp;dbg=0&amp;amp;cap=tc%3D0%26ab%3D0&amp;amp;inst=1&amp;amp;jsl=3&amp;amp;prod=undefined&amp;amp;lng=cs&amp;amp;ogt=&amp;amp;pc=mag&amp;amp;pub=unknown&amp;amp;ssl=1&amp;amp;sid=5acb8962704c16f3&amp;amp;srf=0.01&amp;amp;ver=300&amp;amp;xck=0&amp;amp;xtr=0&amp;amp;og=&amp;amp;csi=undefined&amp;amp;rev=v8.3.0-wp&amp;amp;ct=1&amp;amp;xld=1&amp;amp;xd=1"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;style id="service-icons-0"&gt;&lt;/style&gt;
+
+
+&lt;div class="zoomContainer" style="-webkit-transform: translateZ(0);position:absolute;left:127px;top:250px;height:570px;width:570px;"&gt;&lt;div class="zoomWindowContainer" style="width: 400px;"&gt;&lt;div style="z-index: 999; overflow: hidden; margin-left: 0px; margin-top: 0px; background-position: 0px 0px; width: 570px; height: 570px; float: left; display: none; cursor: crosshair; background-repeat: no-repeat; position: absolute; background-image: url(&amp;quot;https://eshop.zoopraha.cz/media/catalog/product/cache/1/thumbnail/1000x/17f82f742ffe127f42dca9de82fb58b1/d/s/dsc_6860_export.jpg&amp;quot;);" class="zoomWindow"&gt; &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</msg>
+<msg timestamp="20180409 17:40:19.657" level="INFO">Current page contains button 'xpath=//button[@title='Přidat do košíku']'.</msg>
+<status status="PASS" endtime="20180409 17:40:19.657" starttime="20180409 17:40:19.604"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${vydra_add_to_cart}</arg>
+</arguments>
+<msg timestamp="20180409 17:40:19.666" level="INFO">Current page contains element 'xpath=//button[@title='Přidat do košíku']'.</msg>
+<status status="PASS" endtime="20180409 17:40:19.667" starttime="20180409 17:40:19.658"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${vydra_related}</arg>
+</arguments>
+<msg timestamp="20180409 17:40:19.684" level="INFO">Current page contains element 'xpath=//div[@class='block-related']'.</msg>
+<status status="PASS" endtime="20180409 17:40:19.684" starttime="20180409 17:40:19.667"></status>
 </kw>
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180409 17:15:32.915" starttime="20180409 17:15:29.865"></status>
+<status status="PASS" endtime="20180409 17:40:22.759" starttime="20180409 17:40:19.685"></status>
 </kw>
-<status status="PASS" endtime="20180409 17:15:32.915" critical="yes" starttime="20180409 17:15:18.007"></status>
+<status status="PASS" endtime="20180409 17:40:22.760" critical="yes" starttime="20180409 17:40:03.404"></status>
 </test>
-<status status="PASS" endtime="20180409 17:15:32.915" starttime="20180409 17:15:17.819"></status>
+<status status="PASS" endtime="20180409 17:40:22.761" starttime="20180409 17:40:03.194"></status>
 </suite>
-<status status="PASS" endtime="20180409 17:15:32.915" starttime="20180409 17:15:17.804"></status>
+<status status="PASS" endtime="20180409 17:40:22.764" starttime="20180409 17:40:03.191"></status>
 </suite>
-<status status="PASS" endtime="20180409 17:15:32.915" starttime="20180409 17:15:17.788"></status>
+<status status="PASS" endtime="20180409 17:40:22.767" starttime="20180409 17:40:03.163"></status>
 </suite>
 <statistics>
 <total>
@@ -149,7 +1216,7 @@
 <suite>
 <stat fail="0" id="s1" name="4IT446-team-01" pass="1">4IT446-team-01</stat>
 <stat fail="0" id="s1-s1" name="Tests" pass="1">4IT446-team-01.Tests</stat>
-<stat fail="0" id="s1-s1-s1" name="tc03 vyhledavaniZboziNegativni" pass="1">4IT446-team-01.Tests.tc03 vyhledavaniZboziNegativni</stat>
+<stat fail="0" id="s1-s1-s1" name="tc04 prechodNaDetailProduktu" pass="1">4IT446-team-01.Tests.tc04 prechodNaDetailProduktu</stat>
 </suite>
 </statistics>
 <errors>
