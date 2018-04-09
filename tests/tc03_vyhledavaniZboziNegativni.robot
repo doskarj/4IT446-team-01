@@ -2,23 +2,25 @@
 Library    Selenium2Library
 Resource    ../keywords/keywords.txt
 Resource    ../variables/variables.txt
+Resource    ../objects/objects_search.txt
 
 *** Test Cases ***
 TC-03 Vyhledavani zbozi pres vyhledavaci listu - negativni test
     Open browser to Zoo eshop
-    ${pageTitle}=    Get Title
-    Should Be Equal    ${pageTitle}    ${eshopPageTitle}
+    ${page_title}=    Get Title
+    Should Be Equal    ${page_title}    ${eshop_page_title}
     
-    Click Link    xpath=//a[@class='search-icon']
-    Input Text    xpath=//input[@id='search']    ${searchQuery}
-    Select From List By Value    xpath=//select[@id='cat']    ${searchCategory}    
-    Click Button    xpath=//button[@title='Hledat']
+    Click Link    ${class_search_icon}
+    Input Text    ${input_search}    ${search_query}
+    Select From List By Value    ${category_list_search}    ${search_category}    
+    Click Button    ${button_search}
     ${url}=    Get Location
     Should Be Equal    ${url}    ${afterSearchWithCategoryURL}
     
-    Element Text Should Be    xpath=//p[@class='note-msg']    Hledání nenašlo žádné výsledky.        
-    Page Should Not Contain Element    xpath=//li/div[@class='item-area']    
+    Element Text Should Be    ${search_msg_negative}    Hledání nenašlo žádné výsledky.        
+    Page Should Not Contain Element    ${product_list_item} 
+    #xpath=//li/div[@class='item-area']    
     
-    Page Should Not Contain Element    xpath=//div[@class='sorter']/div[@class='sort-by']
+    Page Should Not Contain Element    ${search_sorter_element}
     
     Close Browser   

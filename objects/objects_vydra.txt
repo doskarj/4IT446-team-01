@@ -4,5 +4,8 @@ ${vydra_url}    xpath=//a[@href='https://eshop.zoopraha.cz/suvenyry/magnetky-128
 ${vydra_title}    xpath=//h1
 ${vydra_price}    xpath=//span[@id='price-including-tax-1361']
 ${vydra_short_description}    xpath=//div[@class='short-description']
-${vydra_qty}    xpath=//input[@id='qty']
+${vydra_qty}    xpath=//div[@class='qty-holder']/input[@id='qty']
 ${vydra_add_to_cart}    xpath=//button[@title='Přidat do košíku']
+${vydra_availabitily}    xpath=//p[@class='availability in-stock']
+${vydra_related}    xpath=//div[@class='block-related']
+${vydra_img}    xpath=//img[@alt='Magnetka Vydra']

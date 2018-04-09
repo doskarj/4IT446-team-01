@@ -1,2 +1,7 @@
 *** Variables ***
 ${shop_cart_table}    xpath=//table[@id='shopping-cart-table']
+${shop_cart_title}    xpath=//table[@id='shopping-cart-table']/tbody/tr/td/h2/a
+${shop_cart_price}    xpath=//table[@id='shopping-cart-table']/tbody/tr/td/span[@class='cart-price']/span
+${shop_cart_qty_1}    xpath=//table[@id='shopping-cart-table']/tbody/tr/td/div[@class='qty-holder']/input[@value=1]
+${shop_cart_total_price}    xpath=//table[@id='shopping-cart-totals-table']//tr[@class='grand-total']//span[@class='price']
+${shop_cart_checkout}    xpath=//div[@class='totals']//button[@title='K pokladně']

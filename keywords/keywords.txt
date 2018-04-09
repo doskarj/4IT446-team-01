@@ -40,3 +40,7 @@ Step from success message to shopping cart
     
 Check header menu
     Page Should Contain Element    ${header_menu}
+    
+Add product to shopping cart from product list
+     Mouse Over    xpath=//div[@class='item-area' and //h2/a[@title='${product_name}']]
+    Click Link    xpath=//div[@class='item-area' and //h2/a[@title='${product_name}']]//a[@title='Přidat do košíku']

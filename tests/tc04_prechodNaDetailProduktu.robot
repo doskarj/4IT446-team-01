@@ -12,16 +12,18 @@ TC-04 Prechod na detail produktu pres menu
 
     Check for product in list
         
-    Click Link    xpath=//a[@title='${productName}']
+    Click Element    ${vydra_url}
     ${url}=    Get Location
-    Should Be Equal    ${url}    ${vydra_url}
+    Should Be Equal    ${url}    ${product_page_vydra}
     
-    Element Text Should Be    xpath=//h1    ${productName}
-    Page Should Contain Element    //p[@class='availability in-stock']
-    Element Should Contain    //div[@class='price-box']//span[@id='price-including-tax-1361']    ${productPrice}
-    Page Should Contain Element    //div[@class='qty-holder']/input[@id='qty']
-    Page Should Contain Button    //button[@title='Přidat do košíku'] 
-    Page Should Contain Element    //div[@class='short-description']
-    Page Should Contain Element    //div[@class='block-related']                           
+    Element Text Should Be    ${vydra_title}    ${productName}
+    Page Should Contain Element    ${vydra_img}    
+    Page Should Contain Element    ${vydra_availabitily}
+    Element Should Contain    ${vydra_price}    ${productPrice}
+    
+    Page Should Contain Element    ${vydra_qty}
+    Page Should Contain Button    ${vydra_add_to_cart} 
+    Page Should Contain Element    ${vydra_add_to_cart}
+    Page Should Contain Element    ${vydra_related}                           
     
     Close Browser   

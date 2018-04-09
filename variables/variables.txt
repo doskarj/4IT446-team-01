@@ -17,4 +17,5 @@ ${found_product_title2}    Pexeso Let it grow
 ${search_category}    51
 
 
-${productImgAlt}    Magnetka Vydra
+${product_img_alt}    Magnetka Vydra
+${product_page_vydra}    https://eshop.zoopraha.cz/suvenyry/magnetky-128/magnetka-vydra.html
