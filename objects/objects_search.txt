@@ -4,10 +4,13 @@ ${after_search_url}    https://eshop.zoopraha.cz/catalogsearch/result/?q=Pexeso&
 ${after_search_with_category_url}    https://eshop.zoopraha.cz/catalogsearch/result/?q=Pexeso&cat=51
 ${class_search_icon}    xpath=//a[@class='search-icon']
 ${input_search}    xpath=//input[@id='search']
+${category_list_search}    xpath=//select[@id='cat']
 ${button_search}    xpath=//button[@title='Hledat']
 ${order_by_relevance}    xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&dir=asc&order=relevance&q=Pexeso' and @selected='selected']
 ${order_by_name}    xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&dir=asc&order=name&q=Pexeso']
 ${order_by_price}    xpath=//select/option[@value='https://eshop.zoopraha.cz/catalogsearch/result/index/?cat=&dir=asc&order=price&q=Pexeso']
+${search_msg_negative}    xpath=//p[@class='note-msg']
+${search_sorter_element}    xpath=//div[@class='sorter']/div[@class='sort-by']
 
 #List of products
 ${product_list_item}    xpath=//div[@class='item-area']//h2/a

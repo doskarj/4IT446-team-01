@@ -26,7 +26,7 @@ ${step_two_continue}    xpath=//div[@id='billing-buttons-container']/button[@tit
 
 #zpusob dodani
 ${step_four_content}    xpath=//div[@id='checkout-step-shipping_method']
-${step_four_freeshipping}    xpath=//input[@id='s_method_freeshipping_freeshipping']
+${step_four_freeshipping}    xpath=//div[@id='checkout-step-shipping_method']//input[@id='s_method_freeshipping_freeshipping']
 ${step_four_continue}    xpath=//div[@id='shipping-method-buttons-container']/button
 
 #zpusob dodani a platby
