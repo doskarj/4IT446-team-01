@@ -44,3 +44,15 @@ Check header menu
 Add product to shopping cart from product list
      Mouse Over    xpath=//div[@class='item-area' and //h2/a[@title='${product_name}']]
     Click Link    xpath=//div[@class='item-area' and //h2/a[@title='${product_name}']]//a[@title='Přidat do košíku']
+    
+Check Price
+    [Arguments]    ${element_with_checked_price}    ${products_count}
+    ${number}=    Convert To Integer    ${product_price}    
+    ${total_price}=    Evaluate    ${number}*${products_count}
+    ${total_price_string}=    Convert To String    ${total_price}
+    Element Should Contain    ${element_with_checked_price}    ${total_price_string}
+    
+Remove From Cart And Close Browser
+    Click Link    ${shop_cart_table}//tr[td/a[@title='${product_name}']]//a[@title='Odstranit položku']
+    Page Should Contain    V košíku nejsou žádné položky.       
+    Close Browser

@@ -19,3 +19,6 @@ ${search_category}    51
 
 ${product_img_alt}    Magnetka Vydra
 ${product_page_vydra}    https://eshop.zoopraha.cz/suvenyry/magnetky-128/magnetka-vydra.html
+
+${product_quantity_from_detail}    3
+${product_quantity_from_list}    1

@@ -29,14 +29,8 @@ TC-05 Vložení produku do košíku z detailu produktu
     Step from success message to shopping cart
     Check header menu
     
-    Page Should Contain Element    ${shop_cart_table}//tr[td/a[@title='${product_name}']]//div[@class='qty-holder']/input[@value='3']
-    ${number}=    Convert To Integer    ${product_price}    
-    ${total_price}=    Evaluate    ${number}*${3}
-    ${total_price_string}=    Convert To String    ${total_price}
-    Element Should Contain    ${shop_cart_total_price}    ${total_price_string}
+    Page Should Contain Element    ${shop_cart_table}//tr[td/a[@title='${product_name}']]//div[@class='qty-holder']/input[@value='${product_quantity_from_detail}']
+    Check Price    ${shop_cart_total_price}    ${product_quantity_from_detail}
     
-    Click Link    ${shop_cart_table}//tr[td/a[@title='${product_name}']]//a[@title='Odstranit položku']
-    Page Should Contain    V košíku nejsou žádné položky.       
-   
-    Close Browser
+    Remove From Cart And Close Browser
     
