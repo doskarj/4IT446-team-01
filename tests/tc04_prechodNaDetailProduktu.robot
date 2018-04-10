@@ -16,13 +16,8 @@ TC-04 Prechod na detail produktu pres menu
     ${url}=    Get Location
     Should Be Equal    ${url}    ${product_page_vydra}
     
-    Element Text Should Be    ${vydra_title}    ${productName}
-    Page Should Contain Element    ${vydra_img}    
-    Page Should Contain Element    ${vydra_availabitily}
-    Element Should Contain    ${vydra_price}    ${productPrice}
+    Check Product Detail Basic Info
     
-    Page Should Contain Element    ${vydra_qty}
-    Page Should Contain Button    ${vydra_add_to_cart} 
     Page Should Contain Element    ${vydra_add_to_cart}
     Page Should Contain Element    ${vydra_related}                           
     

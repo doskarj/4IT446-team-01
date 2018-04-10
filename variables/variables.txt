@@ -1,5 +1,6 @@
 *** Variables ***
 ${eshop_page_title}    Zoo Praha | Internetový obchod
+${eshop_url}    https://eshop.zoopraha.cz
 ${page_title_magnets}    Magnetky
 ${product_name}    Magnetka s motivem vydry
 ${product_price}    35

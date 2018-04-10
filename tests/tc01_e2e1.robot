@@ -14,10 +14,7 @@ TC-01 E2E test -pozitivni test zakladni funkcionality eshopu
     #product detail
     Wait Until Element Is Visible    ${vydra_url}
     Click Element    ${vydra_url}
-    Element Should Contain    ${vydra_title}    ${productName}    
-    Element Should Contain    ${vydra_price}    ${productPrice}    
-    Page Should Contain Element    ${vydra_short_description}    
-    Page Should Contain Element    ${vydra_qty}    
+    Check Product Detail Basic Info
     Page Should Contain Element    ${vydra_add_to_cart}    
     
     #success message display

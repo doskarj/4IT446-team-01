@@ -12,18 +12,24 @@ TC-05 Vložení produku do košíku z detailu produktu
     
     Check for product in list
     
-   Add product to shopping cart from product list
+    Click Element    ${vydra_url}
+
+    ${url}=    Get Location
+    Should Be Equal    ${url}    ${product_page_vydra}
+    Check Product Detail Basic Info
+    
+    Click Button    ${vydra_add_to_cart}
     Valid success message
     
     Click Button    ${success_msg_continue}
     Wait Until Element Is Not Visible    ${success_msg_containter}   
     
-    Add product to shopping cart from product list
+    Click Element    ${vydra_add_to_cart}
     Valid success message
     
     Wait Until Element Is Not Visible    ${success_msg_containter} 
 
-    Add product to shopping cart from product list
+    Click Element    ${vydra_add_to_cart}
     Wait Until Element Is Visible    ${success_msg_containter} 
     
     Step from success message to shopping cart

@@ -6,13 +6,13 @@ Resource    ../objects/objects_search.txt
 Resource    ../objects/objects_success_msg.txt
 Resource    ../objects/objects_shopping_cart.txt
 *** Keywords ***
-Open browser to Zoo eshop
-    Open Browser    https://eshop.zoopraha.cz    browser=chrome
+Open Browser To Zoo Eshop
+    Open Browser    ${eshop_url}    browser=chrome
     Maximize Browser Window
     ${page_title}=    Get Title
     Should Contain    ${page_title}    ${eshop_page_title}
     
-Navigate to souveniers/magnets
+Navigate To Souveniers/magnets
     Wait Until Element Is Visible    ${suveniers_url}
     Click Element    ${suveniers_url}
     Wait Until Element Is Visible    ${magnets_category}
@@ -22,28 +22,37 @@ Navigate to souveniers/magnets
     ${url}=    Get Location
     Should Be Equal    ${url}    ${magnets_page_url}
     
-Check for product in list
+Check For Product In List
     Wait Until Element Is Visible    ${vydra_url}
     Element Text Should Be    ${product_list_item}    ${product_name}
     Element Should Contain    xpath=//div[@class='item-area' and //h2/a[@title='${product_name}']]//span[@id='price-including-tax-1361']    ${product_price}
-    Page Should Contain Element    xpath=//div[@class='item-area' and //h2/a[@title='${product_name}']]//img[@alt='${productImgAlt}']
+    Page Should Contain Element    xpath=//div[@class='item-area' and //h2/a[@title='${product_name}']]//img[@alt='${product_img_alt}']
     
-Valid success message
+Valid Success Message
     Wait Until Element Is Visible    ${success_msg_containter}
     Element Should Contain    ${success_msg_product}    ${product_name}
     Page Should Contain Element    ${success_msg_checkout}
     Page Should Contain Element    ${success_msg_continue}
     
-Step from success message to shopping cart
+Step From Success Message To Shopping Cart
     Click Element    ${success_msg_checkout}
     Page Should Contain Element    ${shop_cart_table}
     
-Check header menu
+Check Header Menu
     Page Should Contain Element    ${header_menu}
     
-Add product to shopping cart from product list
+Add Product To Shopping Cart From Product List
      Mouse Over    xpath=//div[@class='item-area' and //h2/a[@title='${product_name}']]
     Click Link    xpath=//div[@class='item-area' and //h2/a[@title='${product_name}']]//a[@title='Přidat do košíku']
+    
+Check Product Detail Basic Info
+    Element Text Should Be    ${vydra_title}    ${productName}
+    Page Should Contain Element    ${vydra_img}    
+    Page Should Contain Element    ${vydra_availabilily}
+    Element Should Contain    ${vydra_price}    ${productPrice}
+    Page Should Contain Element    ${vydra_qty}
+    Page Should Contain Button    ${vydra_add_to_cart} 
+    
     
 Check Price
     [Arguments]    ${element_with_checked_price}    ${products_count}
