@@ -3,7 +3,7 @@
 ${step_one_content}    xpath=//div[@id='checkout-step-login']
 ${step_one_quest}    xpath=//div[@id='checkout-step-login']//input[@id='login:guest']
 ${step_one_continue}    xpath=//button[@id='onepage-guest-register-button']
-
+${step_one_title}    xpath=//li[@id="opc-login"] 
 
 #kontaktni udaje
 ${step_two_content}    xpath=//div[@id='checkout-step-billing']
@@ -22,21 +22,30 @@ ${step_two_email}    xpath=//input[@id='billing:email']
 ${step_two_city}    xpath=//input[@id='billing:city']
 ${step_two_country_id}    xpath=//input[@id='billing:country_id']
 ${step_two_telephone}    xpath=//input[@id='billing:telephone']
-${step_two_continue}    xpath=//div[@id='billing-buttons-container']/button[@title='Pokračovat']
+${step_two_continue}    xpath=//div[@id='billing-buttons-container']/button[@title='PokraÄŤovat']
+${step_two_title}    xpath=//li[@id="opc-billing"]    
+
+#dodaci udaje
+${step_three_title}    xpath=//li[@id="opc-shipping"]  
 
 #zpusob dodani
 ${step_four_content}    xpath=//div[@id='checkout-step-shipping_method']
 ${step_four_freeshipping}    xpath=//div[@id='checkout-step-shipping_method']//input[@id='s_method_freeshipping_freeshipping']
 ${step_four_continue}    xpath=//div[@id='shipping-method-buttons-container']/button
+${step_four_title}    xpath=//li[@id="opc-shipping_method"]  
+
 
 #zpusob dodani a platby
 ${step_five_content}    xpath=//div[@id='checkout-step-payment']
 ${step_five_cash}    xpath=//input[@id='p_method_cashondelivery']
 ${step_five_continue}    xpath=//div[@id='payment-buttons-container']/button
+${step_five_title}    xpath=//li[@id="opc-payment"]  
+
 
 #shrnuti objednavky
 ${step_six_content}    xpath=//div[@id='checkout-step-review']
 ${step_six_product}    xpath=//table[@id='checkout-review-table']/tbody/tr/td/h3
 ${step_six_price}    xpath=//table[@id='checkout-review-table']/tbody/tr/td//span[@class='price']
 ${step_six_total_price}    xpath=//table[@id='checkout-review-table']/tfoot/tr[@class='grand-total last']/td//span[@class='price']
+${step_six_title}   xpath=//li[@id="opc-review"] 
 ${step_six_submit}    xpath=//div[@id='review-buttons-container']/button
