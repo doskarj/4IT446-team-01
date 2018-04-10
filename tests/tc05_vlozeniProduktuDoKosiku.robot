@@ -36,7 +36,7 @@ TC-05 Vložení produku do košíku z detailu produktu
     Check header menu
     
     Page Should Contain Element    ${shop_cart_table}//tr[td/a[@title='${product_name}']]//div[@class='qty-holder']/input[@value='${product_quantity_from_detail}']
-    Check Price    ${shop_cart_total_price}    ${product_quantity_from_detail}
+    Check Price    ${shop_cart_total_price}    ${product_quantity_from_detail}    ${product_price}
     
     Remove From Cart And Close Browser
     

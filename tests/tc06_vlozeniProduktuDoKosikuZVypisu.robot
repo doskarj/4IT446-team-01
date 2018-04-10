@@ -15,13 +15,13 @@ TC06 - Vlozeni produktu do kosiku z vypisu
     Click Button    ${success_msg_continue}
     Wait Until Element Is Not Visible    ${success_msg_containter}   
     
-    Check price    ${shop_cart_price_mouseover}    ${product_quantity_from_list}
+    Check price    ${shop_cart_price_mouseover}    ${product_quantity_from_list}    ${product_price}
     
     Mouse Over	${shop_cart_mouseover}
     Click Element     ${shop_cart_to_cart}
     Check header menu
     
     Page Should Contain Element    ${shop_cart_table}//tr[td/a[@title='${product_name}']]//div[@class='qty-holder']/input[@value='${product_quantity_from_list}']
-    Check Price    ${shop_cart_total_price}    ${product_quantity_from_list}
+    Check Price    ${shop_cart_total_price}    ${product_quantity_from_list}    ${product_price}
     
     Remove From Cart And Close Browser

@@ -7,7 +7,7 @@ Resource    ../objects/objects_success_msg.txt
 Resource    ../objects/objects_shopping_cart.txt
 *** Keywords ***
 Open Browser To Zoo Eshop
-    Open Browser    ${eshop_url}    browser=chrome
+    Open Browser    https://eshop.zoopraha.cz    browser=chrome
     Maximize Browser Window
     ${page_title}=    Get Title
     Should Contain    ${page_title}    ${eshop_page_title}
@@ -55,8 +55,8 @@ Check Product Detail Basic Info
     
     
 Check Price
-    [Arguments]    ${element_with_checked_price}    ${products_count}
-    ${number}=    Convert To Integer    ${product_price}    
+    [Arguments]    ${element_with_checked_price}    ${products_count}    ${price_per_unit}
+    ${number}=    Convert To Integer    ${price_per_unit}    
     ${total_price}=    Evaluate    ${number}*${products_count}
     ${total_price_string}=    Convert To String    ${total_price}
     Element Should Contain    ${element_with_checked_price}    ${total_price_string}
