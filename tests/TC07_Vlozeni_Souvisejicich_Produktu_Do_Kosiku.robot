@@ -24,8 +24,8 @@ TC-07 Vlozeni Produktu Do Kosiku
     Page Should Contain Element    ${vydra_related}   
     
     #6
-    Page Should Contain Element    ${vydra_related_products}
-    Click Element    ${vydra_related_products}   
+    Page Should Contain Checkbox    ${vydra_related_products}
+    Execute Javascript    document.getElementById('related-checkbox740').click()
     
     #7
     Click Element    ${vydra_add_to_cart}
