@@ -57,3 +57,28 @@ TC-08 Vyplneni kroku moznosti nakupu
     Click button    ${step_one_continue}
     Wait Until Page Contains Element    ${step_two_active}    
     
+TC-09 Vyplneni kroku kontaktni udaje  
+    Wait Until Page Contains Element    ${step_two_active}    
+    
+    Check Fields For Contact Details
+    Radio Button Should Be Set To    ${shop_process_two_radio_name}    ${shop_process_two_radio_value}    
+    Invalid Continue Step Two Check   
+    
+    Input Text    ${step_two_first_name}    ${firstName}   
+    Input Text    ${step_two_last_name}    ${lastName}     
+    Invalid Continue Step Two Check 
+    
+    Input Text    ${step_two_email}    ${email_invalid_1}      
+    Invalid Continue Step Two Check With Advice 
+     
+    Input Text    ${step_two_email}    ${email_invalid_2}  
+    Invalid Continue Step Two Check With Advice 
+     
+    Input Text    ${step_two_email}    ${email}  
+    Invalid Continue Step Two Check
+    
+    Input Text    ${step_two_street1}    ${street}         
+    Input Text    ${step_two_city}    ${city}              
+    Input Text    ${step_two_telephone}    ${telephone}    
+    Click Button    ${step_two_continue}                   
+    Wait Until Element Is Visible    ${step_four_content}  

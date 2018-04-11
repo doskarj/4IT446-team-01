@@ -5,6 +5,7 @@ Resource    ../objects/objects_vydra.txt
 Resource    ../objects/objects_search.txt
 Resource    ../objects/objects_success_msg.txt
 Resource    ../objects/objects_shopping_cart.txt
+Resource    ../objects/objects_shop_process.txt
 *** Keywords ***
 Open Browser To Zoo Eshop
     Open Browser    https://eshop.zoopraha.cz    browser=chrome
@@ -71,5 +72,22 @@ Shopping Cart Basic Check
     Element Should Contain    ${shop_cart_price}    ${product_price}
     Page Should Contain Element    ${shop_cart_qty_1}
     Element Should Contain    ${shop_cart_total_price}    ${product_price}
+    
+Check Fields For Contact Details
+    Page Should Contain Element    ${step_two_first_name}    
+    Page Should Contain Element    ${step_two_last_name}    
+    Page Should Contain Element    ${step_two_email}    
+    Page Should Contain Element    ${step_two_street1}    
+    Page Should Contain Element    ${step_two_city}    
+    Page Should Contain Element    ${step_two_psc}    
+    Page Should Contain Element    ${step_two_telephone}   
  
-  
+Invalid Continue Step Two Check 
+    Click Button    ${step_two_continue}
+    Wait Until Page Contains Element    ${step_two_active}  
+    
+Invalid Continue Step Two Check With Advice
+    Invalid Continue Step Two Check
+    Page Should Contain Element    ${step_two_validation_advice}   
+    
+    

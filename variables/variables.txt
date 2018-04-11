@@ -29,3 +29,9 @@ ${shopping_cart_url}    https://eshop.zoopraha.cz/checkout/cart/
 ${shop_process_url}    https://eshop.zoopraha.cz/checkout/onepage/
 
 ${shop_process_one_alert}    Prosím zaregistrujte se, nebo pokračujte jako host
+
+${shop_process_two_radio_name}    billing[use_for_shipping]
+${shop_process_two_radio_value}    1
+
+${email_invalid_1}    ggg
+${email_invalid_2}    ggg@gggg
