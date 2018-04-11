@@ -65,3 +65,11 @@ Remove From Cart And Close Browser
     Click Link    ${shop_cart_table}//tr[td/a[@title='${product_name}']]//a[@title='Odstranit položku']
     Page Should Contain    V košíku nejsou žádné položky.       
     Close Browser
+    
+Shopping Cart Basic Check
+    Element Should Contain    ${shop_cart_title}    ${product_name}
+    Element Should Contain    ${shop_cart_price}    ${product_price}
+    Page Should Contain Element    ${shop_cart_qty_1}
+    Element Should Contain    ${shop_cart_total_price}    ${product_price}
+ 
+  

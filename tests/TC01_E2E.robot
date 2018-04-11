@@ -26,10 +26,7 @@ TC-01 E2E test -pozitivni test zakladni funkcionality eshopu
     Check header menu
     
     
-    Element Should Contain    ${shop_cart_title}    ${product_name}
-    Element Should Contain    ${shop_cart_price}    ${product_price}
-    Page Should Contain Element    ${shop_cart_qty_1}
-    Element Should Contain    ${shop_cart_total_price}    ${product_price}
+    Shopping Cart Basic Check
     
     Click Button    ${shop_cart_checkout}
     Element Should Be Visible    ${step_one_content}

@@ -1,5 +1,5 @@
 *** Variables ***
-${eshop_page_title}    Zoo Praha | InternetovÃ½ obchod
+${eshop_page_title}    Zoo Praha | Internetový obchod
 ${page_title_magnets}    Magnetky
 ${product_name}    Magnetka s motivem vydry
 ${related_product_name}    https://eshop.zoopraha.cz/magnetka-s-blockem-gorila.html
@@ -26,3 +26,6 @@ ${product_quantity_from_detail}    3
 ${product_quantity_from_list}    1
 
 ${shopping_cart_url}    https://eshop.zoopraha.cz/checkout/cart/
+${shop_process_url}    https://eshop.zoopraha.cz/checkout/onepage/
+
+${shop_process_one_alert}    Prosím zaregistrujte se, nebo pokraèujte jako host

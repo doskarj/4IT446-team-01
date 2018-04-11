@@ -21,18 +21,19 @@ TC-08 Vyplneni kroku moznosti nakupu
     Valid Success Message
     
     #5
-    Click button    ${success_msg_checkout}
+    Step From Success Message To Shopping Cart
     Check Header Menu
-    Page Should Contain Element    ${shop_cart_qty_1}
-    Element Should Contain    ${shop_cart_total_price}    ${product_price}
+    Shopping Cart Basic Check
     
     #6
     Click button     ${shop_cart_checkout}
     Check Header Menu
-  
+    ${url}=    Get Location
+    Should Be Equal    ${url}    ${shop_process_url}
     
     
     #7
+    Page Should Contain Element    ${step_one_title}
     Page Should Contain Element    ${step_one_title}   
     Page Should Contain Element    ${step_two_title}    
     Page Should Contain Element    ${step_three_title}
@@ -41,10 +42,14 @@ TC-08 Vyplneni kroku moznosti nakupu
     Page Should Contain Element    ${step_six_title}  
 
     #8
-    
+    Page Should Contain Element    ${step_one_active}
+    Page Should Contain Element    ${step_one_quest}
+    Page Should Contain Element    ${step_one_register}        
     
     #9
     Click button    ${step_one_continue}
+    ${alert_message}=    Handle Alert 
+    Should Be Equal    ${shop_process_one_alert}    ${alert_message}       
     
     #10
     

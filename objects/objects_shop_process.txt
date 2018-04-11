@@ -2,8 +2,11 @@
 #moznosti nakupu
 ${step_one_content}    xpath=//div[@id='checkout-step-login']
 ${step_one_quest}    xpath=//div[@id='checkout-step-login']//input[@id='login:guest']
+${step_one_register}    xpath=//div[@id='checkout-step-login']//input[@id='login:register']
 ${step_one_continue}    xpath=//button[@id='onepage-guest-register-button']
-${step_one_title}    xpath=//li[@id="opc-login"] 
+${step_one_title}    xpath=//li[@id='opc-login'] 
+${step_one_active}    xpath=//li[@id='opc-login' and @class='section allow active'] 
+
 
 #kontaktni udaje
 ${step_two_content}    xpath=//div[@id='checkout-step-billing']
