@@ -50,8 +50,10 @@ TC-08 Vyplneni kroku moznosti nakupu
     Click button    ${step_one_continue}
     ${alert_message}=    Handle Alert 
     Should Be Equal    ${shop_process_one_alert}    ${alert_message}       
+    Page Should Contain Element    ${step_one_active}
     
     #10
-    
+    Click Element    ${step_one_quest}
     Click button    ${step_one_continue}
+    Wait Until Page Contains Element    ${step_two_active}    
     
