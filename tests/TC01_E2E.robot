@@ -58,8 +58,9 @@ TC-01 E2E test -pozitivni test zakladni funkcionality eshopu
     Click Button    ${step_two_continue}
     Wait Until Element Is Visible    ${step_four_content}    
     
-    Wait Until Element Is Visible    ${step_four_freeshipping}    
-    Click Element    ${step_four_freeshipping}
+    Wait Until Element Is Visible    ${step_four_freeshipping}  
+    Execute Javascript    document.getElementById(${step_four_freeshipping_js}).click()  
+    #Click Element    ${step_four_freeshipping}
     Click Button    ${step_four_continue}
     Wait Until Element Is Visible    ${step_five_content}    
 
