@@ -35,3 +35,7 @@ ${shop_process_two_radio_value}    1
 
 ${email_invalid_1}    ggg
 ${email_invalid_2}    ggg@gggg
+
+${shop_process_four_alert}	Vyberte prosím způsob doručení.
+
+${shop_process_five_alert}    Vyberte prosím způsob platby a doručení.
