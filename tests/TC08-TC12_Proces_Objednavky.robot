@@ -82,3 +82,56 @@ TC-09 Vyplneni kroku kontaktni udaje
     Input Text    ${step_two_telephone}    ${telephone}    
     Click Button    ${step_two_continue}                   
     Wait Until Element Is Visible    ${step_four_content}  
+
+
+
+TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
+    #1
+    Wait Until Element Is Visible    ${step_four_content} 
+    Page Should Contain Element    ${step_four_title}    
+    
+    #2
+    Page Should Contain Element    ${step_four_freeshipping}        
+    Page Should Contain Element    ${step_four_flatrate}
+            
+    
+    #3
+    Click Button    ${step_four_continue}        
+    ${alert_message}=    Handle Alert 
+    Should Be Equal    ${shop_process_four_alert}    ${alert_message}       
+    Page Should Contain Element    ${step_four_content}
+    
+    #4
+    Click Element    ${step_four_flatrate}    
+    Click Button    ${step_four_continue}
+    Page Should Contain Element    ${step_five_content}
+    Page Should Contain Element    ${step_five_title}   
+               
+    #5
+    #Page Should Contain Element    ${step_five_standard}
+    #Page Should Contain Element    ${step_five_cash_on_delivery}    
+    
+    #6
+    CLick Button    ${step_five_continue}
+    ${alert_message}=    Handle Alert    
+    Should Be Equal    ${shop_process_five_alert}    ${alert_message}
+    Page Should Contain Element    ${step_five_content}        
+    
+    #7
+    Click Element    ${step_five_standard}
+    #zkontrolovat hlášku
+    Page Should Contain Element    ${step_five_content}    
+    
+    #8
+    Click Element    ${step_five_cash_on_delivery}
+    #zkontrolovat hlášku
+    Page Should Contain Element    ${step_five_content}  
+    
+    #9
+    Click Button    ${step_five_continue}
+    Page Should Contain Element    ${step_six_content}
+    Page Should Contain Element    ${step_six_title}
+               
+    
+    #10
+    
