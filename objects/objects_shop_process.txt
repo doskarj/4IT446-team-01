@@ -40,6 +40,8 @@ ${step_four_freeshipping}    xpath=//div[@id='checkout-step-shipping_method']//i
 ${step_four_freeshipping_js}    's_method_freeshipping_freeshipping'
 ${step_four_continue}    xpath=//div[@id='shipping-method-buttons-container']/button
 ${step_four_title}    xpath=//li[@id="opc-shipping_method"]  
+${step_four_flatrate}    xpath=//div[@id='checkout-step-shipping_method']//input[@id='s_method_flatrate_flatrate']
+
 
 
 #zpusob dodani a platby
@@ -48,6 +50,9 @@ ${step_five_cash}    xpath=//input[@id='p_method_cashondelivery']
 ${step_five_continue}    xpath=//div[@id='payment-buttons-container']/button
 ${step_five_title}    xpath=//li[@id="opc-payment"]  
 
+${step_five_standard}	xpath=//div[@id='checkout-step-payment']//input[@id='p_method_gpwebpay_standard']
+${step_five_cash_on_delivery}  xpath=//div[@id='checkout-step-payment']//input[@id='p_method_phoenix_cashondelivery']
+   
 
 #shrnuti objednavky
 ${step_six_content}    xpath=//div[@id='checkout-step-review']
