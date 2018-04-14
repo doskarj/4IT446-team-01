@@ -93,6 +93,8 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
     #2
     Page Should Contain Element    ${step_four_freeshipping}        
     Page Should Contain Element    ${step_four_flatrate}
+    
+    #zkontolovat zda obsahují i cenu
             
     
     #3
@@ -108,10 +110,11 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
     Page Should Contain Element    ${step_five_title}   
                
     #5
-    #Page Should Contain Element    ${step_five_standard}
-    #Page Should Contain Element    ${step_five_cash_on_delivery}    
+    Wait Until Element Is Visible    ${step_five_standard}
+    Wait Until Element Is Visible    ${step_five_cash_on_delivery}    
     
     #6
+    Wait Until Element Is Visible    ${step_five_continue}
     CLick Button    ${step_five_continue}
     ${alert_message}=    Handle Alert    
     Should Be Equal    ${shop_process_five_alert}    ${alert_message}
@@ -119,12 +122,12 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
     
     #7
     Click Element    ${step_five_standard}
-    #zkontrolovat hlášku
+    #zkontrolovat hlĂˇĹˇku
     Page Should Contain Element    ${step_five_content}    
     
     #8
     Click Element    ${step_five_cash_on_delivery}
-    #zkontrolovat hlášku
+    #zkontrolovat hlĂˇĹˇku
     Page Should Contain Element    ${step_five_content}  
     
     #9
@@ -134,6 +137,15 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
                
     
     #10
+    # obsahuje správný produkt a cenu
+    # obsahuje cash on delivery - dobírka a správná cena
+    # správná celková cena
+    
+    
+    Element Should Contain    ${step_six_product}    ${product_name}    
+    Element Should Contain    ${step_six_price}    ${product_price}
+    Element Should Contain    ${step_six_total_price}    ${productPrice}
+    Page Should Contain    Dopravné (Česká pošta - poštovné a balné)
     
 TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
     #1
