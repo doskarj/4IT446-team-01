@@ -135,3 +135,49 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
     
     #10
     
+TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
+    #1
+    Wait Until Element Is Visible    ${step_four_content}
+    Page Should Contain Element    ${step_four_title}
+    #2
+    Page Should Contain Element    ${step_four_shipping_flatrate_u}    ${step_four_shipping_flatrate_u_price}
+    Page Should Contain Element    ${step_four_shipping_free_u}    ${step_four_shipping_free_u_price}
+    #4
+    Click Element    ${step_four_shipping_free_u}
+    Click Element    ${step_four_continue_u}
+    Page Should Contain Element    ${step_five_content}
+    Page Should Contain Element    ${step_five_title}
+    #5
+    Wait Until Page Contains Element    ${step_five_pay_u_card}
+    Page Should Contain Element    ${step_five_pay_u_card}
+    Wait Until Page Contains Element    ${step_five_pay_u_cashondelivery}
+    Page Should Contain Element    ${step_five_pay_u_cashondelivery}
+    #6
+    Wait Until Page Contains Element    ${step_five_continue_u}
+    Page Should Contain Element    ${step_five_continue_u}
+    #Click Element    ${step_five_continue_u}
+    #7
+    Wait Until Page Contains Element    ${step_five_pay_u_card}
+    Page Should Contain Element    ${step_five_pay_u_card}
+    Click Element    ${step_five_pay_u_card}
+    Page Should Contain Element    ${step_five_radiobutton_u}    ${step_five_radiobutton_u_message}
+    Page Should Contain Element    ${step_five_content}
+    Page Should Contain Element    ${step_five_title}
+    #8
+    Wait Until Page Contains Element    ${step_five_pay_u_cashondelivery}
+    Page Should Contain Element    ${step_five_pay_u_cashondelivery}
+    Click Element    ${step_five_pay_u_cashondelivery}
+    Wait Until Page Contains Element    ${step_five_continue_u}
+    Page Should Contain Element    ${step_five_continue_u}
+    Click Element    ${step_five_continue_u}
+    Page Should Contain Element    ${step_six_title}
+    Page Should Contain Element    ${step_six_content}
+    #9
+    Wait Until Page Contains Element    ${step_six_product_u}
+    Page Should Contain Element    ${step_six_product_u}    ${product_name}
+    Page Should Contain Element    ${step_six_product_u}    ${product_price}
+    Wait Until Page Contains Element    ${step_six_delivery_u}
+    Page Should Contain Element    ${step_six_delivery_u}    ${step_six_delivery_u_price}
+    Wait Until Page Contains Element    ${step_six_altogether_u}
+    Page Should Contain Element    ${step_six_altogether_u}    ${step_six_altogether_u_price}
+    Page Should Not Contain    ${step_six_no_fee_u}
