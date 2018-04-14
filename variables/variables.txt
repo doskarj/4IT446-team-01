@@ -39,3 +39,9 @@ ${email_invalid_2}    ggg@gggg
 ${shop_process_four_alert}	Vyberte prosím způsob doručení.
 
 ${shop_process_five_alert}    Vyberte prosím způsob platby a doručení.
+${step_four_shipping_flatrate_u_price}    86,00 Kč
+${step_four_shipping_free_u_price}    0,00 Kč
+${step_five_radiobutton_u_message}    Po odeslání objednávky budete přesměrování na službu GlobalPayments.
+${step_six_delivery_u_price}     0,00 Kč
+${step_six_altogether_u_price}    35,00 Kč
+${step_six_no_fee_u}    Cash on Delivery fee
