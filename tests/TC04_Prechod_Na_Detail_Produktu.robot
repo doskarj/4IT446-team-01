@@ -7,18 +7,22 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 TC-04 Prechod na detail produktu pres menu
-    #1
+    #1 Otevreni stranky e-shopu
     Open browser to Zoo eshop
-    #2
+    
+    #2 Prechod na vypis s magnetkami
     Navigate to souveniers/magnets
-    #3
+    
+    #3 Kontola vyskytu testovaciho produktu
     Check for product in list
-    #4
+    
+    #4 Prechod na detail produktu
     Click Element    ${vydra_url}
-    ${url}=    Get Location
-    Should Be Equal    ${url}    ${product_page_vydra}
-    #5
+    Check URL    ${product_page_vydra}
+    
+    #5 Kontrola detailu produktu
     Check Product Detail Basic Info
-    Page Should Contain Element    ${vydra_related}                           
+    Page Should Contain Element    ${vydra_related} 
+    Page Should Contain Element    ${vydra_short_description}                              
     
   
