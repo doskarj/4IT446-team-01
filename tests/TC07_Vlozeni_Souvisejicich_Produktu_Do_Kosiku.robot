@@ -3,6 +3,7 @@ Library    Selenium2Library
 Resource    ../keywords/keywords.txt
 Resource    ../variables/variables.txt
 
+Test Teardown    Close Browser
 *** Test Cases ***
 TC-07 Vlozeni Produktu Do Kosiku
      #1

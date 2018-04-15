@@ -18,7 +18,7 @@ ${found_product_title1}    Pexeso Zoo Praha II
 ${found_product_title2}    Pexeso Let it grow
 
 ${search_category}    51
-
+${search_message}    Hledání nenašlo žádné výsledky.
 
 ${product_img_alt}    Magnetka Vydra
 ${product_page_vydra}    https://eshop.zoopraha.cz/suvenyry/magnetky-128/magnetka-vydra.html
