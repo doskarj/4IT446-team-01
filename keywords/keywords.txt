@@ -90,4 +90,10 @@ Invalid Continue Step Two Check With Advice
     Invalid Continue Step Two Check
     Page Should Contain Element    ${step_two_validation_advice}   
     
+Step Six Basic Check
+    [Arguments]    ${name_product}    ${price_per_unit}    ${total_price}
+    Element Should Contain    ${step_six_product}    ${name_product}    
+    Element Should Contain    ${step_six_price}    ${price_per_unit}
+    Element Should Contain    ${step_six_total_price}    ${total_price}
+    Page Should Contain Element    ${step_six_submit}
     

@@ -92,10 +92,8 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
     Page Should Contain Element    ${step_four_active}       
     
     #2
-    Page Should Contain Element    ${step_four_freeshipping}        
-    Page Should Contain Element    ${step_four_flatrate}
-    
-    #zkontolovat zda obsahují i cenu
+    Page Should Contain Element    ${step_four_freeshipping}    ${step_shipping_flatrate_price}
+    Page Should Contain Element    ${step_four_flatrate}    ${step_shipping_free_price}
             
     
     #3
@@ -139,11 +137,9 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
     #10
     Wait Until Element Is Visible    ${step_six_active}    
     Wait Until Element Is Visible    ${step_six_content} 
-    Element Should Contain    ${step_six_product}    ${product_name}    
-    Element Should Contain    ${step_six_price}    ${product_price}
-    Element Should Contain    ${step_six_total_price}    ${step_six_product_price_with_fee}
+    Step Six Basic Check    ${product_name}    ${product_price}    ${step_six_product_price_with_fee}
     Page Should Contain    ${step_six_shipping_method_with_fee}
-    
+    Page Should Contain    ${step_shipping_flatrate_price}    
 TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
     Click Element    ${to_step_four}
     #1
@@ -154,8 +150,8 @@ TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
     Page Should Contain Element    ${step_four_title}
     
     #2
-    Page Should Contain Element    ${step_four_shipping_flatrate_u}    ${step_four_shipping_flatrate_u_price}
-    Page Should Contain Element    ${step_four_shipping_free_u}    ${step_four_shipping_free_u_price}
+    Page Should Contain Element    ${step_four_shipping_flatrate_u}    ${step_shipping_flatrate_price}
+    Page Should Contain Element    ${step_four_shipping_free_u}    ${step_shipping_free_price}
     
     #4
     Click Element    ${step_four_shipping_free_u}
@@ -188,19 +184,26 @@ TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
     #8
     Wait Until Page Contains Element    ${step_five_pay_u_cashondelivery}
     Click Element    ${step_five_pay_u_cashondelivery}
-    Wait Until Page Contains Element    ${step_five_continue_u}
-    Page Should Contain Element    ${step_five_continue_u}
-    Click Element    ${step_five_continue_u}
+    Wait Until Page Contains Element    ${step_five_continue}
+    Page Should Contain Element    ${step_five_continue}
+    Click Element    ${step_five_continue}
     Wait Until Element Is Visible    ${step_six_active}
     
     #9
-    Wait Until Page Contains Element    ${step_six_product_u}
-    Page Should Contain Element    ${step_six_product_u}    ${product_name}
-    Page Should Contain Element    ${step_six_product_u}    ${product_price}
+    Wait Until Element Is Visible    ${step_six_content}    
+    Step Six Basic Check    ${product_name}    ${product_price}    ${product_price}
     Wait Until Page Contains Element    ${step_six_delivery_u}
-    Page Should Contain Element    ${step_six_delivery_u}    ${step_six_delivery_u_price}
-    Wait Until Page Contains Element    ${step_six_altogether_u}
-    Page Should Contain Element    ${step_six_altogether_u}    ${step_six_altogether_u_price}
+    Page Should Contain Element    ${step_six_delivery_u}    ${step_shipping_free_price}
+
+
+    
+    #Wait Until Page Contains Element    ${step_six_product_u}
+    #Page Should Contain Element    ${step_six_product_u}    ${product_name}
+    #Page Should Contain Element    ${step_six_product_u}    ${product_price}
+    #Wait Until Page Contains Element    ${step_six_delivery_u}
+    #Page Should Contain Element    ${step_six_delivery_u}    ${step_six_delivery_u_price}
+    #Wait Until Page Contains Element    ${step_six_altogether_u}
+    #Page Should Contain Element    ${step_six_altogether_u}    ${step_six_altogether_u_price}
     
 TC-12 Prechod mezi kroky objednavky
     #1
@@ -241,9 +244,7 @@ TC-12 Prechod mezi kroky objednavky
     #9
     Click Element    ${step_five_continue}
     Wait Until Element Is Visible    ${step_six_active}
-    Element Should Contain    ${step_six_product}    ${product_name}    
-    Element Should Contain    ${step_six_price}    ${product_price}
-    Element Should Contain    ${step_six_total_price}    ${productPrice}
+    Step Six Basic Check    ${product_name}    ${product_price}    ${product_price}
     Page Should Contain    ${step_six_shipping_method_free}
     Page Should Contain Element    ${step_six_submit}   
     
