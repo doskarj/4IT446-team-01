@@ -71,7 +71,7 @@ Shopping Cart Basic Check
     Element Should Contain    ${shop_cart_title}    ${product_name}
     Element Should Contain    ${shop_cart_price}    ${product_price}
     Page Should Contain Element    ${shop_cart_qty_1}
-    Element Should Contain    ${shop_cart_total_price}    ${product_price}
+    Check Price    ${shop_cart_total_price}    1    ${product_price}
     
 Check Fields For Contact Details
     Page Should Contain Element    ${step_two_first_name}    
