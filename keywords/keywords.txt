@@ -101,3 +101,8 @@ Check URL
     [Arguments]    ${expected_url}
     ${url}=    Get Location
     Should Be Equal    ${url}    ${expected_url}
+    
+Check Alert Message
+    [Arguments]    ${expected_message}
+    ${alert_message}=    Handle Alert 
+    Should Be Equal    ${expected_message}    ${alert_message}   
