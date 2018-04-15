@@ -206,4 +206,4 @@ TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
     Page Should Contain Element    ${step_six_delivery_u}    ${step_six_delivery_u_price}
     Wait Until Page Contains Element    ${step_six_altogether_u}
     Page Should Contain Element    ${step_six_altogether_u}    ${step_six_altogether_u_price}
-    #Page Should Not Contain    ${step_six_no_fee_u}
+    
