@@ -81,14 +81,15 @@ TC-09 Vyplneni kroku kontaktni udaje
     Input Text    ${step_two_city}    ${city}              
     Input Text    ${step_two_telephone}    ${telephone}    
     Click Button    ${step_two_continue}                   
-    Wait Until Element Is Visible    ${step_four_content}  
+    Wait Until Element Is Visible    ${step_four_active}  
 
 
 
 TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
     #1
     Wait Until Element Is Visible    ${step_four_content} 
-    Page Should Contain Element    ${step_four_title}    
+    Page Should Contain Element    ${step_four_title} 
+    Page Should Contain Element    ${step_four_active}       
     
     #2
     Page Should Contain Element    ${step_four_freeshipping}        
@@ -106,8 +107,7 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
     #4
     Click Element    ${step_four_flatrate}    
     Click Button    ${step_four_continue}
-    Page Should Contain Element    ${step_five_content}
-    Page Should Contain Element    ${step_five_title}   
+    Wait Until Element Is Visible    ${step_five_active}       
                
     #5
     Wait Until Element Is Visible    ${step_five_standard}
@@ -122,12 +122,12 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
     
     #7
     Click Element    ${step_five_standard}
-    #zkontrolovat hlĂˇĹˇku
+    Page Should Contain Element    ${step_five_standard_message}    
     Page Should Contain Element    ${step_five_content}    
     
     #8
     Click Element    ${step_five_cash_on_delivery}
-    #zkontrolovat hlĂˇĹˇku
+    Page Should Contain Element    ${step_five_cash_on_delivery_message}    
     Page Should Contain Element    ${step_five_content}  
     
     #9
@@ -137,20 +137,18 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
                
     
     #10
-    # obsahuje správný produkt a cenu
-    # obsahuje cash on delivery - dobírka a správná cena
-    # správná celková cena
-    
-    
+    Wait Until Element Is Visible    ${step_six_active}    
+    Wait Until Element Is Visible    ${step_six_content} 
     Element Should Contain    ${step_six_product}    ${product_name}    
     Element Should Contain    ${step_six_price}    ${product_price}
-    Element Should Contain    ${step_six_total_price}    ${productPrice}
+    Element Should Contain    ${step_six_total_price}    ${step_six_product_price_with_fee}
     Page Should Contain    Dopravné (Česká pošta - poštovné a balné)
     
 TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
+    Click Element    ${to_step_four}
     #1
     Wait Until Page Contains Element    ${step_four_title}
-    Page Should Contain Element    ${step_four_title}
+    Page Should Contain Element    ${step_four_active}
     Click Element    ${step_four_title}
     Wait Until Element Is Visible    ${step_four_content}
     Page Should Contain Element    ${step_four_title}
@@ -162,7 +160,8 @@ TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
     #4
     Click Element    ${step_four_shipping_free_u}
     Click Element    ${step_four_continue_u}
-    Page Should Contain Element    ${step_five_content}
+    Wait Until Element Is Visible    ${step_five_active}
+    Page Should Contain Element    ${step_five_content}    
     Page Should Contain Element    ${step_five_title}
     
     #5
@@ -177,26 +176,22 @@ TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
     Click Element    ${step_five_continue_u}
     ${alert_message}=    Handle Alert
     Should Be Equal    ${shop_process_five_alert}    ${alert_message}
-    Page Should Contain Element    ${step_five_content}
-    Page Should Contain Element    ${step_five_title}
+    Page Should Contain Element    ${step_five_active}
 
     #7
     Wait Until Page Contains Element    ${step_five_pay_u_card}
     Page Should Contain Element    ${step_five_pay_u_card}
     Click Element    ${step_five_pay_u_card}
     Page Should Contain Element    ${step_five_radiobutton_u}    ${step_five_radiobutton_u_message}
-    Page Should Contain Element    ${step_five_content}
-    Page Should Contain Element    ${step_five_title}
+    Page Should Contain Element    ${step_five_active}
     
     #8
     Wait Until Page Contains Element    ${step_five_pay_u_cashondelivery}
-    Page Should Contain Element    ${step_five_pay_u_cashondelivery}
     Click Element    ${step_five_pay_u_cashondelivery}
     Wait Until Page Contains Element    ${step_five_continue_u}
     Page Should Contain Element    ${step_five_continue_u}
     Click Element    ${step_five_continue_u}
-    Page Should Contain Element    ${step_six_title}
-    Page Should Contain Element    ${step_six_content}
+    Wait Until Element Is Visible    ${step_six_active}
     
     #9
     Wait Until Page Contains Element    ${step_six_product_u}
@@ -207,3 +202,18 @@ TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
     Wait Until Page Contains Element    ${step_six_altogether_u}
     Page Should Contain Element    ${step_six_altogether_u}    ${step_six_altogether_u_price}
     
+TC-12 Prechod mezi kroky objednavky
+    #1
+    Page Should Contain Element    ${step_six_active}    
+    Page Should Contain Element    ${step_six_content}  
+    
+    #2
+    Click Element    ${to_step_two}
+    Wait Until Element Is Visible    ${step_two_active}
+    
+    #3
+    Clear Element Text    ${step_two_first_name}
+    Input Text    ${step_two_first_name}    ${new_first_name}
+    Click element    ${step_two_continue}
+    Wait Until Element Is Visible    ${step_four_active}    
+          

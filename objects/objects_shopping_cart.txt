@@ -13,13 +13,4 @@ ${shop_cart_second_price}    xpath=(//tr[@class='last even']//span[@class='price
 ${shop_cart_first_plus}    xpath=//tr[@class='first odd']//a[@class='table_qty_inc']
 ${shop_cart_second_minus}    xpath=//tr[@class='last even']//a[@class='table_qty_dec']
 ${shop_cart_update}    xpath=//button[@class='button btn-update']
-${step_four_shipping_flatrate_u}    //*[@id="s_method_flatrate_flatrate"]
-${step_four_shipping_free_u}    //*[@id="s_method_freeshipping_freeshipping"]
-${step_four_continue_u}    //*[@id="shipping-method-buttons-container"]/button
-${step_five_pay_u_card}    //*[@id="p_method_gpwebpay_standard"]
-${step_five_pay_u_cashondelivery}    //*[@id="p_method_cashondelivery"]
-${step_five_continue_u}    //*[@id="payment-buttons-container"]/button/span/span
-${step_five_radiobutton_u}    //*[@id="payment_form_gpwebpay_standard"]
-${step_six_delivery_u}    //*[@id="checkout-review-table"]/tfoot/tr[2]
-${step_six_product_u}    //*[@id="checkout-review-table"]/tbody/tr
-${step_six_altogether_u}    //*[@id="checkout-review-table"]/tfoot/tr[4]
+

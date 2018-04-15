@@ -6,6 +6,7 @@ ${related_product_name}    https://eshop.zoopraha.cz/magnetka-s-blockem-gorila.h
 ${product_price}    35
 ${related_product_price}    40
 ${first_name}    Pavel
+${new_first_name}    Petr
 ${last_name}    Racek
 ${email}    pavel@mail.com
 ${street}    U zvonu
@@ -45,3 +46,5 @@ ${step_four_shipping_free_u_price}    0,00 Kč
 ${step_five_radiobutton_u_message}    Po odeslání objednávky budete přesměrování na službu GlobalPayments.
 ${step_six_delivery_u_price}     0,00 Kč
 ${step_six_altogether_u_price}    35,00 Kč
+
+${step_six_product_price_with_fee}    156
