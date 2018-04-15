@@ -51,3 +51,12 @@ ${step_six_product_price_with_fee}    156
 
 ${step_six_shipping_method_free}    Dopravné (Osobní odběr)
 ${step_six_shipping_method_with_fee}    Dopravné (Česká pošta - poštovné a balné)
+
+${step_two_radio_lb}    Zaslat Na Tuto Adresu
+${step_two_fn_lb}    Jméno
+${step_two_ln_lb}    Příjmení
+${step_two_addr_lb}    Adresa
+${step_two_mail_lb}    Emailová Adresa
+${step_two_ct_lb}    Město
+${step_two_cnr_lb}    Země
+${step_two_phon_lb}    Telefon

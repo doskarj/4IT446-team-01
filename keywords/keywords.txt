@@ -97,3 +97,7 @@ Step Six Basic Check
     Element Should Contain    ${step_six_total_price}    ${total_price}
     Page Should Contain Element    ${step_six_submit}
     
+Check URL
+    [Arguments]    ${expected_url}
+    ${url}=    Get Location
+    Should Be Equal    ${url}    ${expected_url}
