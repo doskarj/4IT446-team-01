@@ -142,7 +142,7 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
     Element Should Contain    ${step_six_product}    ${product_name}    
     Element Should Contain    ${step_six_price}    ${product_price}
     Element Should Contain    ${step_six_total_price}    ${step_six_product_price_with_fee}
-    Page Should Contain    Dopravné (Česká pošta - poštovné a balné)
+    Page Should Contain    ${step_six_shipping_method_with_fee}
     
 TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
     Click Element    ${to_step_four}
@@ -215,5 +215,43 @@ TC-12 Prechod mezi kroky objednavky
     Clear Element Text    ${step_two_first_name}
     Input Text    ${step_two_first_name}    ${new_first_name}
     Click element    ${step_two_continue}
-    Wait Until Element Is Visible    ${step_four_active}    
+    Wait Until Element Is Visible    ${step_four_active}
+    Wait Until Element Is Visible    ${changed_first_name}    
+    
+    #4
+    Click Element    ${to_step_two}
+    Wait Until Element Is Visible    ${step_two_active}
+    
+    #5
+    Click element    ${step_two_continue}
+    Wait Until Element Is Visible    ${step_four_active}  
+    
+    #6
+    Click Element    ${step_four_continue}
+    Wait Until Element Is Visible    ${step_five_active}
+    
+    #7
+    Click Element    ${to_step_four}
+    Wait Until Element Is Visible    ${step_four_active}
+    
+    #8
+    Click Element    ${step_four_continue}
+    Wait Until Element Is Visible    ${step_five_active}
+    
+    #9
+    Click Element    ${step_five_continue}
+    Wait Until Element Is Visible    ${step_six_active}
+    Element Should Contain    ${step_six_product}    ${product_name}    
+    Element Should Contain    ${step_six_price}    ${product_price}
+    Element Should Contain    ${step_six_total_price}    ${productPrice}
+    Page Should Contain    ${step_six_shipping_method_free}
+    Page Should Contain Element    ${step_six_submit}   
+    
+    #10
+    Click Element    ${step_six_forgot_item}
+     ${url}=    Get Location
+    Should Be Equal    ${url}    ${shopping_cart_url}
+    
+    #11
+    Remove From Cart And Close Browser 
           

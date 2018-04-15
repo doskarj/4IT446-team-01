@@ -69,7 +69,7 @@ TC-01 E2E test -pozitivni test zakladni funkcionality eshopu
     Element Should Contain    ${step_six_product}    ${product_name}    
     Element Should Contain    ${step_six_price}    ${product_price}
     Element Should Contain    ${step_six_total_price}    ${productPrice}
-    Page Should Contain    Dopravné (Osobní odběr)
+    Page Should Contain    ${step_six_shipping_method_free}
     Page Should Contain Element    ${step_six_submit}        
     
     Close Browser

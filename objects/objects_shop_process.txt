@@ -63,9 +63,11 @@ ${step_six_total_price}    xpath=//table[@id='checkout-review-table']/tfoot/tr[@
 ${step_six_title}   xpath=//li[@id="opc-review"] 
 ${step_six_submit}    xpath=//div[@id='review-buttons-container']/button
 ${step_six_active}    xpath=//li[@id='opc-review' and @class='section allow active']
+${step_six_forgot_item}    xpath=//p[@class='forgot-item']/a[@href='https://eshop.zoopraha.cz/checkout/cart/'] 
 
 #prechod
 ${to_step_two}    xpath=//div[@class='step-title']/span[@class='number' and text()=2]
+${changed_first_name}    xpath=//div[@id='billing-progress-opcheckout']/dd[@class='complete' and contains(address,'Petr')]
 ${to_step_four}    xpath=//div[@class='step-title']/span[@class='number' and text()=4]
 ${to_step_five}    xpath=//div[@class='step-title']/span[@class='number' and text()=5]
 

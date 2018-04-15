@@ -48,3 +48,6 @@ ${step_six_delivery_u_price}     0,00 Kč
 ${step_six_altogether_u_price}    35,00 Kč
 
 ${step_six_product_price_with_fee}    156
+
+${step_six_shipping_method_free}    Dopravné (Osobní odběr)
+${step_six_shipping_method_with_fee}    Dopravné (Česká pošta - poštovné a balné)
