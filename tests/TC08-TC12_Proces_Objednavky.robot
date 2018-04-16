@@ -66,7 +66,8 @@ TC-09 Vyplneni kroku kontaktni udaje
     
     #3 Vyplneni jmena a prijmeni
     Input Text    ${step_two_first_name}    ${firstName}   
-    Input Text    ${step_two_last_name}    ${lastName}     
+    Input Text    ${step_two_last_name}    ${lastName}  
+    Wait Until Element Is Visible    ${step_two_continue}       
     Invalid Continue Step Two Check 
     
     #4 Vyplneni nevalidniho e-mailu
