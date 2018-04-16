@@ -5,6 +5,8 @@ Resource    ../variables/variables.txt
 Resource    ../objects/objects_shopping_cart.txt
 Resource    ../objects/objects_shop_process.txt
 
+
+
 *** Test Cases ***
 TC-08 Vyplneni kroku moznosti nakupu
     #1 Otevreni stranky e-shopu
@@ -140,58 +142,44 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
        
 TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
     Click Element    ${to_step_four}
-    #1
-    Wait Until Page Contains Element    ${step_four_title}
-    Page Should Contain Element    ${step_four_active}
-    Click Element    ${step_four_title}
+    #1 Kontrola ze aktualni krok je krok Zpusob dodani
+    Wait Until Page Contains Element    ${step_four_active}
     Wait Until Element Is Visible    ${step_four_content}
     Page Should Contain Element    ${step_four_title}
     
-    #2
-    Page Should Contain Element    ${step_four_shipping_flatrate_u}    ${step_shipping_flatrate_price}
-    Page Should Contain Element    ${step_four_shipping_free_u}    ${step_shipping_free_price}
+    #2 Kontrola moznosti zpusobu dodani
+    Page Should Contain Element    ${step_four_flatrate}    ${step_shipping_flatrate_price}
+    Page Should Contain Element    ${step_four_freeshipping}    ${step_shipping_free_price}
     
-    #4
-    Click Element    ${step_four_shipping_free_u}
-    Click Element    ${step_four_continue_u}
+    #3 Volba osobniho osdberu a prechod na dalsi krok
+    Click Element    ${step_four_freeshipping}
+    Click Element    ${step_four_continue}
     Wait Until Element Is Visible    ${step_five_active}
-    Page Should Contain Element    ${step_five_content}    
-    Page Should Contain Element    ${step_five_title}
+ 
+    #4 Kontrola moznosti platby
+    Wait Until Page Contains Element    ${step_five_standard}
+    Wait Until Page Contains Element    ${step_five_cash}
     
-    #5
-    Wait Until Page Contains Element    ${step_five_pay_u_card}
-    Page Should Contain Element    ${step_five_pay_u_card}
-    Wait Until Page Contains Element    ${step_five_pay_u_cashondelivery}
-    Page Should Contain Element    ${step_five_pay_u_cashondelivery}
-    
-    #6
-    Wait Until Page Contains Element    ${step_five_continue_u}
-    Page Should Contain Element    ${step_five_continue_u}
-    Click Element    ${step_five_continue_u}
-    ${alert_message}=    Handle Alert
-    Should Be Equal    ${shop_process_five_alert}    ${alert_message}
+    #5 Kontrola nemoznosti prechodu bez volby platby
+    Click Element    ${step_five_continue}
+    Check Alert Message    ${shop_process_five_alert}
     Page Should Contain Element    ${step_five_active}
 
-    #7
-    Wait Until Page Contains Element    ${step_five_pay_u_card}
-    Page Should Contain Element    ${step_five_pay_u_card}
-    Click Element    ${step_five_pay_u_card}
-    Page Should Contain Element    ${step_five_radiobutton_u}    ${step_five_radiobutton_u_message}
+    #6 Kontrola hlasky pod platbou kartou
+    Click Element    ${step_five_standard}
+    Page Should Contain Element    ${step_five_standard_message}    
+    Page Should Contain Element    ${step_five_content}
     Page Should Contain Element    ${step_five_active}
     
-    #8
-    Wait Until Page Contains Element    ${step_five_pay_u_cashondelivery}
-    Click Element    ${step_five_pay_u_cashondelivery}
-    Wait Until Page Contains Element    ${step_five_continue}
-    Page Should Contain Element    ${step_five_continue}
+    #7 Volba platby na miste a pokracovani na dalsi krok
+    Click Element    ${step_five_cash_on_delivery_free}
     Click Element    ${step_five_continue}
     Wait Until Element Is Visible    ${step_six_active}
     
-    #9
+    #8 Kontrola souhrnu objednavky
     Wait Until Element Is Visible    ${step_six_content}    
     Step Six Basic Check    ${product_name}    ${product_price}    ${product_price}
-    Wait Until Page Contains Element    ${step_six_delivery_u}
-    Page Should Contain Element    ${step_six_delivery_u}    ${step_shipping_free_price}
+    Page Should Contain Element    ${step_six_delivery}    ${step_shipping_free_price}
 
 
     
