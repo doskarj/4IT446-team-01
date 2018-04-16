@@ -13,6 +13,7 @@ TC-02 Vyhledavani zbozi pres vyhledavaci listu - pozitivni test
 
     #2 Vyhledani pres lupu
     Click Link    ${class_search_icon}
+    Wait Until Element Is Visible    ${input_search}    
     Input Text    ${input_search}    ${search_query}
     Wait Until Element Is Visible    ${input_search} 
     Click Button    ${button_search}

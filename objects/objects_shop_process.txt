@@ -26,7 +26,7 @@ ${step_two_city}    xpath=//input[@id='billing:city']
 ${step_two_psc}    xpath=//input[@id='billing:postcode']
 ${step_two_country_id}    xpath=//input[@id='billing:country_id']
 ${step_two_telephone}    xpath=//input[@id='billing:telephone']
-${step_two_continue}    xpath=//div[@id='billing-buttons-container']/button[@onclick='billing.save()']
+${step_two_continue}    xpath=//div[@id='billing-buttons-container']/button
 ${step_two_title}    xpath=//li[@id="opc-billing"] 
 ${step_two_active}    xpath=//li[@id='opc-billing' and @class='section allow active']   
 ${step_two_validation_advice}    xpath=//div[@id="advice-validate-email-billing:email"] 
