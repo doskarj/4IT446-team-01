@@ -86,7 +86,7 @@ TC-09 Vyplneni kroku kontaktni udaje
     Input Text    ${step_two_street1}    ${street}         
     Input Text    ${step_two_city}    ${city}              
     Input Text    ${step_two_telephone}    ${telephone}    
-    Click Button    ${step_two_continue}                   
+    Click Element    ${step_two_continue}                   
     Wait Until Element Is Visible    ${step_four_active}  
 
 
