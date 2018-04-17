@@ -61,9 +61,7 @@ TC-09 Vyplneni kroku kontaktni udaje
     
     #2 Kontrola zadanych poli
     Check Fields For Contact Details
-    Radio Button Should Be Set To    ${shop_process_two_radio_name}    ${shop_process_two_radio_value}    
-    Click Button    ${step_two_continue}  
-    Wait Until Page Contains Element    ${step_two_active} 
+    Radio Button Should Be Set To    ${shop_process_two_radio_name}    ${shop_process_two_radio_value}     
     Invalid Continue Step Two Check   
     
     #3 Vyplneni jmena a prijmeni
