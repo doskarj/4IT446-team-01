@@ -3,7 +3,7 @@
     <configVersion>1</configVersion>
     <robotExecEnvironment path="/Library/Frameworks/Python.framework/Versions/2.7/bin" interpreter="Python"/>
     <relativeTo>WORKSPACE</relativeTo>
-    <referencedLibrary type="PYTHON" name="Selenium2Library" path="/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages"/>
+    <referencedLibrary type="PYTHON" name="Selenium2Library" path="/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Selenium2Library"/>
     <pythonpath/>
     <classpath/>
     <excludedForValidation/>
