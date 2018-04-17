@@ -84,7 +84,7 @@ Check Fields For Contact Details
  
 Invalid Continue Step Two Check 
     Wait Until Element Is Visible    ${step_two_continue}    
-    Click Element    ${step_two_continue}
+    Click Button    ${step_two_continue}  
     Wait Until Page Contains Element    ${step_two_active}  
     
 Invalid Continue Step Two Check With Advice
