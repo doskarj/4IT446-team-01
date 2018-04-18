@@ -107,8 +107,9 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
     Page Should Contain Element    ${step_four_content}
     
     #4 Volba Ceske posty a nasledny prechod na dalsi krok
-    Wait Until Element Is Visible    ${step_four_flatrate}        
-    Click Element    ${step_four_flatrate}    
+    Wait Until Element Is Visible    ${step_four_flatrate}   
+    Execute Javascript    document.getElementById('s_method_flatrate_flatrate').click()     
+    #Click Element    ${step_four_flatrate}    
     Click Button    ${step_four_continue}
     Wait Until Element Is Visible    ${step_five_active}       
                
