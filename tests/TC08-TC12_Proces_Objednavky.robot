@@ -207,7 +207,7 @@ TC-12 Prechod mezi kroky objednavky
     Page Should Contain Element    ${step_six_content}  
     
     #2 Prechod na krok Kontaktni udaje
-    Execute Javascript    document.getElementById('opc-shipping_method').getElementsByTagName('h2')[0].click()
+    Execute Javascript    document.getElementById('opc-billing').getElementsByTagName('h2')[0].click()
     #Click Element    ${to_step_two}
     Wait Until Element Is Visible    ${step_two_active}
     
@@ -219,7 +219,8 @@ TC-12 Prechod mezi kroky objednavky
     Wait Until Element Is Visible    ${changed_first_name}    
     
     #4 Prechod na krok kontaktni udaje z Zpusob dodani
-    Click Element    ${to_step_two}
+    Execute Javascript    document.getElementById('opc-billing').getElementsByTagName('h2')[0].click()
+    #Click Element    ${to_step_two}
     Wait Until Element Is Visible    ${step_two_active}
     
     #5 Prechod na krok Zpusob dodani
@@ -231,7 +232,8 @@ TC-12 Prechod mezi kroky objednavky
     Wait Until Element Is Visible    ${step_five_active}
     
     #7 Prechod na krok Zpusob dodani
-    Click Element    ${to_step_four}
+    Execute Javascript    document.getElementById('opc-shipping_method').getElementsByTagName('h2')[0].click()
+    #Click Element    ${to_step_four}
     Wait Until Element Is Visible    ${step_four_active}
     
     #8 Prechod na krok pro volbu platby
