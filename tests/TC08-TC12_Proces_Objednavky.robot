@@ -214,7 +214,8 @@ TC-12 Prechod mezi kroky objednavky
     #3 Zmena jmena a nasledny prechod na dalsi krok
     Clear Element Text    ${step_two_first_name}
     Input Text    ${step_two_first_name}    ${new_first_name}
-    Click element    ${step_two_continue}
+    Execute Javascript    document.getElementById('billing-buttons-container').getElementsByTagName('button')[0].click()
+    #Click element    ${step_two_continue}
     Wait Until Element Is Visible    ${step_four_active}
     Wait Until Element Is Visible    ${changed_first_name}    
     
