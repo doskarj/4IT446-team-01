@@ -146,7 +146,7 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
     Page Should Contain    ${step_shipping_flatrate_price} 
        
 TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
-    Click Element    ${to_step_four}
+    Click Element    ${step_four_title}
     #1 Kontrola ze aktualni krok je krok Zpusob dodani
     Wait Until Page Contains Element    ${step_four_active}
     Wait Until Element Is Visible    ${step_four_content}
