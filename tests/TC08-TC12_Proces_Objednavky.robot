@@ -174,7 +174,8 @@ TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
     Page Should Contain Element    ${step_five_active}
 
     #6 Kontrola hlasky pod platbou kartou
-    Click Element    ${step_five_standard}
+    Execute Javascript    document.getElementById('p_method_gpwebpay_standard').click()
+    #Click Element    ${step_five_standard}
     Page Should Contain Element    ${step_five_standard_message}    
     Page Should Contain Element    ${step_five_content}
     Page Should Contain Element    ${step_five_active}
