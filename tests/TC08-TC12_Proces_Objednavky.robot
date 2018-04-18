@@ -225,7 +225,8 @@ TC-12 Prechod mezi kroky objednavky
     Wait Until Element Is Visible    ${step_two_active}
     
     #5 Prechod na krok Zpusob dodani
-    Click element    ${step_two_continue}
+    Execute Javascript    document.getElementById('billing-buttons-container').getElementsByTagName('button')[0].click()
+    #Click element    ${step_two_continue}
     Wait Until Element Is Visible    ${step_four_active}  
     
     #6 Prechod na krok pro volbu plaby
