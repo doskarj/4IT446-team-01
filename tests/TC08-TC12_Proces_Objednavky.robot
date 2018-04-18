@@ -250,7 +250,8 @@ TC-12 Prechod mezi kroky objednavky
     Page Should Contain Element    ${step_six_submit}   
     
     #10 Prechod do kosiku
-    Click Element    ${step_six_forgot_item}
+    Execute Javascript    document.getElementsByClassName('forgot-item')[0].getElementsByTagName('a')[0].click()
+    #Click Element    ${step_six_forgot_item}
     Check URL    ${shopping_cart_url}
     
     #11 Vymazani obsahu kosiku
