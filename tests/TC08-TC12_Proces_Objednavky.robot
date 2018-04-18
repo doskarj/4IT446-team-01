@@ -207,7 +207,8 @@ TC-12 Prechod mezi kroky objednavky
     Page Should Contain Element    ${step_six_content}  
     
     #2 Prechod na krok Kontaktni udaje
-    Click Element    ${to_step_two}
+    Execute Javascript    document.getElementById('opc-shipping_method').getElementsByTagName('h2')[0].click()
+    #Click Element    ${to_step_two}
     Wait Until Element Is Visible    ${step_two_active}
     
     #3 Zmena jmena a nasledny prechod na dalsi krok
