@@ -83,7 +83,8 @@ Check Fields For Contact Details
     Page Should Contain Element    ${step_two_telephone}   
  
 Invalid Continue Step Two Check 
-    Click Button    ${step_two_continue}  
+    Execute Javascript    document.getElementById('billing-buttons-container').getElementsByTagName('button')[0].click()
+    #Click Button    ${step_two_continue}  
     Wait Until Page Contains Element    ${step_two_active}  
     
 Invalid Continue Step Two Check With Advice
