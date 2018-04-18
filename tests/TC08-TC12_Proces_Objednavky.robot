@@ -181,7 +181,8 @@ TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
     Page Should Contain Element    ${step_five_active}
     
     #7 Volba platby na miste a pokracovani na dalsi krok
-    Click Element    ${step_five_cash_on_delivery_free}
+    Execute Javascript    document.getElementById('p_method_cashondelivery').click()
+    #Click Element    ${step_five_cash_on_delivery_free}
     Click Element    ${step_five_continue}
     Wait Until Element Is Visible    ${step_six_active}
     
