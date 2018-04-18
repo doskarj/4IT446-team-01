@@ -148,6 +148,7 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
 TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
     Execute Javascript    document.getElementById('opc-shipping_method').getElementsByTagName('h2')[0].click()
     #Click Element    ${step_four_title}
+    
     #1 Kontrola ze aktualni krok je krok Zpusob dodani
     Wait Until Page Contains Element    ${step_four_active}
     Wait Until Element Is Visible    ${step_four_content}
@@ -158,7 +159,8 @@ TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
     Page Should Contain Element    ${step_four_freeshipping}    ${step_shipping_free_price}
     
     #3 Volba osobniho osdberu a prechod na dalsi krok
-    Click Element    ${step_four_freeshipping}
+    Execute Javascript    document.getElementById(${step_four_freeshipping_js}).click()
+    #Click Element    ${step_four_freeshipping}
     Click Element    ${step_four_continue}
     Wait Until Element Is Visible    ${step_five_active}
  
