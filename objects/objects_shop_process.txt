@@ -27,7 +27,9 @@ ${step_two_psc}    xpath=//input[@id='billing:postcode']
 ${step_two_country_id}    xpath=//input[@id='billing:country_id']
 ${step_two_telephone}    xpath=//input[@id='billing:telephone']
 ${step_two_continue}    xpath=//div[@id='billing-buttons-container']/button
-${step_two_title}    xpath=//li[@id="opc-billing"] 
+${step_two_continue_js}    'billing-buttons-container'
+${step_two_title}    xpath=//li[@id='opc-billing'] 
+${step_two_title_js}    'opc-billing'
 ${step_two_active}    xpath=//li[@id='opc-billing' and @class='section allow active']   
 ${step_two_validation_advice}    xpath=//div[@id="advice-validate-email-billing:email"] 
 
@@ -40,17 +42,21 @@ ${step_four_freeshipping}    xpath=//div[@id='checkout-step-shipping_method']//i
 ${step_four_freeshipping_js}    's_method_freeshipping_freeshipping'
 ${step_four_continue}    xpath=//div[@id='shipping-method-buttons-container']/button
 ${step_four_title}    xpath=//li[@id="opc-shipping_method"]  
+${step_four_title_js}    'opc-shipping_method'
 ${step_four_flatrate}    xpath=//div[@id='checkout-step-shipping_method']//input[@id='s_method_flatrate_flatrate']
+${step_four_flatrate_flatrate_js}    's_method_flatrate_flatrate'
 ${step_four_active}    xpath=//li[@id='opc-shipping_method' and @class='section allow active']
 
 
 #zpusob dodani a platby
 ${step_five_content}    xpath=//div[@id='checkout-step-payment']
 ${step_five_cash}    xpath=//input[@id='p_method_cashondelivery']
+${step_five_cash_js}    'p_method_cashondelivery'
 ${step_five_continue}    xpath=//div[@id='payment-buttons-container']/button
 ${step_five_title}    xpath=//li[@id="opc-payment"]  
 ${step_five_active}    xpath=//li[@id='opc-payment' and @class='section allow active']
 ${step_five_standard}	xpath=//div[@id='checkout-step-payment']//input[@id='p_method_gpwebpay_standard']
+${step_five_standard_js}    's_method_flatrate_flatrate'
 ${step_five_cash_on_delivery}  xpath=//div[@id='checkout-step-payment']//input[@id='p_method_phoenix_cashondelivery']
 ${step_five_standard_message}    xpath=//ul[@id='payment_form_gpwebpay_standard']
 ${step_five_cash_on_delivery_message}    xpath=//ul[@id='payment_form_phoenix_cashondelivery']
@@ -65,6 +71,7 @@ ${step_six_title}   xpath=//li[@id="opc-review"]
 ${step_six_submit}    xpath=//div[@id='review-buttons-container']/button
 ${step_six_active}    xpath=//li[@id='opc-review' and @class='section allow active']
 ${step_six_forgot_item}    xpath=//p[@class='forgot-item']/a[@href='https://eshop.zoopraha.cz/checkout/cart/'] 
+${step_six_forgot_item_js}    'forgot-item'
 ${step_six_delivery}    //*[@id="checkout-review-table"]/tfoot/tr[2]
 
 #prechod
@@ -72,6 +79,7 @@ ${to_step_two}    xpath=//div[@class='step-title']/span[@class='number' and text
 ${changed_first_name}    xpath=//div[@id='billing-progress-opcheckout']/dd[@class='complete' and contains(address,'Petr')]
 ${to_step_four}    xpath=//div[@class='step-title']/span[@class='number' and text()=4]
 ${to_step_five}    xpath=//div[@class='step-title']/span[@class='number' and text()=5]
+
 
 
 

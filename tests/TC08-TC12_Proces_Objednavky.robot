@@ -108,7 +108,7 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
     
     #4 Volba Ceske posty a nasledny prechod na dalsi krok
     Wait Until Element Is Visible    ${step_four_flatrate}   
-    Execute Javascript    document.getElementById('s_method_flatrate_flatrate').click()     
+    Execute Javascript    document.getElementById(${step_four_flatrate_flatrate_js}).click()     
     #Click Element    ${step_four_flatrate}    
     Click Button    ${step_four_continue}
     Wait Until Element Is Visible    ${step_five_active}       
@@ -124,7 +124,7 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
     Page Should Contain Element    ${step_five_active}        
     
     #7 Volba Plaby kartou
-    Execute Javascript    document.getElementById('p_method_gpwebpay_standard').click()
+    Execute Javascript    document.getElementById(${step_five_standard_js}).click()
     #Click Element    ${step_five_standard}
     Page Should Contain Element    ${step_five_standard_message}    
     Page Should Contain Element    ${step_five_content}    
@@ -146,7 +146,7 @@ TC-10 Vyplneni kroku Zpusobu dodani a platby - posta
     Page Should Contain    ${step_shipping_flatrate_price} 
        
 TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
-    Execute Javascript    document.getElementById('opc-shipping_method').getElementsByTagName('h2')[0].click()
+    Execute Javascript    document.getElementById(${step_four_title_js}).getElementsByTagName('h2')[0].click()
     #Click Element    ${step_four_title}
     
     #1 Kontrola ze aktualni krok je krok Zpusob dodani
@@ -174,14 +174,14 @@ TC-11 Vyplneni kroku Zpusob dodani a nasledny zpusob platby - osobni odber
     Page Should Contain Element    ${step_five_active}
 
     #6 Kontrola hlasky pod platbou kartou
-    Execute Javascript    document.getElementById('p_method_gpwebpay_standard').click()
+    Execute Javascript    document.getElementById(${step_five_standard_js}).click()
     #Click Element    ${step_five_standard}
     Page Should Contain Element    ${step_five_standard_message}    
     Page Should Contain Element    ${step_five_content}
     Page Should Contain Element    ${step_five_active}
     
     #7 Volba platby na miste a pokracovani na dalsi krok
-    Execute Javascript    document.getElementById('p_method_cashondelivery').click()
+    Execute Javascript    document.getElementById(${step_five_cash_js}).click()
     #Click Element    ${step_five_cash_on_delivery_free}
     Click Element    ${step_five_continue}
     Wait Until Element Is Visible    ${step_six_active}
@@ -207,25 +207,25 @@ TC-12 Prechod mezi kroky objednavky
     Page Should Contain Element    ${step_six_content}  
     
     #2 Prechod na krok Kontaktni udaje
-    Execute Javascript    document.getElementById('opc-billing').getElementsByTagName('h2')[0].click()
+    Execute Javascript    document.getElementById(${step_two_title_js}).getElementsByTagName('h2')[0].click()
     #Click Element    ${to_step_two}
     Wait Until Element Is Visible    ${step_two_active}
     
     #3 Zmena jmena a nasledny prechod na dalsi krok
     Clear Element Text    ${step_two_first_name}
     Input Text    ${step_two_first_name}    ${new_first_name}
-    Execute Javascript    document.getElementById('billing-buttons-container').getElementsByTagName('button')[0].click()
+    Execute Javascript    document.getElementById(${step_two_continue_js}).getElementsByTagName('button')[0].click()
     #Click element    ${step_two_continue}
     Wait Until Element Is Visible    ${step_four_active}
     Wait Until Element Is Visible    ${changed_first_name}    
     
     #4 Prechod na krok kontaktni udaje z Zpusob dodani
-    Execute Javascript    document.getElementById('opc-billing').getElementsByTagName('h2')[0].click()
+    Execute Javascript    document.getElementById(${step_two_title_js}).getElementsByTagName('h2')[0].click()
     #Click Element    ${to_step_two}
     Wait Until Element Is Visible    ${step_two_active}
     
     #5 Prechod na krok Zpusob dodani
-    Execute Javascript    document.getElementById('billing-buttons-container').getElementsByTagName('button')[0].click()
+    Execute Javascript    document.getElementById(${step_two_continue_js}).getElementsByTagName('button')[0].click()
     #Click element    ${step_two_continue}
     Wait Until Element Is Visible    ${step_four_active}  
     
@@ -234,7 +234,7 @@ TC-12 Prechod mezi kroky objednavky
     Wait Until Element Is Visible    ${step_five_active}
     
     #7 Prechod na krok Zpusob dodani
-    Execute Javascript    document.getElementById('opc-shipping_method').getElementsByTagName('h2')[0].click()
+    Execute Javascript    document.getElementById(${step_four_title_js}).getElementsByTagName('h2')[0].click()
     #Click Element    ${to_step_four}
     Wait Until Element Is Visible    ${step_four_active}
     
@@ -250,7 +250,7 @@ TC-12 Prechod mezi kroky objednavky
     Page Should Contain Element    ${step_six_submit}   
     
     #10 Prechod do kosiku
-    Execute Javascript    document.getElementsByClassName('forgot-item')[0].getElementsByTagName('a')[0].click()
+    Execute Javascript    document.getElementsByClassName(${step_six_forgot_item_js})[0].getElementsByTagName('a')[0].click()
     #Click Element    ${step_six_forgot_item}
     Check URL    ${shopping_cart_url}
     
